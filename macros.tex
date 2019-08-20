@@ -1,3 +1,11 @@
+%% conference information
+% \acmConference{CoNEXT '18}{December 4--7, 2018}{Heraklion/Crete, Greece}
+% \acmYear{2018}
+% \copyrightyear{2018}
+
+%% anonymize macros
+\newcommand\facebook{{Facebook}\xspace}
+
 %%% Macros for convenience
 %% References
 \newcommand{\secref}[1]{\S\ref{sec:#1}}
@@ -10,61 +18,52 @@
 \newcommand{\eg}{\emph{e.g.,}\xspace}
 \newcommand{\etal}{\emph{et al.}\xspace}
 
-%%%%% Squeezing space before sections, subsections, and re-defining
-%%%%% paragraphs
-\makeatletter
-\let\origsection\section
-\let\origsubsection\subsection
-\let\origparagraph\paragraph
+%% editing notes
+\newcommand\ekb[1]{{\color{blue}ekb: #1}}
+\newcommand\tbd[1]{{\color{red}{\bf TBD: #1}}}
+\newcommand\new[1]{{\color{red}{#1}}}
 
-\renewcommand\section{\@ifstar{\starsection}{\nostarsection}}
-\renewcommand\subsection{\@ifstar{\starsubsection}{\nostarsubsection}}
-\renewcommand\paragraph{\@ifstar{\starpara}{\nostarpara}}
+% HD-ratio
+\newcommand{\Ttotal}{\ensuremath{T_\mathrm{total}}}
+\newcommand{\Btotal}{\ensuremath{B_\mathrm{total}}}
+\newcommand{\Bmss}{\ensuremath{B_\mathrm{MSS}}}
+\newcommand{\Winit}{\ensuremath{W_\mathrm{init}}}
+\newcommand{\RbottleN}[1]{R_\mathrm{bottleneck}(#1)}
+\newcommand{\BssN}[1]{\ensuremath{B_\mathrm{SS}(#1)}}
+\newcommand{\WssN}[1]{\ensuremath{W_\mathrm{SS}(#1)}}
+\newcommand{\TmodelN}[1]{\ensuremath{T_\mathrm{model}(#1)}}
+\newcommand{\RTmin}{\ensuremath{\mathrm{RoundTrips}_\mathrm{min}}}
+\newcommand{\Rachievable}{\ensuremath{R_\mathrm{achievable}}}
+\newcommand{\Rachieved}{\ensuremath{R_\mathrm{achieved}}}
 
-%% Change these
-\newcommand\sectionprelude{\vspace{0em}}
-\newcommand\sectionpostlude{\vspace{0em}}
-\newcommand\subsectionprelude{\vspace{0em}}
-\newcommand\subsectionpostlude{\vspace{0em}}
-\newcommand\paraspace{\vspace*{0ex}}
+% terms
+\newcommand\bgp{BGP\xspace}
+\newcommand\as{AS\xspace}
+\newcommand\ases{ASes\xspace}
+\newcommand\asn{ASN\xspace}
+\newcommand\asns{ASNs\xspace}
+\newcommand\aspath{AS-path\xspace}
+\newcommand\aspaths{AS-paths\xspace}
+\newcommand\localpref{local-pref\xspace}
+\newcommand\med{MED\xspace}
 
-\newcommand\nostarsection[1]{\sectionprelude\origsection{#1}\sectionpostlude}
-\newcommand\starsection[1]{\sectionprelude\origsection*{#1}\sectionpostlude}
+\newcommand\minrtt{\ensuremath{\mathrm{MinRTT}}\xspace}
+\newcommand\hdratio{HD-ratio\xspace}
 
-\newcommand\nostarsubsection[1]{\subsectionprelude\origsubsection{#1}\subsectionpostlude}
-\newcommand\starssubection[1]{\subsectionprelude\origsubsection*{#1}\subsectionpostlude}
+\newcommand\upperbound{\emph{upper bound}\xspace}
+\newcommand\beststatic{\emph{static best path}\xspace}
+\newcommand\bestdynamic{\emph{best path per time bucket}\xspace}
 
-\newcommand\starpara[1]{\paraspace\noindent\origparagraph*{\textbf{#1}}}
-\newcommand\nostarpara[1]{\paraspace\noindent\origparagraph*{\textbf{#1}}}
+\newcommand\prefixthree{\texttt{BadPeerPrefix}\xspace}
+\newcommand\prefixtwo{\texttt{DiurnalPrefix}\xspace}
+\newcommand\prefixone{\texttt{TransientPrefix}\xspace}
 
-\providecommand\subparagraph[1]{\paraspace\noindent\origparagraph*{\textit{#1}}}
+\newcommand\popprefixtuple{$\left\langle \text{PoP, prefix} \right\rangle$\xspace}
+\newcommand\popprefixroutetuple{$\left\langle \text{PoP, prefix, route} \right\rangle$\xspace}
+\newcommand\popprefixroutetimetuple{$\left\langle \text{PoP, prefix, route, time window} \right\rangle$\xspace}
 
-\makeatother
+\newcommand\popprefixroutetime{$\langle$PoP, prefix, route, time window$ \rangle$\xspace}
 
-%%% Backref magic
-\DefineBibliographyStrings{english}{%
-  backrefpage = {Cited on page},
-  backrefpages = {Cited on pages},
-}
-\renewbibmacro{pageref}{%
-  \iflistundef{pageref}
-    {\printtext[parens]{Not Cited}} 
-    {%
-     \printtext[parens]{\ifnumgreater{\value{pageref}}{1}   
-       {\bibstring{backrefpages}} 
-       {\bibstring{backrefpage}}
-       \printlist [pageref][-\value{listtotal}]{pageref}}}}    
-
-\DeclareListFormat{pageref}{%
-     % == 2 references
-    \ifthenelse{\value{liststop} < 3}{\ifthenelse{\value{listcount}<\value{liststop}}{\hyperpage{#1} and }{\hyperpage{#1}}} %
-    { % > 2 references
-        \ifthenelse{\value{listcount}<\value{liststop}}
-          {\hyperpage{#1}\addcomma\addspace}
-          {\ifnumequal{\value{listcount}}{\value{liststop}}
-            {and \hyperpage{#1}}
-            {}%
-          }%
-    }%  
-}
-
+\newcommand{\rightdownarrow}{\mathrel{\scalebox{1}[-1]{$\Rsh$}}}
+\newcommand{\cmark}{\color{OliveGreen}\ding{51}}%
+\newcommand{\xmark}{\color{BrickRed}\ding{55}}%
