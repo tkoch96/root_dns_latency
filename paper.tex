@@ -86,7 +86,7 @@ classoption: - natbib=true - table header-includes: -
 
 \iffalse
 
-Table of contents
+Github: https://github.com/tkoch96/root\_dns\_latency Table of contents
 
 \section*{Abstract}\label{abstract}
 \addcontentsline{toc}{section}{Abstract}
@@ -118,12 +118,16 @@ Users}\label{root-latency-experienced-by-users}
 
 \fi
 
+\iffalse
+
 Figures to generate: ISI logy root DNS latency MSFT client \# - volume
 correlation plot DITL RR query distribution pre and post MSFT join DITL
 \& MSFT user latency per day DITL \& MSFT \# user queries per day
 
 Tables to construct: ISI cache hit rate statistics (from Sheet) DITL vs
 MSFT vs RIPE matching statistics
+
+\fi
 
 \section*{Abstract}\label{abstract-1}
 \addcontentsline{toc}{section}{Abstract}
@@ -369,6 +373,8 @@ experienced for queries over the same one month period. Requests that do
 not generate a query to a root server are counted as having a latency of
 0.
 
+{[}f{]}
+
 \begin{figure}
     \centering
     \includegraphics[width=0.45\textwidth]{figures/isi_root_dns_latency.png}
@@ -407,14 +413,14 @@ Motivated by this ideal scenario, we obtain statistics from a large CDN
 operator containing information about the users of that CDN.
 Specifically, these statistics include RR IP's, the number of distinct
 client IP's behind those RR's and the relative query volume those client
-IP's contributed (as a fraction of the total CDN query volume{[}f{]})
+IP's contributed (as a fraction of the total CDN query volume{[}g{]})
 for 8 consecutive days in 2019. Working with the notion of a ``user'' is
 valuable, as this provides us with an estimate of how much latency each
 user experiences. However, since the notion of `user' is an IP address,
 one `user' can actually refer to several people behind a NAT.
 Furthermore, when weighting results, client query volume is intuitively
 the correct metric to weight by, since query volume indicates activity
-on the web. {[}g{]}{[}h{]}The relationship between daily average query
+on the web. {[}h{]}{[}i{]}The relationship between daily average query
 volume and daily average client IP count per RR is shown in Figure
 \ref{fig:query_client_relationship}. The correlation coefficient between
 average weekly volume and client count is .81, with actual daily
@@ -422,7 +428,7 @@ correlations ranging from .76 to .85. This correlation is not perfect,
 but good enough for us to represent the ``importance'' of an RR by the
 number of distinct client IP's behind it.
 
-{[}i{]} query\_client\_relationship
+{[}j{]} query\_client\_relationship
 
 \begin{figure}
     \centering
@@ -462,7 +468,7 @@ ditl\_volume\_comparisons
 \end{table}
 
 We then join these data sets by /24, aggregating their respective client
-IP counts, query {[}j{]}volumes, etc\ldots{} -- this joined data set is
+IP counts, query {[}k{]}volumes, etc\ldots{} -- this joined data set is
 referred to henceforth as the DCDN data set. Naturally, there is a
 mismatch in the /24's represented by each data set. Table
 \ref{tab:dataset_matching_statistics} summarizes the extent to which the
@@ -489,7 +495,7 @@ We have also included the number of requests each user makes per day in
 Figure \ref{fig:user_num_requests_per_day} for reference. Figure
 \ref{fig:user_num_requests_per_day} may be particularly useful for
 comparing these results with other studies that show CDF's of user
-latencies to various roots.{[}k{]}{[}l{]}
+latencies to various roots.{[}l{]}{[}m{]}
 
 user\_root\_latency\_per\_day
 
@@ -570,16 +576,109 @@ utility of proposed improvements to IP anycast should not be assessed
 using root DNS servers, as the generalization ability of the improvement
 to all IP anycast systems is unpredictable.
 
-\section{Related Work}\label{related-work-1}
+\section{Related Work{[}n{]}}\label{related-workn}
+
+IP anycast is usually studied in two applications: the root DNS servers
+{[}{]}, and CDN's {[}{]}. In addition to these topics, we discuss
+studies of popular recursive resolvers, and client-centric measurements
+of web latency.
+
+\subsection{Root DNS Anycast
+Performance}\label{root-dns-anycast-performance}
+
+The performance of anycast in the context of root DNS is generally
+gauged by anycast's ability to balance load among server replicas or
+provide low latency to users. Generally, all studies conclude that
+anycast successfully balances load, while latency performance depends on
+the specific deployment configuration. \cite{moura2016anycast} looks at
+a DDoS attack on the root name server infrastructure, and generally
+shows that anycast is a good defense mechanism against such attacks. An
+earlier study, \cite{sarat2006use} confirms that anycast protects the
+root DNS infrastructure against such attacks and, furthermore, that
+anycast routes users to an optimal location in most cases.
+\cite{de2017anycast} looks at user latency to C, F, K, and L-root and
+attributes better performance to good geographic location and peering
+strategies. These findings coincide with an earlier study,
+\cite{ballani2006measurement}, who conclude the performance of anycast
+is intrinsically linked to deployment strategy. Additionally
+\cite{de2017anycast} finds that as few as 12 sites can provide ``good''
+latency to users. \cite{li_leven_spring_bhattacharjee_2018},
+\cite{colitti2006evaluating}, \cite{de2017anycast}, and
+\cite{liang2013measuring} are all examples of studies who quantify
+latencies to various root servers, and note how these compare to the
+(optimal) latency of the closest unicast alternative for the client who
+issued the query.
+
+\subsection{CDN Anycast Performance}\label{cdn-anycast-performance}
+
+Some CDN's (e.g.~Cloudflare, Edgecast, Fastly) use IP anycast to augment
+their serving infrastructure. When deploying an Anycast CDN (ACDN),
+delivering content to users with low latency becomes a high priority, as
+there is a large financial incentive to do so. The simplicity of IP
+anycast comes at the cost of having coarse grained control over where
+client queries land. Shifting client load between nodes during peak
+hours, for example, is a challenging problem. As a potential solution,
+\cite{flavel2015fastroute} and \cite{alzoubi2011practical} use DNS
+redirects at ADNS servers to shift load among anycast nodes, albeit in
+slightly different ways. \cite{calder2015analyzing} analyzes what
+latency clients are achieving, compared to optimal, when being routed to
+anycast nodes and finds that 10\% of clients experience a latency
+inflation of at least 100 ms.
+
+\subsection{Recursive Resolvers and the Benefits of
+Caching}\label{recursive-resolvers-and-the-benefits-of-caching}
+
+Similar to the RR analysis conducted here, \cite{jung2002dns} looks at
+DNS traffic on a small network and notably finds that 16\% of queries
+resulted in queries to the root, most of which were for invalid domains.
+As this study is quite old, it is no surprise that this rate has
+decreased (recall we observed .5\% of queries resulted in queries to the
+root) since browser designers and network engineers understand the
+importance of caching. \cite{callahan2013modern} also look at a RR
+network and analyze statistics of DNS exchanges occurring over it
+including DNS transaction latencies. Both \cite{lentz2013d} and
+\cite{yu2012authority} look at certain pathological behaviors of popular
+recursive resolvers, and the implications these behaviors have on root
+DNS load.
+
+\subsection{Web Performance}\label{web-performance}
+
+Although we were unable to find any specific study that looked at how
+web performance and root DNS latency were related, there are certainly
+studies characterizing web performance. \cite{sundaresan2013web}
+characterizes web performance bottlenecks in (at the time) new broadband
+networks, and finds that latency is the main bottleneck for PLT when the
+user's bandwidth exceeds 16 Mbps. However, the study does not
+realistically emulate a page load and, in particular, can not analyze
+the effect of having multiple DNS resolutions per page. Similarly,
+\cite{asrese2016wepr} analyzes how each step of a page load contributes
+to the aggregate PLT using a tool designed in-house. However, unlike
+\cite{sundaresan2013web}, they did not conduct a large measurement
+campaign and do not include information about multiple DNS lookups per
+page. A more recent study, \cite{enghardt2019web} provides a brief
+survey of web performance measurement studies and explains why it is
+difficult (with current practices) to compare two different studies in
+web performance.
+
+\iffalse
 
 (studies looking at anycast in context of root DNS servers) Anycast
-Performance, Problems and Potential how many sites are enough? (studies
-looking at anycast in context of CDN's) Edgecast paper that hasn't been
-released yet Analyzing the Performance of an Anycast CDN (studies
-looking at recursive resolvers/caching) On Modern DNS Behavior and
-Properties DNS Performance and the Effectiveness of Caching (studies
+Performance, Problems and Potential how many sites are enough? A
+measurement based deployment proposal for IP Anycast Evaluating the
+Effects of Anycast on DNS Root Nameservers Measuring Query Latency of
+Top Level DNS Servers Anycast vs.~DDoS: Evaluating the November 2015
+Root DNS Event On the Use of Anycast in DNS (studies looking at anycast
+in context of CDN's) fastroute A Practical Architecture for an Anycast
+CDN Edgecast paper that hasn't been released yet Analyzing the
+Performance of an Anycast CDN (studies looking at recursive
+resolvers/caching) (maybe) John's TR of how different resolvers query at
+different times On Modern DNS Behavior and Properties DNS Performance
+and the Effectiveness of Caching D-mystifying the D-root Address Change
+Authority Server Selection of DNS Caching Resolvers{[}o{]} (studies
 looking at web performance/how client caching effects it) Measuring and
 mitigating web performance bottlenecks in broadband access networks
+WePR: A tool for Automated Web Performance Measurement Demystifying Page
+Load Performance with WProf{[}p{]} \fi
 
 \section{Conclusion}\label{conclusion-1}
 
@@ -601,15 +700,19 @@ generate a figure showing a CDF of TTL's of all TLD NS records (pretty
 easy to generate) {[}c{]}Would probably need to run BIND locally, and
 set myself as my own recursive resolver {[}d{]}has 4x cache hit rate
 (far fewer client queries?) {[}e{]}Update: pinged John about it with
-more information about when issue occurs {[}f{]}perhaps elaborate on
-what is meant by ``query volume'' {[}g{]}+ethanbkb@gmail.com This is one
-way I currently use Microsoft's query volume numbers to justify our
-results. What do you think? {[}h{]}I was thinking along the lines of
-weighting root query cost by query volume (rather than by ``users'').
-{[}i{]}y axis needs relabeling {[}j{]}TODO: comment about removing v6
-{[}k{]}For example, people could look at UMD paper and apply the
-95\%-ile latency to all clients and see implications.
-{[}l{]}Questionable utility, may be a glut of graphs
+more information about when issue occurs {[}f{]}maybe use this as a
+p.d.f. for ``amortizing'' the root latency in the table {[}g{]}perhaps
+elaborate on what is meant by ``query volume''
+{[}h{]}+ethanbkb@gmail.com This is one way I currently use Microsoft's
+query volume numbers to justify our results. What do you think? {[}i{]}I
+was thinking along the lines of weighting root query cost by query
+volume (rather than by ``users''). {[}j{]}y axis needs relabeling
+{[}k{]}TODO: comment about removing v6 {[}l{]}For example, people could
+look at UMD paper and apply the 95\%-ile latency to all clients and see
+implications. {[}m{]}Questionable utility, may be a glut of graphs
+{[}n{]}cite more numbers maybe {[}o{]}interesting that in 10 minutes
+they observe so many queries for COM TLD yet don't see any issue with
+that {[}p{]}Might be an interesting tool to use
 
 \bibliography{bib.bib}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.16)  20 AUG 2019 12:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.16)  21 AUG 2019 11:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1223,9 +1223,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 227.
+(Font)              <10> on input line 231.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 227.
+(Font)              <7> on input line 231.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1247,100 +1247,105 @@ Package Fancyhdr Warning: \headheight is too small (13.0pt):
 [2.2]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 332.
+               Default added (so using `tbp') on input line 336.
 
-<figures/isi_root_dns_latency.png, id=84, 578.16pt x 433.62pt>
+<figures/isi_root_dns_latency.png, id=100, 578.16pt x 433.62pt>
 File: figures/isi_root_dns_latency.png Graphic file (type png)
 
 <use figures/isi_root_dns_latency.png>
-Package pdftex.def Info: figures/isi_root_dns_latency.png used on input line 37
-4.
+Package pdftex.def Info: figures/isi_root_dns_latency.png used on input line 38
+0.
 (pdftex.def)             Requested size: 227.82814pt x 170.87111pt.
 
 
-Class acmart Warning: A possible image without description on input line 377.
+Class acmart Warning: A possible image without description on input line 383.
 
-[3.3] <figures/query_client_relationship.png, id=96, 462.528pt x 346.896pt>
+[3.3] <figures/query_client_relationship.png, id=112, 462.528pt x 346.896pt>
 File: figures/query_client_relationship.png Graphic file (type png)
 
 <use figures/query_client_relationship.png>
 Package pdftex.def Info: figures/query_client_relationship.png used on input li
-ne 429.
+ne 435.
 (pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
 
 
-Class acmart Warning: A possible image without description on input line 432.
+Class acmart Warning: A possible image without description on input line 438.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 444.
+               Default added (so using `tbp') on input line 450.
 
 
 LaTeX Warning: Reference `fig:ditl_volume_comparisons' on page 4 undefined on i
-nput line 475.
+nput line 481.
 
 [4.4 <./figures/isi_root_dns_latency.png> <./figures/query_client_relationship.
 png>]
 
 LaTeX Warning: Reference `fig:user_num_requests_per_day' on page 5 undefined on
- input line 489.
+ input line 495.
 
 
 LaTeX Warning: Reference `fig:user_num_requests_per_day' on page 5 undefined on
- input line 490.
+ input line 496.
 
-<figures/user_root_latency_per_day.png, id=109, 462.528pt x 346.896pt>
+<figures/user_root_latency_per_day.png, id=125, 462.528pt x 346.896pt>
 File: figures/user_root_latency_per_day.png Graphic file (type png)
 
 <use figures/user_root_latency_per_day.png>
 Package pdftex.def Info: figures/user_root_latency_per_day.png used on input li
-ne 498.
+ne 504.
 (pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
 
 
-Class acmart Warning: A possible image without description on input line 501.
+Class acmart Warning: A possible image without description on input line 507.
 
 [5.5 <./figures/user_root_latency_per_day.png>]
-Underfull \hbox (badness 2401) in paragraph at lines 575--583
-\T1/lmr/m/n/10 (+20) On Mod-ern DNS Be-hav-ior and Prop-er-ties DNS
- []
+
+Package natbib Warning: Citation `li_leven_spring_bhattacharjee_2018' on page 6
+ undefined on input line 605.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-(./paper.bbl)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6.6]
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+
+(./paper.bbl [7.7])
+
+Package natbib Warning: There were undefined citations.
+
 
 Class acmart Warning: Some images may lack descriptions.
 
-
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
-
-[6.6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 616.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 616.
+[8.8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 719.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 719.
  (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 616.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 616.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 719.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 719.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: BD780A6EF17667747028DD42F64BC06D;2168.
+(rerunfilecheck)             Checksum: F3A07366B8E4DA929BB4F43C0F4D1919;3108.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16483 strings out of 494953
- 237876 string characters out of 6180977
- 385132 words of memory out of 5000000
- 19139 multiletter control sequences out of 15000+600000
- 73539 words of font info for 112 fonts, out of 8000000 for 9000
+ 16598 strings out of 494953
+ 240050 string characters out of 6180977
+ 386644 words of memory out of 5000000
+ 19200 multiletter control sequences out of 15000+600000
+ 75260 words of font info for 128 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,15n,94p,812b,390s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm
+ 60i,15n,94p,812b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm
 /lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
 f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
 7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
@@ -1349,11 +1354,12 @@ sr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmsy10.pfb>
-Output written on paper.pdf (6 pages, 415322 bytes).
+f/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
+8.pfb>
+Output written on paper.pdf (8 pages, 436195 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 16516 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 16548 words of extra memory for PDF output out of 17280 (max. 10000000)
 
