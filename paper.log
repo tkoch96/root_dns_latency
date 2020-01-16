@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.16)  21 AUG 2019 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.16)  14 JAN 2020 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1217,15 +1217,45 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 71.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+Underfull \hbox (badness 1748) in paragraph at lines 148--214
+\T1/lmr/m/n/10 (+20) servers, de-spite the ex-is-tence of a ge-o-graph-i-cally
+ []
+
+
+Underfull \hbox (badness 1442) in paragraph at lines 148--214
+\T1/lmr/m/n/10 (+20) la-ten-cies for users, and harms their ex-pe-ri-ence. 
+ []
+
+
+Underfull \hbox (badness 4699) in paragraph at lines 148--214
+\T1/lmr/m/n/10 (+20) res-o-lu-tion, such mod-i-fi-ca-tions and im-prove-ments
+ []
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 148--214
+\T1/lmr/m/n/10 (+20) di-rectly queries the root DNS server. We fur-ther
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 148--214
+\T1/lmr/m/n/10 (+20) la-tency is neg-li-gi-ble. In light of these re-sults, in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--214
+
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 231.
+(Font)              <10> on input line 233.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 231.
+(Font)              <7> on input line 233.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1233,11 +1263,44 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+Underfull \hbox (badness 1132) in paragraph at lines 227--288
+\T1/lmr/m/n/10 (+20) for human-readable host-names are mapped to IP
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 227--288
+\T1/lmr/m/n/10 (+20) Since each re-quest is a cor-re-spon-dence be-tween
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--288
+
+ []
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 227--288
+\T1/lmr/m/n/10 (+20) In prac-tice, there is quite a lot of po-ten-tial for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--288
+
+ []
+
+
+Underfull \hbox (badness 2735) in paragraph at lines 227--288
+\T1/lmr/m/n/10 (+20) Caching at re-mote RR's is won-der-ful, and can
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 227--288
+\T1/lmr/m/n/10 (+20) through an id-iosyn-cratic com-bi-na-tion of browsers,
+ []
+
 Package microtype Info: Loading generic settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
 
 Package Fancyhdr Warning: \headheight is too small (13.0pt): 
  Make it at least 22.96501pt.
@@ -1245,121 +1308,188 @@ Package Fancyhdr Warning: \headheight is too small (13.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2.2]
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 336.
+               Default added (so using `tbp') on input line 347.
 
-<figures/isi_root_dns_latency.png, id=100, 578.16pt x 433.62pt>
+[3.3] <figures/isi_root_dns_latency.png, id=143, 578.16pt x 433.62pt>
 File: figures/isi_root_dns_latency.png Graphic file (type png)
 
 <use figures/isi_root_dns_latency.png>
-Package pdftex.def Info: figures/isi_root_dns_latency.png used on input line 38
-0.
+Package pdftex.def Info: figures/isi_root_dns_latency.png used on input line 39
+4.
 (pdftex.def)             Requested size: 227.82814pt x 170.87111pt.
 
 
-Class acmart Warning: A possible image without description on input line 383.
+Class acmart Warning: A possible image without description on input line 397.
 
-[3.3] <figures/query_client_relationship.png, id=112, 462.528pt x 346.896pt>
+<figures/query_client_relationship.png, id=148, 1128.8574pt x 697.4055pt>
 File: figures/query_client_relationship.png Graphic file (type png)
 
 <use figures/query_client_relationship.png>
 Package pdftex.def Info: figures/query_client_relationship.png used on input li
-ne 435.
-(pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
+ne 453.
+(pdftex.def)             Requested size: 227.81725pt x 140.74496pt.
 
 
-Class acmart Warning: A possible image without description on input line 438.
+Class acmart Warning: A possible image without description on input line 456.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 450.
+               Default added (so using `tbp') on input line 471.
+
+[4.4 <./figures/isi_root_dns_latency.png>]
+<figures/ditl_volume_comparisons.png, id=161, 462.528pt x 346.896pt>
+File: figures/ditl_volume_comparisons.png Graphic file (type png)
+
+<use figures/ditl_volume_comparisons.png>
+Package pdftex.def Info: figures/ditl_volume_comparisons.png used on input line
+ 509.
+(pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
 
 
-LaTeX Warning: Reference `fig:ditl_volume_comparisons' on page 4 undefined on i
-nput line 481.
+Class acmart Warning: A possible image without description on input line 512.
 
-[4.4 <./figures/isi_root_dns_latency.png> <./figures/query_client_relationship.
-png>]
-
-LaTeX Warning: Reference `fig:user_num_requests_per_day' on page 5 undefined on
- input line 495.
-
-
-LaTeX Warning: Reference `fig:user_num_requests_per_day' on page 5 undefined on
- input line 496.
-
-<figures/user_root_latency_per_day.png, id=125, 462.528pt x 346.896pt>
+<figures/user_root_latency_per_day.png, id=164, 462.528pt x 346.896pt>
 File: figures/user_root_latency_per_day.png Graphic file (type png)
 
 <use figures/user_root_latency_per_day.png>
 Package pdftex.def Info: figures/user_root_latency_per_day.png used on input li
-ne 504.
+ne 535.
 (pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
 
 
-Class acmart Warning: A possible image without description on input line 507.
-
-[5.5 <./figures/user_root_latency_per_day.png>]
-
-Package natbib Warning: Citation `li_leven_spring_bhattacharjee_2018' on page 6
- undefined on input line 605.
+Class acmart Warning: A possible image without description on input line 538.
 
 
+Underfull \hbox (badness 1484) in paragraph at lines 540--595
+\T1/lmr/m/n/10 (+20) root la-tency per RR per query is mul-ti-plied by
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 540--595
+\T1/lmr/m/n/10 (+20) the num-ber of queries per day each RR makes.
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 540--595
+\T1/lmr/m/n/10 (+20) This is then weighted by user count (from the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--595
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--595
+
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 540--595
+\T1/lmr/m/n/10 (+20) The line la-beled ``heuris-tic root value'' is cal-cu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--595
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--595
+
+ []
+
+[5.5 <./figures/query_client_relationship.png> <./figures/ditl_volume_compariso
+ns.png>]
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 601.
+
+Underfull \hbox (badness 4416) in paragraph at lines 613--619
+[]\T1/lmr/m/n/10 (+20) This fur-ther es-tab-lishes that Fig-ure []4[] is to
+ []
+
+
+Underfull \hbox (badness 6063) in paragraph at lines 613--619
+\T1/lmr/m/n/10 (+20) be in-ter-preted as a con-ser-va-tive up-per bound
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 613--619
+\T1/lmr/m/n/10 (+20) of daily root la-tency ex-pe-ri-enced by users. 
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 613--619
+\T1/lmr/m/n/10 (+20) Although it may not be valid or worth-while to
+ []
+
+[6.6 <./figures/user_root_latency_per_day.png>]
+Underfull \hbox (badness 1107) in paragraph at lines 622--634
+\T1/lmr/m/n/10 (+20) to IP any-cast should not be as-sessed us-ing root
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 622--634
+\T1/lmr/m/n/10 (+20) DNS servers, as the gen-er-al-iza-tion abil-ity of the
+ []
+
+
+Underfull \vbox (badness 1270) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5260) has occurred while \output is active []
+
+ [7.7]
+(./paper.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6.6]
-Underfull \vbox (badness 4279) has occurred while \output is active []
-
-
-(./paper.bbl [7.7])
-
-Package natbib Warning: There were undefined citations.
-
+ [8.8])
 
 Class acmart Warning: Some images may lack descriptions.
 
-[8.8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 719.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 719.
- (./paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 719.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 719.
+
+Overfull \vbox (2.0pt too high) has occurred while \output is active []
+
+ [9.9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 784.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 784.
+
+(./paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 784.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 784.
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: F3A07366B8E4DA929BB4F43C0F4D1919;3108.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: 207CA7E347499A97A2B8363FDDE75F5E;3239.
  ) 
 Here is how much of TeX's memory you used:
- 16598 strings out of 494953
- 240050 string characters out of 6180977
- 386644 words of memory out of 5000000
- 19200 multiletter control sequences out of 15000+600000
- 75260 words of font info for 128 fonts, out of 8000000 for 9000
+ 16682 strings out of 494953
+ 241588 string characters out of 6180977
+ 387620 words of memory out of 5000000
+ 19244 multiletter control sequences out of 15000+600000
+ 78979 words of font info for 138 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,15n,94p,812b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,15n,94p,812b,579s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm
-/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
-7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
-8.pfb>
-Output written on paper.pdf (8 pages, 436195 bytes).
+c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/s
+hare/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy8.pfb>
+Output written on paper.pdf (9 pages, 521050 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 16548 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 18609 words of extra memory for PDF output out of 20736 (max. 10000000)
 

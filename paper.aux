@@ -17,42 +17,68 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{ACM-Reference-Format.bst}
+\citation{rfc_1546}
+\citation{katabi2000framework}
 \citation{li_levin_spring_bhattacharjee_2018}
+\citation{moura2016anycast}
+\citation{li_levin_spring_bhattacharjee_2018}
+\citation{sarat2006use}
+\citation{root_servers}
+\citation{li_levin_spring_bhattacharjee_2018}
+\citation{moura2016anycast}
+\citation{linden}
+\citation{li_levin_spring_bhattacharjee_2018}
+\citation{huawei_evaluating_anycast}
 \newlabel{abstract-1}{{}{1}{Abstract}{section*.1}{}}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{introduction-1}{{1}{1}{Introduction}{section.1}{}}
+\citation{kurose2010computer}
+\citation{cloudflare_dns_tutorial}
+\citation{rfc_1035}
+\citation{callahan2013modern}
+\citation{bind9_config}
+\citation{alexa_topsites}
+\citation{yu2012authority}
 \@writefile{toc}{\contentsline {section}{\numberline {2}DNS -- A Practical Viewpoint}{2}{section.2}}
 \newlabel{dns-a-practical-viewpoint-1}{{2}{2}{DNS -- A Practical Viewpoint}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Great Latency Savings Potential}{2}{subsection.2.1}}
 \newlabel{great-latency-savings-potential-1}{{2.1}{2}{Great Latency Savings Potential}{subsection.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Practical DNS Pitfalls}{2}{subsection.2.2}}
-\newlabel{practical-dns-pitfalls-1}{{2.2}{2}{Practical DNS Pitfalls}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Practical DNS Pitfalls}{3}{subsection.2.2}}
+\newlabel{practical-dns-pitfalls-1}{{2.2}{3}{Practical DNS Pitfalls}{subsection.2.2}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}A Close Look at a Recursive Resolver}{3}{section.3}}
 \newlabel{a-close-look-at-a-recursive-resolver-1}{{3}{3}{A Close Look at a Recursive Resolver}{section.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Statistics gathered from the ISI RR for the month of January, 2018, and implications of these statistics assuming conservative values for web page load time (PLT), root DNS latency, and number of DNS lookups per page. \relax }}{3}{table.caption.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Statistics gathered from the ISI RR for a representative month of 2018, and implications of these statistics assuming conservative values for web page load time (PLT), root DNS latency, and number of DNS lookups per page. \relax }}{3}{table.caption.2}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{tab:isi_cache_hit_rate_stats}{{1}{3}{Statistics gathered from the ISI RR for the month of January, 2018, and implications of these statistics assuming conservative values for web page load time (PLT), root DNS latency, and number of DNS lookups per page. \relax }{table.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Root DNS latency for queries made by clients of the ISI recursive resolver during January, 2018. Client queries that did not generate a query to a root server were given a latency of 0. \relax }}{4}{figure.caption.3}}
-\newlabel{fig:isi_root_dns_latency}{{1}{4}{Root DNS latency for queries made by clients of the ISI recursive resolver during January, 2018. Client queries that did not generate a query to a root server were given a latency of 0. \relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}A Global Look at Users of a Large CDN}{4}{section.4}}
-\newlabel{a-global-look-at-users-of-a-large-cdn-1}{{4}{4}{A Global Look at Users of a Large CDN}{section.4}{}}
+\newlabel{tab:isi_cache_hit_rate_stats}{{1}{3}{Statistics gathered from the ISI RR for a representative month of 2018, and implications of these statistics assuming conservative values for web page load time (PLT), root DNS latency, and number of DNS lookups per page. \relax }{table.caption.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Root DNS latency for queries made by clients of the ISI recursive resolver during 2018. Client queries that did not generate a query to a root server were given a latency of 0. \relax }}{4}{figure.caption.3}}
+\newlabel{fig:isi_root_dns_latency}{{1}{4}{Root DNS latency for queries made by clients of the ISI recursive resolver during 2018. Client queries that did not generate a query to a root server were given a latency of 0. \relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}A Global Look at Users of a Large CDN{[}i{]}}{4}{section.4}}
+\newlabel{a-global-look-at-users-of-a-large-cdni}{{4}{4}{A Global Look at Users of a Large CDN{[}i{]}}{section.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Data Sources and Processing}{4}{subsection.4.1}}
 \newlabel{data-sources-and-processing-1}{{4.1}{4}{Data Sources and Processing}{subsection.4.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Relationship between daily average client count and daily average (relative) query volume for users of a large CDN. Each point represents one RR.\relax }}{4}{figure.caption.4}}
-\newlabel{fig:query_client_relationship}{{2}{4}{Relationship between daily average client count and daily average (relative) query volume for users of a large CDN. Each point represents one RR.\relax }{figure.caption.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistics displaying the extent to which the RR's of users in a large CDN represent RR's seen in the 2018 DITL captures. Further, it shows the extent to which RR's of RIPE probes represent the 2018 DITL captures.\relax }}{5}{table.caption.5}}
-\newlabel{tab:dataset_matching_statistics}{{2}{5}{Statistics displaying the extent to which the RR's of users in a large CDN represent RR's seen in the 2018 DITL captures. Further, it shows the extent to which RR's of RIPE probes represent the 2018 DITL captures.\relax }{table.caption.5}{}}
+\citation{private_ip_space}
+\citation{li_levin_spring_bhattacharjee_2018}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Relationship between daily average client count and daily average (relative) query volume for users of a large CDN. Each point represents one RR.\relax }}{5}{figure.caption.4}}
+\newlabel{fig:query_client_relationship}{{2}{5}{Relationship between daily average client count and daily average (relative) query volume for users of a large CDN. Each point represents one RR.\relax }{figure.caption.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistics displaying the extent to which the RR's of users in a large CDN represent RR's seen in the 2018 DITL captures. Also shown is the extent to which RR's of RIPE probes represent the 2018 DITL captures.\relax }}{5}{table.caption.5}}
+\newlabel{tab:dataset_matching_statistics}{{2}{5}{Statistics displaying the extent to which the RR's of users in a large CDN represent RR's seen in the 2018 DITL captures. Also shown is the extent to which RR's of RIPE probes represent the 2018 DITL captures.\relax }{table.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A comparison of daily query volumes seen from various sets of RR's. Those RR's both in the data set of the large CDN and DITL have relatively high daily query volumes, as evidenced by the large tail of DCDN. \relax }}{5}{figure.caption.6}}
+\newlabel{fig:ditl_volume_comparisons}{{3}{5}{A comparison of daily query volumes seen from various sets of RR's. Those RR's both in the data set of the large CDN and DITL have relatively high daily query volumes, as evidenced by the large tail of DCDN. \relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Root Latency Experienced by Users}{5}{subsection.4.2}}
 \newlabel{root-latency-experienced-by-users-1}{{4.2}{5}{Root Latency Experienced by Users}{subsection.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A CDF of approximate latency a user experiences due to root DNS resolution, per day.\relax }}{5}{figure.caption.6}}
-\newlabel{fig:user_root_latency_per_day}{{3}{5}{A CDF of approximate latency a user experiences due to root DNS resolution, per day.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A CDF of approximate latency a user experiences due to root DNS resolution, per day.\relax }}{6}{figure.caption.7}}
+\newlabel{fig:user_root_latency_per_day}{{4}{6}{A CDF of approximate latency a user experiences due to root DNS resolution, per day.\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Discussion}{6}{subsection.4.3}}
+\newlabel{discussion}{{4.3}{6}{Discussion}{subsection.4.3}{}}
+\newlabel{approximations-and-limitations}{{4.3.1}{6}{Approximations and Limitations}{subsubsection.4.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Approximations and Limitations}{6}{subsubsection.4.3.1}}
 \citation{moura2016anycast}
 \citation{sarat2006use}
 \citation{de2017anycast}
 \citation{ballani2006measurement}
 \citation{de2017anycast}
-\citation{li_leven_spring_bhattacharjee_2018}
+\citation{li_levin_spring_bhattacharjee_2018}
 \citation{colitti2006evaluating}
 \citation{de2017anycast}
 \citation{liang2013measuring}
@@ -67,40 +93,53 @@
 \citation{asrese2016wepr}
 \citation{sundaresan2013web}
 \citation{enghardt2019web}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Related Work{[}n{]}}{6}{section.5}}
-\newlabel{related-workn}{{5}{6}{Related Work{[}n{]}}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Root DNS Anycast Performance}{6}{subsection.5.1}}
-\newlabel{root-dns-anycast-performance}{{5.1}{6}{Root DNS Anycast Performance}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}CDN Anycast Performance}{6}{subsection.5.2}}
-\newlabel{cdn-anycast-performance}{{5.2}{6}{CDN Anycast Performance}{subsection.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Recursive Resolvers and the Benefits of Caching}{6}{subsection.5.3}}
-\newlabel{recursive-resolvers-and-the-benefits-of-caching}{{5.3}{6}{Recursive Resolvers and the Benefits of Caching}{subsection.5.3}{}}
-\bibdata{bib.bib}
-\bibcite{alzoubi2011practical}{{1}{2011}{{Alzoubi et~al\unhbox \voidb@x \hbox {.}}}{{Alzoubi, Lee, Rabinovich, Spatscheck, and Van Der~Merwe}}}
-\bibcite{asrese2016wepr}{{2}{2016}{{Asrese et~al\unhbox \voidb@x \hbox {.}}}{{Asrese, Sarolahti, Boye, and Ott}}}
-\bibcite{ballani2006measurement}{{3}{2006}{{Ballani et~al\unhbox \voidb@x \hbox {.}}}{{Ballani, Francis, and Ratnasamy}}}
-\bibcite{calder2015analyzing}{{4}{2015}{{Calder et~al\unhbox \voidb@x \hbox {.}}}{{Calder, Flavel, Katz-Bassett, Mahajan, and Padhye}}}
-\bibcite{callahan2013modern}{{5}{2013}{{Callahan et~al\unhbox \voidb@x \hbox {.}}}{{Callahan, Allman, and Rabinovich}}}
-\bibcite{colitti2006evaluating}{{6}{2006}{{Colitti et~al\unhbox \voidb@x \hbox {.}}}{{Colitti, Romijn, Uijterwaal, and Robachevsky}}}
-\bibcite{de2017anycast}{{7}{2017}{{de~Oliveira~Schmidt et~al\unhbox \voidb@x \hbox {.}}}{{de~Oliveira~Schmidt, Heidemann, and Kuipers}}}
-\bibcite{enghardt2019web}{{8}{2019}{{Enghardt et~al\unhbox \voidb@x \hbox {.}}}{{Enghardt, Zinner, and Feldmann}}}
-\bibcite{flavel2015fastroute}{{9}{2015}{{Flavel et~al\unhbox \voidb@x \hbox {.}}}{{Flavel, Mani, Maltz, Holt, Liu, Chen, and Surmachev}}}
-\bibcite{jung2002dns}{{10}{2002}{{Jung et~al\unhbox \voidb@x \hbox {.}}}{{Jung, Sit, Balakrishnan, and Morris}}}
-\bibcite{lentz2013d}{{11}{2013}{{Lentz et~al\unhbox \voidb@x \hbox {.}}}{{Lentz, Levin, Castonguay, Spring, and Bhattacharjee}}}
-\bibcite{li_levin_spring_bhattacharjee_2018}{{12}{2018}{{Li et~al\unhbox \voidb@x \hbox {.}}}{{Li, Levin, Spring, and Bhattacharjee}}}
-\bibcite{liang2013measuring}{{13}{2013}{{Liang et~al\unhbox \voidb@x \hbox {.}}}{{Liang, Jiang, Duan, Li, and Wu}}}
-\bibcite{moura2016anycast}{{14}{2016}{{Moura et~al\unhbox \voidb@x \hbox {.}}}{{Moura, Schmidt, Heidemann, de~Vries, Muller, Wei, and Hesselman}}}
+\newlabel{root-dns-in-anycast}{{4.3.2}{7}{Root DNS in Anycast}{subsubsection.4.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Root DNS in Anycast}{7}{subsubsection.4.3.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Related Work}{7}{section.5}}
+\newlabel{related-work-1}{{5}{7}{Related Work}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Root DNS Anycast Performance}{7}{subsection.5.1}}
+\newlabel{root-dns-anycast-performance}{{5.1}{7}{Root DNS Anycast Performance}{subsection.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}CDN Anycast Performance}{7}{subsection.5.2}}
+\newlabel{cdn-anycast-performance}{{5.2}{7}{CDN Anycast Performance}{subsection.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Recursive Resolvers and the Benefits of Caching}{7}{subsection.5.3}}
+\newlabel{recursive-resolvers-and-the-benefits-of-caching}{{5.3}{7}{Recursive Resolvers and the Benefits of Caching}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Web Performance}{7}{subsection.5.4}}
 \newlabel{web-performance}{{5.4}{7}{Web Performance}{subsection.5.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{7}{section.6}}
-\newlabel{conclusion-1}{{6}{7}{Conclusion}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{References}{7}{section*.8}}
-\bibcite{sarat2006use}{{15}{2006}{{Sarat et~al\unhbox \voidb@x \hbox {.}}}{{Sarat, Pappas, and Terzis}}}
-\bibcite{sundaresan2013web}{{16}{2013}{{Sundaresan et~al\unhbox \voidb@x \hbox {.}}}{{Sundaresan, Magharei, Feamster, Teixeira, and Crawford}}}
-\bibcite{yu2012authority}{{17}{2012}{{Yu et~al\unhbox \voidb@x \hbox {.}}}{{Yu, Wessels, Larson, and Zhang}}}
+\bibdata{bib.bib}
+\bibcite{root_servers}{{1}{[n. d.]}{{roo}}{{??}}}
+\bibcite{alexa_topsites}{{2}{[n. d.]}{{ale}}{{??}}}
+\bibcite{alzoubi2011practical}{{3}{2011}{{Alzoubi et~al\unhbox \voidb@x \hbox {.}}}{{Alzoubi, Lee, Rabinovich, Spatscheck, and Van Der~Merwe}}}
+\bibcite{asrese2016wepr}{{4}{2016}{{Asrese et~al\unhbox \voidb@x \hbox {.}}}{{Asrese, Sarolahti, Boye, and Ott}}}
+\bibcite{ballani2006measurement}{{5}{2006}{{Ballani et~al\unhbox \voidb@x \hbox {.}}}{{Ballani, Francis, and Ratnasamy}}}
+\bibcite{calder2015analyzing}{{6}{2015}{{Calder et~al\unhbox \voidb@x \hbox {.}}}{{Calder, Flavel, Katz-Bassett, Mahajan, and Padhye}}}
+\bibcite{callahan2013modern}{{7}{2013}{{Callahan et~al\unhbox \voidb@x \hbox {.}}}{{Callahan, Allman, and Rabinovich}}}
+\bibcite{cloudflare_dns_tutorial}{{8}{[n. d.]}{{Cloudflare}}{{Cloudflare}}}
+\bibcite{colitti2006evaluating}{{9}{2006}{{Colitti et~al\unhbox \voidb@x \hbox {.}}}{{Colitti, Romijn, Uijterwaal, and Robachevsky}}}
+\bibcite{de2017anycast}{{10}{2017}{{de~Oliveira~Schmidt et~al\unhbox \voidb@x \hbox {.}}}{{de~Oliveira~Schmidt, Heidemann, and Kuipers}}}
+\bibcite{enghardt2019web}{{11}{2019}{{Enghardt et~al\unhbox \voidb@x \hbox {.}}}{{Enghardt, Zinner, and Feldmann}}}
+\bibcite{flavel2015fastroute}{{12}{2015}{{Flavel et~al\unhbox \voidb@x \hbox {.}}}{{Flavel, Mani, Maltz, Holt, Liu, Chen, and Surmachev}}}
+\bibcite{bind9_config}{{13}{[n. d.]}{{Goldlust}}{{Goldlust}}}
+\bibcite{jung2002dns}{{14}{2002}{{Jung et~al\unhbox \voidb@x \hbox {.}}}{{Jung, Sit, Balakrishnan, and Morris}}}
+\bibcite{katabi2000framework}{{15}{2000}{{Katabi and Wroclawski}}{{Katabi and Wroclawski}}}
+\bibcite{kurose2010computer}{{16}{2010}{{Kurose and Ross}}{{Kurose and Ross}}}
+\bibcite{lentz2013d}{{17}{2013}{{Lentz et~al\unhbox \voidb@x \hbox {.}}}{{Lentz, Levin, Castonguay, Spring, and Bhattacharjee}}}
+\bibcite{li_levin_spring_bhattacharjee_2018}{{18}{2018}{{Li et~al\unhbox \voidb@x \hbox {.}}}{{Li, Levin, Spring, and Bhattacharjee}}}
+\bibcite{liang2013measuring}{{19}{2013}{{Liang et~al\unhbox \voidb@x \hbox {.}}}{{Liang, Jiang, Duan, Li, and Wu}}}
+\bibcite{linden}{{20}{[n. d.]}{{Linden}}{{Linden}}}
+\bibcite{rfc_1035}{{21}{[n. d.]}{{Mockapetris}}{{Mockapetris}}}
+\bibcite{moura2016anycast}{{22}{2016}{{Moura et~al\unhbox \voidb@x \hbox {.}}}{{Moura, Schmidt, Heidemann, de~Vries, Muller, Wei, and Hesselman}}}
+\bibcite{rfc_1546}{{23}{[n. d.]}{{Partridge et~al\unhbox \voidb@x \hbox {.}}}{{Partridge, Mendez, and Milliken}}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{8}{section.6}}
+\newlabel{conclusion-1}{{6}{8}{Conclusion}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{References}{8}{section*.9}}
+\bibcite{sarat2006use}{{24}{2006}{{Sarat et~al\unhbox \voidb@x \hbox {.}}}{{Sarat, Pappas, and Terzis}}}
+\bibcite{sundaresan2013web}{{25}{2013}{{Sundaresan et~al\unhbox \voidb@x \hbox {.}}}{{Sundaresan, Magharei, Feamster, Teixeira, and Crawford}}}
+\bibcite{huawei_evaluating_anycast}{{26}{2019}{{Xue et~al\unhbox \voidb@x \hbox {.}}}{{Xue, Dang, Wang, Wang, and Wang}}}
+\bibcite{yu2012authority}{{27}{2012}{{Yu et~al\unhbox \voidb@x \hbox {.}}}{{Yu, Wessels, Larson, and Zhang}}}
+\bibcite{private_ip_space}{{28}{[n. d.]}{{zakird}}{{zakird}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{5.0pt}
 \newlabel{tocindent2}{12.77776pt}
-\newlabel{tocindent3}{0pt}
-\newlabel{TotPages}{{8}{8}{}{page.8}{}}
+\newlabel{tocindent3}{23.88884pt}
+\newlabel{TotPages}{{9}{9}{}{page.9}{}}
