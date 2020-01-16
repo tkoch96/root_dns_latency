@@ -1,7 +1,7 @@
 # NB: By default fetch the paper from Google docs every time
 # use "make recompile" to avoid the extra fetch
 
-NAME=paper
+NAME=root_dns_latency
 TARGET=$(NAME).pdf
 
 # Change the line below to contain an export URL.
