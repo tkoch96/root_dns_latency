@@ -143,9 +143,10 @@
         {de2017anycast}
 \bibfield{author}{\bibinfo{person}{R. de Oliveira~Schmidt}, \bibinfo{person}{J.
   Heidemann}, {and} \bibinfo{person}{J.~H. Kuipers}.}
-\newblock \showarticletitle{?}. In \bibinfo{booktitle}{{\em International
-  Conference on Passive and Active Network Measurement},}. Springer,
-  \bibinfo{pages}{188--200} \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Anycast Latency: How Many Sites Are Enough?}. In
+  \bibinfo{booktitle}{{\em International Conference on Passive and Active
+  Network Measurement},}. Springer, \bibinfo{pages}{188--200}
+  \bibinfo{year}{2017}\natexlab{}.
 \newblock
 
 
@@ -168,7 +169,7 @@
   \bibinfo{person}{D. Maltz}, \bibinfo{person}{N. Holt}, \bibinfo{person}{J.
   Liu}, \bibinfo{person}{Y. Chen}, {and} \bibinfo{person}{O. Surmachev}.}
 \newblock \showarticletitle{Fastroute: A scalable load-aware anycast routing
-  architecture for modern cdns}. In \bibinfo{booktitle}{{\em 12th
+  architecture for modern CDNs}. In \bibinfo{booktitle}{{\em 12th
   $\{$USENIX$\}$ Symposium on Networked Systems Design and Implementation
   ($\{$NSDI$\}$ 15)},}. \bibinfo{pages}{381--394}
   \bibinfo{year}{2015}\natexlab{}.
