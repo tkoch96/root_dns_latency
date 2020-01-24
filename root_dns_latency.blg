@@ -23,6 +23,8 @@ Warning--empty author in root_servers
 Warning--no key, author in alexa_topsites
 Warning--no author, editor, organization, or key in alexa_topsites
 Warning--empty author in alexa_topsites
+Warning--empty publisher in allman_eliminate
+Warning--empty address in allman_eliminate
 Warning--empty publisher in asrese2016wepr
 Warning--empty address in asrese2016wepr
 Warning--empty publisher in ballani2006measurement
@@ -50,45 +52,45 @@ Warning--empty publisher in sarat2006use
 Warning--empty address in sarat2006use
 Warning--empty publisher in huawei_evaluating_anycast
 Warning--empty address in huawei_evaluating_anycast
-You've used 28 entries,
+You've used 29 entries,
             5727 wiz_defined-function locations,
-            1451 strings with 19790 characters,
-and the built_in function-call counts, 33366 in all, are:
-= -- 4083
-> -- 1230
+            1456 strings with 19928 characters,
+and the built_in function-call counts, 34329 in all, are:
+= -- 4184
+> -- 1250
 < -- 0
-+ -- 380
-- -- 704
-* -- 2371
-:= -- 3419
-add.period$ -- 135
-call.type$ -- 28
-change.case$ -- 203
-chr.to.int$ -- 28
-cite$ -- 79
-duplicate$ -- 2379
-empty$ -- 1773
-format.name$ -- 484
-if$ -- 7759
++ -- 384
+- -- 712
+* -- 2420
+:= -- 3513
+add.period$ -- 140
+call.type$ -- 29
+change.case$ -- 208
+chr.to.int$ -- 29
+cite$ -- 82
+duplicate$ -- 2481
+empty$ -- 1847
+format.name$ -- 492
+if$ -- 7994
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 92
-newline$ -- 265
-num.names$ -- 208
-pop$ -- 1248
+missing$ -- 97
+newline$ -- 272
+num.names$ -- 216
+pop$ -- 1300
 preamble$ -- 1
-purify$ -- 327
+purify$ -- 337
 quote$ -- 0
-skip$ -- 843
+skip$ -- 879
 stack$ -- 0
-substring$ -- 3044
-swap$ -- 200
+substring$ -- 3113
+swap$ -- 207
 text.length$ -- 616
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 728
-warning$ -- 43
-while$ -- 190
+type$ -- 758
+warning$ -- 45
+while$ -- 201
 width$ -- 0
-write$ -- 505
-(There were 44 warnings)
+write$ -- 521
+(There were 46 warnings)

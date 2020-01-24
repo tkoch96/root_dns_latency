@@ -103,16 +103,19 @@ Anycast is means of distributing content that has been praised for its simplicit
 # Introduction
 
 
+\label{sec:introduction}
 Anycast is a method of server deployment in which a set of physically distinct servers, called anycast replicas, all serve the same content. Specifically, IP anycast is a system in which geographically diverse anycast replicas all advertise the same IP address using the Border Gateway Protocol (BGP). Routing policies of providers and BGP determine which anycast replica a client will be mapped to when querying the (anycasted) IP. This is all transparent to the client, as each site has exactly the same content \cite{rfc_1546}, \cite{katabi2000framework}.  
 Anycast has been lauded for its potential to offer improved latency and decreased load on each anycast server, doing so with minimal scaling complexity. The geographical diversity of anycast deployments offers resilience to network outages and targeted attacks \cite{li_levin_spring_bhattacharjee_2018}, \cite{moura2016anycast}. However, numerous studies have argued that anycast can lead to reduced performance for a subset of clients. Some go further to say that adding more sites may harm, rather than help user performance \cite{li_levin_spring_bhattacharjee_2018}, \cite{sarat2006use}. The basic idea behind these claims is that BGP can sometimes direct clients to far-away anycast servers, despite the existence of a geographically close server. This inefficiency unnecessarily inflates latencies for users, and harms their experience. 
 
 ## How Should We Evaluate Anycast?
+\label{sec:how_to_evaluate}
 The root DNS servers notoriously feature in studies involving anycast because it is relatively easy to gain access to root DNS data, information about their deployments, and they are run by several organizations \cite{root_servers}. This last fact manifests itself in a diverse set of deployment strategies, for essentially the same service. For example, in 2018 B-root had 2 server deployments while K-root had close to 70. These different strategies allow researchers to, for example, coarsely analyze the effect the number of sites has on the performance of the service \cite{li_levin_spring_bhattacharjee_2018}.  \break \break
 Using the root DNS servers to draw conclusions about the performance of anycast as a whole has its drawbacks. Organizations in charge of managing these services have different performance goals when deploying new servers. For example, generally, new root server deployments offer more resilience in the face of attacks on the DNS infrastructure and so organizations may opt to place their servers in locations that maximize reachability to at least one replica in the face of server failure \cite{moura2016anycast}. Conversely, managers of large content delivery networks (CDN's) may opt to place their servers near large population centers to provide low latency access to users. This is on top of the infrastructure the CDN may already have in place, such as a diverse set of peers or a private wide area network (WAN). CDN's are very attentive of user-perceived latencies, as higher latency has been directly shown to affect profits \cite{linden}. Indeed the everyday notions of "performance" that typical users are interested in are principally important to CDN's, yet may only be somewhat important to root DNS managers. \break
 Nevertheless, in the face of perceived anycast inefficiencies many authors have offered solutions ranging from ISP policy changes to modifications to BGP to bolster the performance of anycast \cite{li_levin_spring_bhattacharjee_2018}, \cite{huawei_evaluating_anycast}. Often, studies have framed the problem as a sort of optimization problem, where every client request should be mapped to the same physical site as the best unicast alternative. These proposed modifications are then shown to push anycast closer to optimal performance. \break \break
 However it is not immediately clear that anycast's problems and inefficiencies lead to a measurable impact on user performance, in the context of root DNS resolution. For example, although anycast has been shown to inflate paths in some cases, there is little understanding as to how this inflation impacts end-user latency.
 
 ## Goals and Contributions
+\label{sec:goals_and_contrib}
 Our primary goal is to contextualize research results regarding the performance of anycast in the context of the root DNS servers. That is, we would like to understand how anycasts' problems and inefficiencies as demonstrated by these studies translate into end-user performance degradation (e.g. increased latency). Towards this end, we make the following major contributions.
 \begin{enumerate}
         \item We look at a recursive resolver serving an academic institution and estimate the expected latency per page load experienced by users at this institution, due to root DNS latency.
@@ -125,6 +128,7 @@ Placing this in the context of paths inflated by anycast, we find that such infl
 # DNS --  A Practical Viewpoint
 
 
+\label{sec:dns_practical_viewpoint}
 Modern day DNS infrastructure is designed so as to limit the time a user has to wait for DNS query resolution, and this principle naturally reduces root DNS query resolution time for many users. Herein we describe the implementation of DNS, both client and server side, and discuss how this allows for faster DNS resolution at the client.
 
 
@@ -134,9 +138,10 @@ Modern day DNS infrastructure is designed so as to limit the time a user has to 
 
 There are many descriptions of DNS \cite{kurose2010computer}, \cite{cloudflare_dns_tutorial}, and we by no means attempt to give an introductory lesson. The DNS is a means by which user requests for human-readable hostnames are mapped to IP addresses. Typically, a user will send DNS requests in the form of UDP packets to one or more recursive resolvers (RR's) provided by their ISP\footnote{ The user can specify whatever RR they wish, but one can sensibly assume the typical user's RR is set by the ISP, broadcasted through DHCP. }. The RR then requests the records from a root DNS server, top level domain (TLD) server and authoritative DNS (ADNS) server corresponding to the record the user requested. Since each request is a correspondence between the RR and a remote server, there can be several requests made by the RR for a single end-user request. \break \break
 In practice, there is quite a lot of potential for caching these DNS records, thus removing unnecessary steps of the recursion outlined above. Each DNS server provides a time-to-live (TTL) with each record they return, specifying the duration in seconds for which the record can be kept locally cached. After this duration, the record should be deleted from the cache of the RR \cite{rfc_1035}. It has been observed that more heavily accessed websites tend to purposefully set the TTL of their DNS records to be some small value, evidence of fine-grained traffic engineering \cite{callahan2013modern}. Hence the popularity of a website does not make it more likely to live in the cache of an RR. Nevertheless, RR's can pre-fetch records for popular websites. For example, a configuration setting on the popular resolver BIND specifies whether or not BIND should prefetch (recently accessed) records set to expire soon \cite{bind9_config}. 
-In contrast to heavily accessed sites, TLD records tend to have long TTL's. For example, the COM TLD record (one of the most popular) has a TTL of 2 days. One might speculate that, since the most popular websites fall into ten or so popular TLD's \cite{alexa_topsites}, that a request to the root server would rarely occur. In this scenario, a user fetching example.com would only generate a request for the COM NS record once every 2 days. Furthermore, some commercial RR's are known to cache the entire root table locally. Since there are only 1,000 or so TLD's, the memory requirements are quite inexpensive and caching these records provides potential for latency savings. On top of all of this structure, there can be multiple RR's (a sort of hierarchy of RR's) among which a query traverses before a third party (root, TLD, ADNS) is finally queried. This hierarchy compounds the potential effects of local caching. \break \break
+In contrast to heavily accessed sites, TLD records tend to have long TTL's. For example, the COM TLD record (one of the most popular) has a TTL of 2 days. One might speculate that, since the most popular websites fall into ten or so popular TLD's \cite{alexa_topsites}, that a request to the root server would rarely occur. In this scenario, a user fetching example.com would only generate a request for, say, the COM NS record once every 2 days. Furthermore, some commercial RR's are known to cache the entire root table locally. Since there are only 1,000 or so TLD's, the memory requirements are quite inexpensive and caching these records provides potential for latency savings. \cite{allman_eliminate} goes one step further to suggest every RR should have a local copy of the root. \break
+On top of all of this structure, there can be multiple RR's (a sort of hierarchy of RR's) among which a query traverses before a third party (root, TLD, ADNS) is finally queried. This hierarchy compounds the potential effects of local caching. \break \break
 Caching at remote RR's is wonderful, and can greatly reduce DNS query resolution time. Indeed since the typical user's RR is run by their \textit{local} ISP, generally the user will experience negligible latency for a DNS query if they hit a warm cache. Modern browsers and operating systems have taken this one step further and engage in a number of practices that further aid the user. Operating systems or browsers are known to locally cache DNS records, as these records are small (compared to say, an image). Software can go even further, refreshing records in the cache that are about to expire (just as a RR can do). Features such as link prefetching in Chrome and Firefox, where the browser will send DNS requests for all links on a page, allow the user to completely "skip" the DNS resolution process in certain scenarios. 
-All this being said, it is unfortunately quite difficult to quantify the extent to which these features save users time. Users request web services through an idiosyncratic combination of browsers, web sites, operating systems, personalized settings \footnote{ For example, users can opt out of the link prefetching mechanism in Chrome. }, physical locations, bandwidths, devices, ISP's, and RR's. On top of this, all the optimizations just mentioned can be undone through poor configuration or a conservative manager of the RR, as we will now discuss. 
+All this being said, it is unfortunately quite difficult to quantify the extent to which these features save users time. Users request web services through an idiosyncratic combination of browsers, web sites, operating systems, personalized settings \footnote{ For example, users can opt out of the link prefetching mechanism in Chrome. }, physical locations, bandwidths, devices, ISP's, and RR's. On top of this, all the optimizations just mentioned can be undone through poor configuration, a conservative manager of the RR, or software inefficiencies as we will now discuss. 
 
 
 
@@ -147,8 +152,7 @@ All this being said, it is unfortunately quite difficult to quantify the extent 
 
 We have discussed the ways in which a user is, by design, prevented from experiencing latency due to root DNS query resolution. However, there can be a stark difference between ideal and actual caching behavior. Although RR's should cache TLD records for the full TTL, unexpected logical flows in software execution can cause unnecessary queries to the root server. Furthermore, operators can set conservative settings on the RR's they run. Regardless of the TTL recommended by the record, the operator can set this to any value below that recommended TTL. It has also been noted that popular RR distributions have implementation flaws that lead them to select poor/unresponsive DNS servers as opposed to low-latency, high performing ones \cite{yu2012authority}.
 \break
-Furthering the problem, users can disable local DNS caching on their computers, or use services such as private browsing which disables some local caching for privacy concerns. Web pages can also contain "hidden" DNS requests. The HTTP body of a web page can contain references to resources stored on third party domains, for which the browser must request DNS records. Those resources can contain even more references, creating a chain of DNS requests for potentially uncached records. Users issuing reverse-DNS lookups or requesting invalid domains always result in queries to a root server (although it can be argued that these should not be considered here). Users can also act as their own RR if they wish, eliminating much of their ability to leverage the full benefits of caching that are only possible through the "crowd-sourced" caching of ISP or regional RR's. 
-\break
+Furthering the problem, users can disable local DNS caching on their computers, or use services such as private browsing which disables some local caching for privacy concerns. Web pages can also contain "hidden" DNS requests. The HTTP body of a web page can contain references to resources stored on third party domains, for which the browser must request DNS records. Those resources can contain even more references, creating a chain of DNS requests for potentially uncached records. Another source of root DNS latency, reverse-DNS lookups or requesting invalid domains always result in queries to a root server. Users can also act as their own RR if they wish, eliminating much of their ability to leverage the full benefits of caching that are only possible through the "crowd-sourced" caching of ISP or regional RR's. \break \break
 It is difficult to quantify or measure the degree to which these pitfalls limit a typical users' ability to leverage the caching capability of DNS. Notably it is difficult to characterize the inefficiency introduced by the software employed by the RR of that users' ISP. One could potentially statistically characterize these inefficiencies for various open source RR's, which is a subject for future work.
 
 
@@ -156,12 +160,24 @@ It is difficult to quantify or measure the degree to which these pitfalls limit 
 # A Close Look at a Recursive Resolver
 
 
+\label{sec:rr_close_look}
 Towards the goal of quantifying the extent to which latency due to root DNS query resolution impacts the typical user at a particular institution, we analyze packet traces of a recursive resolver at ISI. Although this is a fine-grained analysis, looking at a single resolver allows us to estimate the average amount of latency experienced by a user due to DNS resolution \textit{per page load}. This type of analysis would not be possible from a single end user, nor from the vantage point of the root servers themselves.
 
 ## Data Source
-The recursive resolver of interest (running BIND 9) saves all traffic traversing over port 53 to file, and has done so for 5 years, providing us with a rich source of data. This corpus of users is relatively small, and consists of university traffic, so the specifics of the analysis we conduct may not extend to other RR's. For example, over 2018, we saw roughly 900 unique IP addresses, with about 100 unique IP addresses each day. This might be a smaller corpus of users than is seen at the RR of, say, an ISP in a large metro area. Nevertheless, we wish to observe some high-level features of the data, and their implications. 
+\label{sec:rr_close_look_data}
+The recursive resolver of interest (running BIND 9) saves all traffic traversing over port 53 to file, and has done so for 5 years, providing us with a rich source of data. This corpus of users is relatively small, and consists of university traffic, so the specifics of the analysis we conduct may not extend to other RR's. For example, over 2018, we saw roughly 900 unique IP addresses, with about 100 unique IP addresses each day. This might be a smaller corpus of users than is seen at the RR of, say, an ISP in a large metro area. Nevertheless, we wish to observe some high-level features of the data, and their implications. \break
+Figure \ref{fig:all_dns_latencies_isi} shows the latencies of all queries seen at ISI over INSERT_DURATION. We can see that the latencies are divided into (roughly) 3 regions: sub-millisecond latency, low latency, and high latency. The first region corresponds to cached queries The second region probably corresponds to DNS resolutions for which the resolving server was close. Finally, the third region probably corresponds to queries that had to travel to distance servers, or required a few rounds of recursion to fully resolve the domain. The results, strikingly similar to those presented in \cite{callahan2013modern}, suggest that ISI is not more or less "connected" than the typical recursive resolver. 
+  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.45\textwidth]{figures/all_dns_latencies_isi.png}
+    \caption{CDF of client DNS query latencies seen at a recursive resolve at ISI, over the course of INSERT\_DURATION. }
+    \label{fig:all_dns_latencies_isi}
+\end{figure}
 
 ## How Often Does a User Interact with the Roots?
+\label{sec:rr_close_look_discussion}
 From packet traces of all of 2018, we would like to quantify the effect caching root DNS records has on users, and how this differs from the ideal behavior users can experience. Specifically, we are interested in the number of queries to the root server as a fraction of user requests to the recursive resolver. We refer to this metric as the cache miss rate, as it approximates how often a TLD record is not found in the cache of the RR in the event of a client query. We say approximately since, for example, the recursive resolver may have sent multiple root requests per client query, or root requests without any client query triggering them.
 
 
@@ -190,7 +206,7 @@ From packet traces of all of 2018, we would like to quantify the effect caching 
 Relevant statistics and their implications on user-perceived latency are presented in Table \ref{tab:isi_cache_hit_rate_stats}. We find that daily cache miss rates of the resolver range from .1% to 4.5%, with a median value of .5%. This is quite a wide range of cache miss rates, and is potentially skewed by the traffic generated by the internet measurement lab (ISI). However, assessing the latency implications for cache miss rates higher than the median is simply a multiplicative factor and the qualitative conclusions are the same. \break \break
 To calculate the impact of root latency on user experience, assume that a web page load takes N seconds, that there are M serial DNS requests per page, that the root latency is k seconds, and that the cache miss rate is p. Then, the resulting (average) latency due to root DNS resolution per page load is given by $pMk$, which, as a fraction of PLT is $\frac{p M k}{N}$. \break \break
 Although N and k depend on a number of factors difficult to measure, p can be measured for each recursive resolver (as shown in Table \ref{tab:isi_cache_hit_rate_stats}), and M is relatively constant. To demonstrate this last point, we performed page loads for 500 popular domains using the Selenium web-browser and calculated the number of blocking DNS requests per page load using methods in \cite{sundaresan2013web}. We find 95% of requests resulted in M $\leq$ 3 and so use this in what follows. \break
-As exaggerated upper bounds on the impact of root DNS latency, we choose N = 3 and k = .5 \footnote{ According to [http archive], and RIPE Atlas, these are quite conservative estimates. }. Hence, supposing root latency is completely removed from the equation, a user saves, on average, 8 ms per page load. As a percentage of the total page load time, this is .25\%, which is measurable, but not significant. Note that for a conservative estimate of the cache miss rate of 4.5%, this would translate to approximately 2.3% of a single page load. \break \break
+As exaggerated upper bounds on the impact of root DNS latency, we choose N = 3 and k = .5 \footnote{ According to [http archive], RIPE Atlas, and the results from ISI itself, these are quite conservative estimates. }. Hence, supposing root latency is completely removed from the equation, a user saves, on average, 8 ms per page load. As a percentage of the total page load time, this is .25\%, which is measurable, but not significant. Note that for a conservative estimate of the cache miss rate of 4.5%, this would translate to approximately 2.3% of a single page load. \break \break
 As a visualization of this these results, Figure \ref{fig:isi_root_dns_latency} shows a CDF of root DNS latency experienced for queries over 2018. Requests that do not generate a query to a root server are counted as having a root latency of 0. 
 
 
@@ -210,15 +226,13 @@ Clearly the impact of root DNS latency in this situation is minimal, and we can 
 
 
 # A Global Look at Users of a Large CDN
-
-
+\label{sec:rr_global_look}
 Looking at cache hit rates of individual RR's is informative, yet does not provide us with a notion of how much latency large user populations experience in a day due to root DNS resolution -- a statistic that would help us contextualize the effect of anycast path inflation on user experience. Indeed it would be ideal if we could measure the number of active clients, how many times those clients request web pages and the cache hit rates of the clients' recursive resolvers to obtain an estimate of the latency they experience due to root DNS resolution. 
 
 
 
 ## Data Sources and Processing
-
-
+\label{sec:rr_global_look_data}
 Motivated by this ideal scenario, we obtain statistics from a large CDN operator containing information about the users of that CDN. Specifically, these statistics include RR IP's, the number of distinct client IP's behind those RR's and the relative query volume those client IP's contributed (as a fraction of the total CDN query volume[a]) for a month in 2019. Working with the notion of a "user" is valuable, as this provides us with an estimate of how much latency each user experiences. However, since the notion of 'user' is an IP address, one 'user' can actually refer to several people behind a NAT. Furthermore, when weighting results, client query volume is intuitively the correct metric to weight by, since query volume indicates activity on the web. [b][c]The relationship between daily average query volume and daily average client IP count per RR is shown in Figure \ref{fig:query_client_relationship}. The median correlation coefficient between weekly volume and client count is .83, with actual daily correlations ranging from .78 to .83. This correlation is not perfect, but good enough for us to represent the "importance" of an RR by the number of distinct client IP's behind it.
   
 
@@ -257,7 +271,7 @@ Out of a total of 512 billion daily requests to all roots, we observed 310 billi
 
 
 
-We then join these data sets by /24, aggregating their respective client IP counts and query volumes \footnote{We take care to ensure that neither client counts nor query volumes are "double counted" across different IP's.} -- this joined data set is referred to henceforth as the DCDN data set [29 and 16 in yahoo video]. To determine how "representative" this DCDN data set is, we remove queries from prefixes in the private IP space \footnote{ The list we use can be found at \cite{private_ip_space}.}, as these are not valid queries. Queries from these addresses account for approximately 7\% of traffic to the roots. We additionally disregard the presence of IPv6 traffic, and note that it comprises about 12% of DITL query volume. Finally, as previously mentioned, we do not consider requests for bogus domain names nor requests for PTR records. Naturally, there is a mismatch in the /24's represented by each data set. Table \ref{tab:dataset_matching_statistics} summarizes the extent to which the DCDN data (which is a subset of all users) represents the DITL captures, and vice versa. For brevity, we henceforth refer to these /24's as RR's, even though each data point may represent several RR's. 
+We then join these data sets by /24, aggregating their respective client IP counts and query volumes \footnote{We take care to ensure that neither client counts nor query volumes are "double counted" across different IP's.} -- this joined data set is referred to henceforth as the DCDN data set. To determine how "representative" this DCDN data set is, we remove queries from prefixes in the private IP space \footnote{ The list we use can be found at \cite{private_ip_space}.}, as these are not valid queries. Queries from these addresses account for approximately 7\% of traffic to the roots. We additionally disregard the presence of IPv6 traffic, and note that it comprises about 12% of DITL query volume. Finally, as previously mentioned, we do not consider requests for bogus domain names nor requests for PTR records. Naturally, there is a mismatch in the /24's represented by each data set. Table \ref{tab:dataset_matching_statistics} summarizes the extent to which the DCDN data (which is a subset of all users) represents the DITL captures, and vice versa. For brevity, we henceforth refer to these /24's as RR's, even though each data point may represent several RR's. 
   
 
 \begin{figure}
@@ -268,11 +282,10 @@ We then join these data sets by /24, aggregating their respective client IP coun
 \end{figure}
 
 
-Although the DCDN data considers a relatively small percentage of all RR's, it captures a disproportionately large amount of all DITL volume. A useful visualization of the effect of removing these RR's from consideration is shown in Figure \ref{fig:ditl_volume_comparisons}. The quartiles of the DCDN volume counts (blue) are approximately 10-times those of DITL (orange), suggesting /24s in the DCDN are a particularly active subset of all RR's. This suggests that, despite disregarding many RR's, our analysis actually provides an upper bound on root DNS latency experienced by the typical user.
+Although the DCDN data considers a relatively small percentage of all RR's, it captures a disproportionately large amount of all DITL volume. A useful visualization of the effect of removing these RR's from consideration is shown in Figure \ref{fig:ditl_volume_comparisons}. Figure \ref{fig:ditl_volume_comparisons} is a CDF of daily query volumes of RR's in the various data sets. The quartiles of the DCDN volume counts (blue) are approximately 10-times those of DITL (orange), suggesting /24s in the DCDN are a particularly noisy subset of all RR's. Therefore as we will demonstrate in the following, despite disregarding many RR's, our analysis actually provides an upper bound on root DNS latency experienced by the typical user.
 
 ## Root Latency Experienced by Users
-
-
+\label{sec:rr_global_look_analysis}
 Our main result, shown in Figure \ref{fig:user_root_latency_per_day}, is a CDF of expected user latency per day, where the expected value is calculated according to certain assumptions we make about root latency.
   
 [d]
@@ -294,33 +307,38 @@ Finally, the line labeled 'ideal' does not use DITL query volumes to calculate d
 
 
 ## Comparison to Anycast Path Inflation
+\label{sec:rr_global_look_api}
 TODO: compare with anycast path inflation results
 
 # Discussion
 
 ## Approximations and Limitations
+\label{sec:discussion_approximations}
 In the above we have attempted to provide upper bounds of the impact of user latency on user experience. The reason for this is two-fold. First, what we are trying to measure can only be measured by accumulating measurements from a variety of sources and so naturally we have a lack of representativeness and certainty when discussing results. Second, we are arguing that users rarely interact with the DNS infrastructure. Hence, we would like to obtain upper bounds on latency experienced by users due to root DNS resolution, so we can make claims with more certainty. \break \break
 The notable limitations in our above analysis are
 \begin{enumerate}
         \item In the case of studying root record cache hit rates at the resolver level, we were only able to study one recursive resolver.
         \item When looking at global root server querying behavior, we were only able to calculate daily user latency due to root DNS resolution for approximately 30% of (v4) recursive resolvers around the world. 
 \end{enumerate}
-However, even when we use extremely conservative estimates of parameters such as page load time, or root DNS latency we find in Section \ref{sec:local_rr} that root DNS resolution adds a \textit{negligible} latency to page loads. \break
+However, even when we use extremely conservative estimates of parameters such as page load time, or root DNS latency we find in Section \ref{sec:rr_close_look_discussion} that root DNS resolution adds a \textit{negligible} latency to page loads. \break
 One might also consider a lack of insight into what latencies each recursive resolver saw to be a weakness of our analysis. However, regardless of which method is used to calculate expected daily user latency, users generally experience median values of  $<$ 50 ms/day while worst case users generally experience $<$ 10 s/day. Moreover, recall the following simplifications we make in our above (global) analysis.
 \begin{enumerate}
         \item Requests to root servers are generated by a myriad of services, so each request may not have been generated by an actual user.
         \item The notion of "user" here (in the CDN) is likely a home router, potentially representing several users across many devices.
         \item The DCDN data set contains particularly "active" RR's.
 \end{enumerate}
-This further establishes that Figure \ref{fig:user_root_latency_per_day} is to be interpreted as a conservative upper bound of daily root latency experienced by users. \break \break
+To investigate item 2 in the above list, we looked specifically at recursive resolvers in AS's owned by mobile providers in the United States. Many large mobile providers in the U.S. do not assign IPv4 addresses to individual devices, and so act as giant NAT's. Additionally, U.S. mobile providers have separate AS's for their mobile networks. For this, we use the free IP to ASN mapping service provided by MaxMind. We find that the daily user latency of these particular recursives is indeed orders of magnitude over the median. Since we have no reason to believe mobile Internet traffic generates more root requests than any other type of traffic, this confirms our suspicions that client count estimates for NAT'ed networks are lower bounds. \break
+This further establishes that Figure \ref{fig:user_root_latency_per_day} is to be interpreted as a conservative upper bound of daily root latency experienced by users.
 
 ## Root DNS in Anycast
+\label{sec:discussion_implications}
 In the context of anycast, recall that studies routinely use the root servers as sources of data. However, in light of these results, one can question whether the typical user interacts with these particular anycast deployments. One could go further to argue the utility of proposed improvements to IP anycast should not be assessed using root DNS servers, as the generalization ability of the improvement to all IP anycast systems is uncertain. \break
 Regardless, we believe these results should encourage others to consider the implications of anycasts' weakness, whatever they may be. Pointing out sub-optimal performance for the sake of analysis is interesting, but it is equally interesting to note whether or not this sub-optimal performance has any practical, measurable effect.
 
 
 
 # Related Work
+\label{sec:related}
 IP anycast performance is usually studied in the context of two applications: the root DNS servers, and CDN's. In addition to these topics, we discuss studies of popular recursive resolvers, and client-centric measurements of web performance.
 
 

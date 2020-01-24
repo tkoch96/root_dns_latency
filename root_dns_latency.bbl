@@ -54,6 +54,15 @@
 \url{https://www.alexa.com/topsites}}
 
 
+\bibitem[\protect\citeauthoryear{Allman}{Allman}{2019}]%
+        {allman_eliminate}
+\bibfield{author}{\bibinfo{person}{M. Allman}.}
+\newblock \showarticletitle{On Eliminating Root Nameservers from the DNS}. In
+  \bibinfo{booktitle}{{\em Proceedings of the 18th ACM Workshop on Hot Topics
+  in Networks},}. \bibinfo{pages}{1--8} \bibinfo{year}{2019}\natexlab{}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Alzoubi, Lee, Rabinovich, Spatscheck, and Van
   Der~Merwe}{Alzoubi et~al\mbox{.}}{2011}]%
         {alzoubi2011practical}
