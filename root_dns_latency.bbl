@@ -208,18 +208,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Katabi and Wroclawski}{Katabi and
-  Wroclawski}{2000}]%
-        {katabi2000framework}
-\bibfield{author}{\bibinfo{person}{D. Katabi} {and} \bibinfo{person}{J.
-  Wroclawski}.} \bibinfo{year}{2000}\natexlab{}.
-\newblock \showarticletitle{A framework for scalable global IP-anycast (GIA)}.
-\newblock \bibinfo{journal}{{\em ACM SIGCOMM Computer Communication Review\/}}
-  \bibinfo{volume}{30}, \bibinfo{number}{4} (\bibinfo{year}{2000}),
-  \bibinfo{pages}{3--15}.
-\newblock
-
-
 \bibitem[\protect\citeauthoryear{Kurose and Ross}{Kurose and Ross}{2010}]%
         {kurose2010computer}
 \bibfield{author}{\bibinfo{person}{J. Kurose} {and} \bibinfo{person}{K. Ross}.}
@@ -268,16 +256,6 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Linden}{Linden}{[n. d.]}]%
-        {linden}
-\bibfield{author}{\bibinfo{person}{G. Linden}.}
-\newblock \bibinfo{title}{Make Data Useful}.
-\newblock
-\newblock
-\showURL{%
-\url{https://sites.google.com/site/glinden/Home/}}
-
-
 \bibitem[\protect\citeauthoryear{Mockapetris}{Mockapetris}{[n. d.]}]%
         {rfc_1035}
 \bibfield{author}{\bibinfo{person}{P. Mockapetris}.}
@@ -300,18 +278,6 @@
   Measurement Conference},}. ACM, \bibinfo{pages}{255--270}
   \bibinfo{year}{2016}\natexlab{}.
 \newblock
-
-
-\bibitem[\protect\citeauthoryear{Partridge, Mendez, and Milliken}{Partridge
-  et~al\mbox{.}}{[n. d.]}]%
-        {rfc_1546}
-\bibfield{author}{\bibinfo{person}{C. Partridge}, \bibinfo{person}{T. Mendez},
-  {and} \bibinfo{person}{W. Milliken}.}
-\newblock \bibinfo{title}{Host Anycasting Service}.
-\newblock
-\newblock
-\showURL{%
-\url{https://tools.ietf.org/html/rfc1546}}
 
 
 \bibitem[\protect\citeauthoryear{Sarat, Pappas, and Terzis}{Sarat
@@ -337,19 +303,6 @@
 \newblock \bibinfo{journal}{{\em ACM SIGMETRICS Performance Evaluation
   Review\/}} \bibinfo{volume}{41}, \bibinfo{number}{1} (\bibinfo{year}{2013}),
   \bibinfo{pages}{383--384}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Xue, Dang, Wang, Wang, and Wang}{Xue
-  et~al\mbox{.}}{2019}]%
-        {huawei_evaluating_anycast}
-\bibfield{author}{\bibinfo{person}{J. Xue}, \bibinfo{person}{W. Dang},
-  \bibinfo{person}{H. Wang}, \bibinfo{person}{J. Wang}, {and}
-  \bibinfo{person}{H. Wang}.}
-\newblock \showarticletitle{Evaluating performance and inefficient routing of
-  an anycast CDN}. In \bibinfo{booktitle}{{\em Proceedings of the International
-  Symposium on Quality of Service},}. ACM, \bibinfo{pages}{14}
-  \bibinfo{year}{2019}\natexlab{}.
 \newblock
 
 
