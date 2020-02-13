@@ -8,17 +8,25 @@ Database file #1: bib.bib.bib
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
 Warning--to sort, need author or key in root_servers
+Warning--no key, author in ditl
+Warning--no author, editor, organization, or key in ditl
+Warning--to sort, need author or key in ditl
 Warning--no key, author in alexa_topsites
 Warning--no author, editor, organization, or key in alexa_topsites
 Warning--to sort, need author or key in alexa_topsites
 Warning--no key, author in alexa_topsites
 Warning--no key, author in alexa_topsites
+Warning--no key, author in ditl
+Warning--no key, author in ditl
 Warning--no key, author in root_servers
 Warning--no key, author in root_servers
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
 Warning--empty author in root_servers
+Warning--no key, author in ditl
+Warning--no author, editor, organization, or key in ditl
+Warning--empty author in ditl
 Warning--no key, author in alexa_topsites
 Warning--no author, editor, organization, or key in alexa_topsites
 Warning--empty author in alexa_topsites
@@ -45,49 +53,51 @@ Warning--empty publisher in li_levin_spring_bhattacharjee_2018
 Warning--empty address in li_levin_spring_bhattacharjee_2018
 Warning--empty publisher in liang2013measuring
 Warning--empty address in liang2013measuring
+Warning--empty publisher in mcquistin2019taming
+Warning--empty address in mcquistin2019taming
 Warning--empty publisher in moura2016anycast
 Warning--empty address in moura2016anycast
 Warning--empty publisher in sarat2006use
 Warning--empty address in sarat2006use
-You've used 25 entries,
+You've used 30 entries,
             5727 wiz_defined-function locations,
-            1437 strings with 19388 characters,
-and the built_in function-call counts, 29649 in all, are:
-= -- 3593
-> -- 1088
+            1459 strings with 19943 characters,
+and the built_in function-call counts, 35357 in all, are:
+= -- 4361
+> -- 1228
 < -- 0
-+ -- 334
-- -- 578
-* -- 2096
-:= -- 3014
-add.period$ -- 120
-call.type$ -- 25
-change.case$ -- 181
-chr.to.int$ -- 25
-cite$ -- 76
-duplicate$ -- 2201
-empty$ -- 1634
-format.name$ -- 424
-if$ -- 6963
++ -- 376
+- -- 705
+* -- 2466
+:= -- 3545
+add.period$ -- 142
+call.type$ -- 30
+change.case$ -- 210
+chr.to.int$ -- 30
+cite$ -- 95
+duplicate$ -- 2594
+empty$ -- 1934
+format.name$ -- 484
+if$ -- 8310
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 88
-newline$ -- 237
-num.names$ -- 184
-pop$ -- 1145
+missing$ -- 101
+newline$ -- 278
+num.names$ -- 216
+pop$ -- 1362
 preamble$ -- 1
-purify$ -- 294
+purify$ -- 344
 quote$ -- 0
-skip$ -- 778
+skip$ -- 914
 stack$ -- 0
-substring$ -- 2605
-swap$ -- 187
-text.length$ -- 458
+substring$ -- 3226
+swap$ -- 220
+text.length$ -- 618
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 652
-warning$ -- 43
-while$ -- 171
+type$ -- 774
+warning$ -- 53
+while$ -- 206
 width$ -- 0
-write$ -- 453
-(There were 43 warnings)
+write$ -- 533
+(There were 53 warnings)

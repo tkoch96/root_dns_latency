@@ -45,6 +45,14 @@
 \url{root-servers.org}}
 
 
+\bibitem[\protect\citeauthoryear{??}{dit}{[n. d.]}]%
+        {ditl}
+
+\newblock
+\showURL{%
+\url{https://www.dns-oarc.net/oarc/data/ditl/2018}}
+
+
 \bibitem[\protect\citeauthoryear{??}{ale}{[n. d.]}]%
         {alexa_topsites}
 \bibinfo{title}{The Top 500 Sites on the Web}.
@@ -208,6 +216,18 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Katabi and Wroclawski}{Katabi and
+  Wroclawski}{2000}]%
+        {katabi2000framework}
+\bibfield{author}{\bibinfo{person}{D. Katabi} {and} \bibinfo{person}{J.
+  Wroclawski}.} \bibinfo{year}{2000}\natexlab{}.
+\newblock \showarticletitle{A framework for scalable global IP-anycast (GIA)}.
+\newblock \bibinfo{journal}{{\em ACM SIGCOMM Computer Communication Review\/}}
+  \bibinfo{volume}{30}, \bibinfo{number}{4} (\bibinfo{year}{2000}),
+  \bibinfo{pages}{3--15}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Kurose and Ross}{Kurose and Ross}{2010}]%
         {kurose2010computer}
 \bibfield{author}{\bibinfo{person}{J. Kurose} {and} \bibinfo{person}{K. Ross}.}
@@ -256,6 +276,27 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{McQuistin, Uppu, and Flores}{McQuistin
+  et~al\mbox{.}}{2019}]%
+        {mcquistin2019taming}
+\bibfield{author}{\bibinfo{person}{S. McQuistin}, \bibinfo{person}{S.~P. Uppu},
+  {and} \bibinfo{person}{M. Flores}.}
+\newblock \showarticletitle{Taming Anycast in the Wild Internet}. In
+  \bibinfo{booktitle}{{\em Proceedings of the Internet Measurement
+  Conference},}. \bibinfo{pages}{165--178} \bibinfo{year}{2019}\natexlab{}.
+\newblock
+
+
+\bibitem[\protect\citeauthoryear{Metz}{Metz}{2002}]%
+        {metz2002ip}
+\bibfield{author}{\bibinfo{person}{C. Metz}.} \bibinfo{year}{2002}\natexlab{}.
+\newblock \showarticletitle{IP anycast point-to-(any) point communication}.
+\newblock \bibinfo{journal}{{\em IEEE Internet Computing\/}}
+  \bibinfo{volume}{6}, \bibinfo{number}{2} (\bibinfo{year}{2002}),
+  \bibinfo{pages}{94--98}.
+\newblock
+
+
 \bibitem[\protect\citeauthoryear{Mockapetris}{Mockapetris}{[n. d.]}]%
         {rfc_1035}
 \bibfield{author}{\bibinfo{person}{P. Mockapetris}.}
@@ -278,6 +319,18 @@
   Measurement Conference},}. ACM, \bibinfo{pages}{255--270}
   \bibinfo{year}{2016}\natexlab{}.
 \newblock
+
+
+\bibitem[\protect\citeauthoryear{Partridge, Mendez, and Milliken}{Partridge
+  et~al\mbox{.}}{[n. d.]}]%
+        {rfc_1546}
+\bibfield{author}{\bibinfo{person}{C. Partridge}, \bibinfo{person}{T. Mendez},
+  {and} \bibinfo{person}{W. Milliken}.}
+\newblock \bibinfo{title}{Host Anycasting Service}.
+\newblock
+\newblock
+\showURL{%
+\url{https://tools.ietf.org/html/rfc1546}}
 
 
 \bibitem[\protect\citeauthoryear{Sarat, Pappas, and Terzis}{Sarat
