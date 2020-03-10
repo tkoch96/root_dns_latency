@@ -45,12 +45,20 @@
 \url{root-servers.org}}
 
 
+\bibitem[\protect\citeauthoryear{??}{aka}{[n. d.]}]%
+        {akamai_anycast}
+
+\newblock
+\showURL{%
+\url{akamai.com/us/en/multimedia/documents/white-paper/akamai-designing-dns-for-availability-and-resilience-against-ddos-attacks.pdf}}
+
+
 \bibitem[\protect\citeauthoryear{??}{dit}{[n. d.]}]%
         {ditl}
 
 \newblock
 \showURL{%
-\url{https://www.dns-oarc.net/oarc/data/ditl/2018}}
+\url{dns-oarc.net/oarc/data/ditl/2018}}
 
 
 \bibitem[\protect\citeauthoryear{??}{ale}{[n. d.]}]%
@@ -59,7 +67,7 @@
 \newblock
 \newblock
 \showURL{%
-\url{https://www.alexa.com/topsites}}
+\url{alexa.com/topsites}}
 
 
 \bibitem[\protect\citeauthoryear{Allman}{Allman}{2019}]%
@@ -82,6 +90,24 @@
   \bibinfo{volume}{5}, \bibinfo{number}{4} (\bibinfo{year}{2011}),
   \bibinfo{pages}{17}.
 \newblock
+
+
+\bibitem[\protect\citeauthoryear{Amazon}{Amazon}{[n. d.]a}]%
+        {route53_anycast}
+\bibfield{author}{\bibinfo{person}{Amazon}.}
+\newblock
+\newblock
+\showURL{%
+\url{aws.amazon.com/route53/faqs/}}
+
+
+\bibitem[\protect\citeauthoryear{Amazon}{Amazon}{[n. d.]b}]%
+        {amazon_cloudfront}
+\bibfield{author}{\bibinfo{person}{Amazon}.}
+\newblock
+\newblock
+\showURL{%
+\url{aws.amazon.com/cloudfront/}}
 
 
 \bibitem[\protect\citeauthoryear{Asrese, Sarolahti, Boye, and Ott}{Asrese
@@ -132,14 +158,24 @@
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Cloudflare}{Cloudflare}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{Cloudflare}{Cloudflare}{[n. d.]a}]%
+        {cloudflare_anycast}
+\bibfield{author}{\bibinfo{person}{Cloudflare}.}
+\newblock \bibinfo{title}{Load Balancing without Load Balancers}.
+\newblock
+\newblock
+\showURL{%
+\url{blog.cloudflare.com/cloudflares-architecture-eliminating-single-p/}}
+
+
+\bibitem[\protect\citeauthoryear{Cloudflare}{Cloudflare}{[n. d.]b}]%
         {cloudflare_dns_tutorial}
 \bibfield{author}{\bibinfo{person}{Cloudflare}.}
 \newblock \bibinfo{title}{What is DNS?}
 \newblock
 \newblock
 \showURL{%
-\url{https://www.cloudflare.com/learning/dns/what-is-dns/}}
+\url{cloudflare.com/learning/dns/what-is-dns/}}
 
 
 \bibitem[\protect\citeauthoryear{Colitti, Romijn, Uijterwaal, and
@@ -200,7 +236,16 @@
 \newblock
 \newblock
 \showURL{%
-\url{https://kb.isc.org/docs/aa-01122}}
+\url{kb.isc.org/docs/aa-01122}}
+
+
+\bibitem[\protect\citeauthoryear{Google}{Google}{[n. d.]}]%
+        {google_public_dns}
+\bibfield{author}{\bibinfo{person}{Google}.}
+\newblock
+\newblock
+\showURL{%
+\url{developers.google.com/speed/public-dns}}
 
 
 \bibitem[\protect\citeauthoryear{Jung, Sit, Balakrishnan, and Morris}{Jung
@@ -304,7 +349,7 @@
 \newblock
 \newblock
 \showURL{%
-\url{https://www.ietf.org/rfc/rfc1035.txt}}
+\url{ietf.org/rfc/rfc1035.txt}}
 
 
 \bibitem[\protect\citeauthoryear{Moura, Schmidt, Heidemann, de~Vries, Muller,
@@ -330,7 +375,7 @@
 \newblock
 \newblock
 \showURL{%
-\url{https://tools.ietf.org/html/rfc1546}}
+\url{tools.ietf.org/html/rfc1546}}
 
 
 \bibitem[\protect\citeauthoryear{Sarat, Pappas, and Terzis}{Sarat
@@ -359,6 +404,15 @@
 \newblock
 
 
+\bibitem[\protect\citeauthoryear{Verizon}{Verizon}{[n. d.]}]%
+        {edgecast_anycast}
+\bibfield{author}{\bibinfo{person}{Verizon}.}
+\newblock
+\newblock
+\showURL{%
+\url{verizondigitalmedia.com/media-platform/delivery/network/}}
+
+
 \bibitem[\protect\citeauthoryear{Yu, Wessels, Larson, and Zhang}{Yu
   et~al\mbox{.}}{2012}]%
         {yu2012authority}
@@ -380,7 +434,7 @@
 \newblock
 \newblock
 \showURL{%
-\url{https://github.com/zmap/zmap/blob/master/conf/blacklist.conf}}
+\url{github.com/zmap/zmap/blob/master/conf/blacklist.conf}}
 
 
 \end{thebibliography}

@@ -8,12 +8,17 @@ Database file #1: bib.bib.bib
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
 Warning--to sort, need author or key in root_servers
+Warning--no key, author in akamai_anycast
+Warning--no author, editor, organization, or key in akamai_anycast
+Warning--to sort, need author or key in akamai_anycast
 Warning--no key, author in ditl
 Warning--no author, editor, organization, or key in ditl
 Warning--to sort, need author or key in ditl
 Warning--no key, author in alexa_topsites
 Warning--no author, editor, organization, or key in alexa_topsites
 Warning--to sort, need author or key in alexa_topsites
+Warning--no key, author in akamai_anycast
+Warning--no key, author in akamai_anycast
 Warning--no key, author in alexa_topsites
 Warning--no key, author in alexa_topsites
 Warning--no key, author in ditl
@@ -24,6 +29,9 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
 Warning--empty author in root_servers
+Warning--no key, author in akamai_anycast
+Warning--no author, editor, organization, or key in akamai_anycast
+Warning--empty author in akamai_anycast
 Warning--no key, author in ditl
 Warning--no author, editor, organization, or key in ditl
 Warning--empty author in ditl
@@ -59,45 +67,45 @@ Warning--empty publisher in moura2016anycast
 Warning--empty address in moura2016anycast
 Warning--empty publisher in sarat2006use
 Warning--empty address in sarat2006use
-You've used 30 entries,
+You've used 36 entries,
             5727 wiz_defined-function locations,
-            1459 strings with 19943 characters,
-and the built_in function-call counts, 35357 in all, are:
-= -- 4361
-> -- 1228
+            1475 strings with 20365 characters,
+and the built_in function-call counts, 42369 in all, are:
+= -- 5226
+> -- 1324
 < -- 0
-+ -- 376
-- -- 705
-* -- 2466
-:= -- 3545
-add.period$ -- 142
-call.type$ -- 30
-change.case$ -- 210
-chr.to.int$ -- 30
-cite$ -- 95
-duplicate$ -- 2594
-empty$ -- 1934
-format.name$ -- 484
-if$ -- 8310
-int.to.chr$ -- 1
++ -- 398
+- -- 1012
+* -- 2890
+:= -- 4230
+add.period$ -- 165
+call.type$ -- 36
+change.case$ -- 239
+chr.to.int$ -- 34
+cite$ -- 113
+duplicate$ -- 2901
+empty$ -- 2182
+format.name$ -- 522
+if$ -- 9656
+int.to.chr$ -- 3
 int.to.str$ -- 0
 missing$ -- 101
-newline$ -- 278
-num.names$ -- 216
-pop$ -- 1362
+newline$ -- 332
+num.names$ -- 254
+pop$ -- 1608
 preamble$ -- 1
-purify$ -- 344
+purify$ -- 389
 quote$ -- 0
-skip$ -- 914
+skip$ -- 1020
 stack$ -- 0
-substring$ -- 3226
-swap$ -- 220
-text.length$ -- 618
+substring$ -- 4457
+swap$ -- 238
+text.length$ -- 1162
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 774
-warning$ -- 53
-while$ -- 206
+type$ -- 942
+warning$ -- 61
+while$ -- 250
 width$ -- 0
-write$ -- 533
-(There were 53 warnings)
+write$ -- 623
+(There were 61 warnings)

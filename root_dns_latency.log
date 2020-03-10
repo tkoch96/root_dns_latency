@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.16)  13 FEB 2020 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.8.16)  10 MAR 2020 13:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1217,52 +1217,58 @@ LaTeX Font Info:    Try loading font information for T1+lmss on input line 71.
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 1609) in paragraph at lines 152--241
-\T1/lmr/m/n/10 (+20) server [[]], [[]], [[]]. How-ever, nu-mer-ous stud-ies
+
+LaTeX Warning: Reference `sec:apii' on page 1 undefined on input line 257.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--258
+\T1/lmr/m/n/10 (+20) [d] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--241
-
- []
-
-
-Underfull \hbox (badness 4634) in paragraph at lines 152--241
+Underfull \hbox (badness 4634) in paragraph at lines 166--258
 \T1/lmr/m/n/10 (+20) Anycast is pri-mar-ily de-ployed in two do-mains:
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 152--241
-\T1/lmr/m/n/10 (+20) fea-ture in stud-ies in-volv-ing any-cast be-cause it is
+Underfull \hbox (badness 2181) in paragraph at lines 166--258
+\T1/lmr/m/n/10 (+20) stud-ies in-volv-ing any-cast be-cause it is rel-a-tively
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--241
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--241
+Underfull \hbox (badness 10000) in paragraph at lines 166--258
 
  []
 
 
-Underfull \hbox (badness 1701) in paragraph at lines 152--241
+Underfull \hbox (badness 2556) in paragraph at lines 166--258
+\T1/lmr/m/n/10 (+20) The ge-o-graphic di-ver-sity of any-cast de-ploy-ments
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--258
+
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 166--258
 \T1/lmr/m/n/10 (+20) in are prin-ci-pally im-por-tant to CDN's, yet may
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--241
+Underfull \hbox (badness 10000) in paragraph at lines 166--258
 
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 152--241
-\T1/lmr/m/n/10 (+20) Our pri-mary goal is to con-tex-tu-al-ize re-search re-
+Underfull \hbox (badness 2903) in paragraph at lines 166--258
+\T1/lmr/m/n/10 (+20) Our pri-mary goal is to con-tex-tu-al-ize re-search[f]
  []
 
 
-Underfull \vbox (badness 6380) has occurred while \output is active []
+Underfull \hbox (badness 1152) in paragraph at lines 166--258
+\T1/lmr/m/n/10 (+20) dras-ti-cally lim-its user ex-po-sure to the root DNS
+ []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1273,9 +1279,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 261.
+(Font)              <10> on input line 277.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 261.
+(Font)              <7> on input line 277.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1283,47 +1289,37 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Underfull \hbox (badness 1132) in paragraph at lines 255--317
-\T1/lmr/m/n/10 (+20) for human-readable host-names are mapped to IP
- []
-
-
-Underfull \hbox (badness 2828) in paragraph at lines 255--317
-\T1/lmr/m/n/10 (+20) Since each re-quest is a cor-re-spon-dence be-tween
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 255--317
+Underfull \hbox (badness 10000) in paragraph at lines 271--333
 
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 255--317
+Underfull \hbox (badness 1264) in paragraph at lines 271--333
 \T1/lmr/m/n/10 (+20) In prac-tice, there is quite a lot of po-ten-tial for
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 255--317
+Underfull \hbox (badness 1616) in paragraph at lines 271--333
 \T1/lmr/m/n/10 (+20) ti-ple RR's (a sort of hi-er-ar-chy of RR's) among
  []
 
 
-Underfull \hbox (badness 3895) in paragraph at lines 255--317
+Underfull \hbox (badness 3895) in paragraph at lines 271--333
 \T1/lmr/m/n/10 (+20) TLD, ADNS) is fi-nally queried. This hi-er-ar-chy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--317
+Underfull \hbox (badness 10000) in paragraph at lines 271--333
 
  []
 
 
-Underfull \hbox (badness 2735) in paragraph at lines 255--317
+Underfull \hbox (badness 2735) in paragraph at lines 271--333
 \T1/lmr/m/n/10 (+20) Caching at re-mote RR's is won-der-ful, and can
  []
 
 
-Underfull \hbox (badness 1242) in paragraph at lines 255--317
+Underfull \hbox (badness 1242) in paragraph at lines 271--333
 \T1/lmr/m/n/10 (+20) through an id-iosyn-cratic com-bi-na-tion of browsers,
  []
 
@@ -1338,207 +1334,242 @@ Package Fancyhdr Warning: \headheight is too small (13.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2.2]
-Underfull \hbox (badness 10000) in paragraph at lines 320--351
+Underfull \hbox (badness 10000) in paragraph at lines 336--367
 
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 320--351
+Underfull \hbox (badness 1389) in paragraph at lines 336--367
 \T1/lmr/m/n/10 (+20) It is dif-fi-cult to quan-tify or mea-sure the de-gree
  []
 
+[3.3] <figures/all_dns_latencies_isi.pdf, id=198, 462.52798pt x 346.89601pt>
+File: figures/all_dns_latencies_isi.pdf Graphic file (type pdf)
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3.3]
-<figures/all_dns_latencies_isi.png, id=173, 462.528pt x 346.896pt>
-File: figures/all_dns_latencies_isi.png Graphic file (type png)
-
-<use figures/all_dns_latencies_isi.png>
-Package pdftex.def Info: figures/all_dns_latencies_isi.png used on input line 3
-90.
-(pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
+<use figures/all_dns_latencies_isi.pdf>
+Package pdftex.def Info: figures/all_dns_latencies_isi.pdf used on input line 4
+06.
+(pdftex.def)             Requested size: 227.83342pt x 170.87508pt.
 
 
-Class acmart Warning: A possible image without description on input line 393.
+Class acmart Warning: A possible image without description on input line 409.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 409.
+               Default added (so using `tbp') on input line 425.
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 430--465
+Underfull \hbox (badness 2837) in paragraph at lines 446--481
 \T1/lmr/m/n/10 (+20) in-ter-net mea-sure-ment lab (ISI). How-ever, as-sess-
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 430--465
+Underfull \hbox (badness 1215) in paragraph at lines 446--481
 \T1/lmr/m/n/10 (+20) ing the la-tency im-pli-ca-tions for cache miss rates
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--465
+Underfull \hbox (badness 10000) in paragraph at lines 446--481
 
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 430--465
+Underfull \hbox (badness 1365) in paragraph at lines 446--481
 \T1/lmr/m/n/10 (+20) To cal-cu-late the im-pact of root la-tency on user
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--465
+Underfull \hbox (badness 10000) in paragraph at lines 446--481
 
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 430--465
+Underfull \hbox (badness 1389) in paragraph at lines 446--481
 \T1/lmr/m/n/10 (+20) Although N and k de-pend on a num-ber of fac-
  []
 
 
-Underfull \hbox (badness 1365) in paragraph at lines 430--465
+Underfull \hbox (badness 1365) in paragraph at lines 446--481
 \T1/lmr/m/n/10 (+20) num-ber of block-ing DNS re-quests per page load
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 430--465
+Underfull \hbox (badness 1406) in paragraph at lines 446--481
 \T1/lmr/m/n/10 (+20) us-ing meth-ods in [[]]. We find 95% of re-quests
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--465
+Underfull \hbox (badness 10000) in paragraph at lines 446--481
 
  []
 
+[4.4 <./figures/all_dns_latencies_isi.pdf>]
+<figures/isi_root_dns_latency.pdf, id=255, 578.16pt x 433.62pt>
+File: figures/isi_root_dns_latency.pdf Graphic file (type pdf)
 
-Underfull \hbox (badness 1052) in paragraph at lines 430--465
-\T1/lmr/m/n/10 (+20) As a vi-su-al-iza-tion of this these re-sults, Fig-ure []2
-[]
- []
-
-
-Underfull \vbox (badness 1205) has occurred while \output is active []
-
- [4.4 <./figures/all_dns_latencies_isi.png>]
-<figures/isi_root_dns_latency.png, id=192, 578.16pt x 433.62pt>
-File: figures/isi_root_dns_latency.png Graphic file (type png)
-
-<use figures/isi_root_dns_latency.png>
-Package pdftex.def Info: figures/isi_root_dns_latency.png used on input line 46
-8.
+<use figures/isi_root_dns_latency.pdf>
+Package pdftex.def Info: figures/isi_root_dns_latency.pdf used on input line 48
+4.
 (pdftex.def)             Requested size: 227.82814pt x 170.87111pt.
 
 
-Class acmart Warning: A possible image without description on input line 471.
-
-<figures/query_user_relationship.png, id=196, 1128.8574pt x 697.4055pt>
-File: figures/query_user_relationship.png Graphic file (type png)
-
-<use figures/query_user_relationship.png>
-Package pdftex.def Info: figures/query_user_relationship.png used on input line
- 529.
-(pdftex.def)             Requested size: 227.81725pt x 140.74496pt.
+Class acmart Warning: A possible image without description on input line 487.
 
 
-Class acmart Warning: A possible image without description on input line 532.
+Underfull \hbox (badness 1082) in paragraph at lines 489--502
+\T1/lmr/m/n/10 (+20) one would ex-pect. For ex-am-ple, a par-tic-u-lar day
+ []
 
-[5.5 <./figures/isi_root_dns_latency.png>]
+
+Underfull \hbox (badness 1226) in paragraph at lines 489--502
+\T1/lmr/m/n/10 (+20) that users rarely ex-pe-ri-ence root la-tency be-cause
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--555
+
+ []
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 547.
+               Default added (so using `tbp') on input line 556.
 
-<figures/ditl_volume_comparisons.png, id=211, 462.528pt x 346.896pt>
-File: figures/ditl_volume_comparisons.png Graphic file (type png)
+[5.5 <./figures/isi_root_dns_latency.pdf>]
+<figures/ditl_volume_comparisons.pdf, id=312, 462.52798pt x 346.89601pt>
+File: figures/ditl_volume_comparisons.pdf Graphic file (type pdf)
 
-<use figures/ditl_volume_comparisons.png>
-Package pdftex.def Info: figures/ditl_volume_comparisons.png used on input line
- 587.
-(pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
-
-
-Class acmart Warning: A possible image without description on input line 590.
-
-<figures/user_root_latency_per_day.png, id=215, 462.528pt x 346.896pt>
-File: figures/user_root_latency_per_day.png Graphic file (type png)
-
-<use figures/user_root_latency_per_day.png>
-Package pdftex.def Info: figures/user_root_latency_per_day.png used on input li
-ne 616.
-(pdftex.def)             Requested size: 227.83342pt x 170.87506pt.
+<use figures/ditl_volume_comparisons.pdf>
+Package pdftex.def Info: figures/ditl_volume_comparisons.pdf used on input line
+ 596.
+(pdftex.def)             Requested size: 227.83342pt x 170.87508pt.
 
 
-Class acmart Warning: A possible image without description on input line 619.
+Class acmart Warning: A possible image without description on input line 599.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--684
+Underfull \vbox (badness 1527) has occurred while \output is active []
+
+
+<figures/user_root_latency_per_day.pdf, id=316, 462.52798pt x 346.89601pt>
+File: figures/user_root_latency_per_day.pdf Graphic file (type pdf)
+
+<use figures/user_root_latency_per_day.pdf>
+Package pdftex.def Info: figures/user_root_latency_per_day.pdf used on input li
+ne 625.
+(pdftex.def)             Requested size: 227.83342pt x 170.87508pt.
+
+
+Class acmart Warning: A possible image without description on input line 628.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 630--693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--684
+Underfull \hbox (badness 10000) in paragraph at lines 630--693
 
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 621--684
+Underfull \hbox (badness 2253) in paragraph at lines 630--693
 \T1/lmr/m/n/10 (+20) The line la-beled ``heuris-tic root value'' is cal-cu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--684
+Underfull \hbox (badness 10000) in paragraph at lines 630--693
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--684
+Underfull \hbox (badness 10000) in paragraph at lines 630--693
 
  []
 
-[6.6 <./figures/query_user_relationship.png> <./figures/ditl_volume_comparisons
-.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 696--706
+[6.6 <./figures/ditl_volume_comparisons.pdf> <./figures/user_root_latency_per_d
+ay.pdf
+
+pdfTeX warning: pdflatex (file ./figures/user_root_latency_per_day.pdf): PDF in
+clusion: multiple pdfs with page group included in a single page
+>] [7.7]
+Underfull \hbox (badness 10000) in paragraph at lines 739--749
 
  []
 
-[7.7 <./figures/user_root_latency_per_day.png>]
-Underfull \vbox (badness 1270) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2698) has occurred while \output is active []
-
- [8.8]
-(./root_dns_latency.bbl
-Underfull \vbox (badness 6396) has occurred while \output is active []
-
- [9.9]
+[8.8]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)
+
+Underfull \hbox (badness 10000) in paragraph at lines 915--938
+
+ []
+
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
+ [9.9]
+(./root_dns_latency.bbl
+Underfull \hbox (badness 2005) in paragraph at lines 51--54
+[] []$\T1/lmr/m/n/8 (+20) akamai . com / us / en / multimedia / documents / whi
+te-[]paper /
+ []
+
+
+Overfull \hbox (43.44395pt too wide) in paragraph at lines 51--54
+\T1/lmr/m/n/8 (-20) akamai-[]designing-[]dns-[]for-[]availability-[]and-[]resil
+ience-[]against-[]ddos-[]attacks .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--169
+[]\T1/lmr/m/n/8 (+20) Cloudflare.  Load Bal-anc-ing with-out
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--169
+\T1/lmr/m/n/8 (+20) Load Bal-ancers.   []$blog . cloud^^]are . com /
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10.10])
 
 Class acmart Warning: Some images may lack descriptions.
 
 
-Package balance Warning: You have called \balance in second column
-(balance)                Columns might not be balanced.
+Overfull \vbox (10.0pt too high) has occurred while \output is active []
 
-[10.10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 902.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 902.
- (./root_dns_latency.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 902.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 902.
+
+Overfull \vbox (12.0pt too high) has occurred while \output is active []
+
+ [11.11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 958.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 958.
+
+(./root_dns_latency.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 958.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 958.
 Package rerunfilecheck Info: File `root_dns_latency.out' has not changed.
-(rerunfilecheck)             Checksum: E03EBDA3B2B8E20ACCD1987905C1C4A3;4344.
+(rerunfilecheck)             Checksum: 897FD6E8952FDE919A073FCDD63D5DA4;4720.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 16707 strings out of 494953
- 242375 string characters out of 6180977
- 391685 words of memory out of 5000000
- 19270 multiletter control sequences out of 15000+600000
- 75652 words of font info for 133 fonts, out of 8000000 for 9000
+ 16734 strings out of 494953
+ 242867 string characters out of 6180977
+ 390918 words of memory out of 5000000
+ 19290 multiletter control sequences out of 15000+600000
+ 75568 words of font info for 132 fonts, out of 8000000 for 9000
  175 hyphenation exceptions out of 8191
- 60i,15n,94p,823b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,15n,94p,823b,601s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
 c/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/s
 hare/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/publi
@@ -1551,10 +1582,10 @@ ublic/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/sha
 re/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/
 lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on root_dns_latency.pdf (10 pages, 529874 bytes).
+Output written on root_dns_latency.pdf (11 pages, 441385 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
- 16606 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 593 PDF objects out of 1000 (max. 8388607)
+ 391 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
+ 16617 words of extra memory for PDF output out of 17280 (max. 10000000)
 
