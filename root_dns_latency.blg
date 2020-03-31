@@ -3,49 +3,41 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: root_dns_latency.aux
 The style file: ACM-Reference-Format.bst.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: bib.bib.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
 Warning--to sort, need author or key in root_servers
 Warning--no key, author in akamai_anycast
 Warning--no author, editor, organization, or key in akamai_anycast
 Warning--to sort, need author or key in akamai_anycast
-Warning--no key, author in ditl
-Warning--no author, editor, organization, or key in ditl
-Warning--to sort, need author or key in ditl
-Warning--no key, author in alexa_topsites
-Warning--no author, editor, organization, or key in alexa_topsites
-Warning--to sort, need author or key in alexa_topsites
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Warning--no key, author in akamai_anycast
 Warning--no key, author in akamai_anycast
-Warning--no key, author in alexa_topsites
-Warning--no key, author in alexa_topsites
-Warning--no key, author in ditl
-Warning--no key, author in ditl
 Warning--no key, author in root_servers
 Warning--no key, author in root_servers
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
 Warning--empty author in root_servers
+Warning--empty year in root_servers
 Warning--no key, author in akamai_anycast
 Warning--no author, editor, organization, or key in akamai_anycast
 Warning--empty author in akamai_anycast
-Warning--no key, author in ditl
-Warning--no author, editor, organization, or key in ditl
-Warning--empty author in ditl
-Warning--no key, author in alexa_topsites
-Warning--no author, editor, organization, or key in alexa_topsites
-Warning--empty author in alexa_topsites
-Warning--empty publisher in allman_eliminate
-Warning--empty address in allman_eliminate
+Warning--empty year in akamai_anycast
+Warning--empty year in route53_anycast
+Warning--empty year in amazon_cloudfront
 Warning--empty publisher in asrese2016wepr
 Warning--empty address in asrese2016wepr
 Warning--empty publisher in ballani2006measurement
 Warning--empty address in ballani2006measurement
 Warning--empty publisher in calder2015analyzing
 Warning--empty address in calder2015analyzing
+Warning--empty year in cloudflare_anycast
 Warning--page numbers missing in both pages and numpages fields in colitti2006evaluating
 Warning--empty publisher in de2017anycast
 Warning--empty address in de2017anycast
@@ -53,59 +45,58 @@ Warning--empty publisher in enghardt2019web
 Warning--empty address in enghardt2019web
 Warning--empty publisher in flavel2015fastroute
 Warning--empty address in flavel2015fastroute
-Warning--no number and no volume in kurose2010computer
-Warning--page numbers missing in both pages and numpages fields in kurose2010computer
+Warning--empty year in google_public_dns
 Warning--empty publisher in lentz2013d
 Warning--empty address in lentz2013d
 Warning--empty publisher in li_levin_spring_bhattacharjee_2018
 Warning--empty address in li_levin_spring_bhattacharjee_2018
 Warning--empty publisher in liang2013measuring
 Warning--empty address in liang2013measuring
-Warning--empty publisher in mcquistin2019taming
-Warning--empty address in mcquistin2019taming
 Warning--empty publisher in moura2016anycast
 Warning--empty address in moura2016anycast
+Warning--empty year in rfc_1546
 Warning--empty publisher in sarat2006use
 Warning--empty address in sarat2006use
-You've used 36 entries,
-            5727 wiz_defined-function locations,
-            1475 strings with 20365 characters,
-and the built_in function-call counts, 42369 in all, are:
-= -- 5226
-> -- 1324
+Warning--empty year in edgecast_anycast
+You've used 27 entries,
+            5901 wiz_defined-function locations,
+            1449 strings with 18831 characters,
+and the built_in function-call counts, 30211 in all, are:
+= -- 3505
+> -- 1147
 < -- 0
-+ -- 398
-- -- 1012
-* -- 2890
-:= -- 4230
-add.period$ -- 165
-call.type$ -- 36
-change.case$ -- 239
-chr.to.int$ -- 34
-cite$ -- 113
-duplicate$ -- 2901
-empty$ -- 2182
-format.name$ -- 522
-if$ -- 9656
++ -- 378
+- -- 371
+* -- 2186
+:= -- 3101
+add.period$ -- 127
+call.type$ -- 27
+change.case$ -- 193
+chr.to.int$ -- 26
+cite$ -- 82
+duplicate$ -- 2661
+empty$ -- 1895
+format.name$ -- 447
+if$ -- 7260
 int.to.chr$ -- 3
-int.to.str$ -- 0
-missing$ -- 101
-newline$ -- 332
-num.names$ -- 254
-pop$ -- 1608
+int.to.str$ -- 1
+missing$ -- 87
+newline$ -- 271
+num.names$ -- 199
+pop$ -- 1254
 preamble$ -- 1
-purify$ -- 389
+purify$ -- 387
 quote$ -- 0
-skip$ -- 1020
+skip$ -- 906
 stack$ -- 0
-substring$ -- 4457
-swap$ -- 238
-text.length$ -- 1162
+substring$ -- 2009
+swap$ -- 264
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 942
-warning$ -- 61
-while$ -- 250
+type$ -- 692
+warning$ -- 47
+while$ -- 179
 width$ -- 0
-write$ -- 623
-(There were 61 warnings)
+write$ -- 505
+(There were 47 warnings)

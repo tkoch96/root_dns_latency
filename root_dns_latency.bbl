@@ -2,7 +2,7 @@
 %%% Do NOT edit. File created by BibTeX with style
 %%% ACM-Reference-Format-Journals [18-Jan-2012].
 
-\begin{thebibliography}{00}
+\begin{thebibliography}{27}
 
 %%% ====================================================================
 %%% NOTE TO THE USER: you can override these defaults by providing
@@ -37,225 +37,200 @@
 \providecommand\natexlab[1]{#1}
 \providecommand\showeprint[2][]{arXiv:#2}
 
-\bibitem[\protect\citeauthoryear{??}{roo}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{??}{roo}{[n.d.]}]%
         {root_servers}
-
+ \bibinfo{year}{[n.d.]}\natexlab{}.
 \newblock
+\newblock
+\urldef\tempurl%
+\url{root-servers.org}
 \showURL{%
-\url{root-servers.org}}
+\tempurl}
 
 
-\bibitem[\protect\citeauthoryear{??}{aka}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{??}{aka}{[n.d.]}]%
         {akamai_anycast}
-
+ \bibinfo{year}{[n.d.]}\natexlab{}.
 \newblock
+\newblock
+\urldef\tempurl%
+\url{akamai.com/us/en/multimedia/documents/white-paper/akamai-designing-dns-for-availability-and-resilience-against-ddos-attacks.pdf}
 \showURL{%
-\url{akamai.com/us/en/multimedia/documents/white-paper/akamai-designing-dns-for-availability-and-resilience-against-ddos-attacks.pdf}}
-
-
-\bibitem[\protect\citeauthoryear{??}{dit}{[n. d.]}]%
-        {ditl}
-
-\newblock
-\showURL{%
-\url{dns-oarc.net/oarc/data/ditl/2018}}
-
-
-\bibitem[\protect\citeauthoryear{??}{ale}{[n. d.]}]%
-        {alexa_topsites}
-\bibinfo{title}{The Top 500 Sites on the Web}.
-\newblock
-\newblock
-\showURL{%
-\url{alexa.com/topsites}}
-
-
-\bibitem[\protect\citeauthoryear{Allman}{Allman}{2019}]%
-        {allman_eliminate}
-\bibfield{author}{\bibinfo{person}{M. Allman}.}
-\newblock \showarticletitle{On Eliminating Root Nameservers from the DNS}. In
-  \bibinfo{booktitle}{{\em Proceedings of the 18th ACM Workshop on Hot Topics
-  in Networks},}. \bibinfo{pages}{1--8} \bibinfo{year}{2019}\natexlab{}.
-\newblock
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Alzoubi, Lee, Rabinovich, Spatscheck, and Van
   Der~Merwe}{Alzoubi et~al\mbox{.}}{2011}]%
         {alzoubi2011practical}
-\bibfield{author}{\bibinfo{person}{H.~A. Alzoubi}, \bibinfo{person}{S. Lee},
-  \bibinfo{person}{M. Rabinovich}, \bibinfo{person}{O. Spatscheck}, {and}
-  \bibinfo{person}{J. Van Der~Merwe}.} \bibinfo{year}{2011}\natexlab{}.
+\bibfield{author}{\bibinfo{person}{Hussein~A Alzoubi},
+  \bibinfo{person}{Seungjoon Lee}, \bibinfo{person}{Michael Rabinovich},
+  \bibinfo{person}{Oliver Spatscheck}, {and} \bibinfo{person}{Jacobus Van
+  Der~Merwe}.} \bibinfo{year}{2011}\natexlab{}.
 \newblock \showarticletitle{A practical architecture for an anycast CDN}.
-\newblock \bibinfo{journal}{{\em ACM Transactions on the Web (TWEB)\/}}
+\newblock \bibinfo{journal}{\emph{ACM Transactions on the Web (TWEB)}}
   \bibinfo{volume}{5}, \bibinfo{number}{4} (\bibinfo{year}{2011}),
   \bibinfo{pages}{17}.
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Amazon}{Amazon}{[n. d.]a}]%
+\bibitem[\protect\citeauthoryear{Amazon}{Amazon}{[n.d.]a}]%
         {route53_anycast}
 \bibfield{author}{\bibinfo{person}{Amazon}.}
+  \bibinfo{year}{[n.d.]}\natexlab{a}.
 \newblock
 \newblock
+\urldef\tempurl%
+\url{aws.amazon.com/route53/faqs/}
 \showURL{%
-\url{aws.amazon.com/route53/faqs/}}
+\tempurl}
 
 
-\bibitem[\protect\citeauthoryear{Amazon}{Amazon}{[n. d.]b}]%
+\bibitem[\protect\citeauthoryear{Amazon}{Amazon}{[n.d.]b}]%
         {amazon_cloudfront}
 \bibfield{author}{\bibinfo{person}{Amazon}.}
+  \bibinfo{year}{[n.d.]}\natexlab{b}.
 \newblock
 \newblock
+\urldef\tempurl%
+\url{aws.amazon.com/cloudfront/}
 \showURL{%
-\url{aws.amazon.com/cloudfront/}}
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Asrese, Sarolahti, Boye, and Ott}{Asrese
   et~al\mbox{.}}{2016}]%
         {asrese2016wepr}
-\bibfield{author}{\bibinfo{person}{A.~S. Asrese}, \bibinfo{person}{P.
-  Sarolahti}, \bibinfo{person}{M. Boye}, {and} \bibinfo{person}{J. Ott}.}
+\bibfield{author}{\bibinfo{person}{Alemnew~Sheferaw Asrese},
+  \bibinfo{person}{Pasi Sarolahti}, \bibinfo{person}{Magnus Boye}, {and}
+  \bibinfo{person}{Jorg Ott}.} \bibinfo{year}{2016}\natexlab{}.
 \newblock \showarticletitle{WePR: a tool for automated web performance
-  measurement}. In \bibinfo{booktitle}{{\em 2016 IEEE Globecom Workshops (GC
-  Wkshps)},}. IEEE, \bibinfo{pages}{1--6} \bibinfo{year}{2016}\natexlab{}.
+  measurement}. In \bibinfo{booktitle}{\emph{2016 IEEE Globecom Workshops (GC
+  Wkshps)}}. IEEE, \bibinfo{pages}{1--6}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Ballani, Francis, and Ratnasamy}{Ballani
   et~al\mbox{.}}{2006}]%
         {ballani2006measurement}
-\bibfield{author}{\bibinfo{person}{H. Ballani}, \bibinfo{person}{P. Francis},
-  {and} \bibinfo{person}{S. Ratnasamy}.}
-\newblock \showarticletitle{A measurement-based deployment proposal for IP
-  anycast}. In \bibinfo{booktitle}{{\em Proceedings of the 6th ACM SIGCOMM
-  conference on Internet measurement},}. ACM, \bibinfo{pages}{231--244}
+\bibfield{author}{\bibinfo{person}{Hitesh Ballani}, \bibinfo{person}{Paul
+  Francis}, {and} \bibinfo{person}{Sylvia Ratnasamy}.}
   \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{A measurement-based deployment proposal for IP
+  anycast}. In \bibinfo{booktitle}{\emph{Proceedings of the 6th ACM SIGCOMM
+  conference on Internet measurement}}. ACM, \bibinfo{pages}{231--244}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Calder, Flavel, Katz-Bassett, Mahajan, and
   Padhye}{Calder et~al\mbox{.}}{2015}]%
         {calder2015analyzing}
-\bibfield{author}{\bibinfo{person}{M. Calder}, \bibinfo{person}{A. Flavel},
-  \bibinfo{person}{E. Katz-Bassett}, \bibinfo{person}{R. Mahajan}, {and}
-  \bibinfo{person}{J. Padhye}.}
-\newblock \showarticletitle{Analyzing the Performance of an Anycast CDN}. In
-  \bibinfo{booktitle}{{\em Proceedings of the 2015 Internet Measurement
-  Conference},}. ACM, \bibinfo{pages}{531--537}
+\bibfield{author}{\bibinfo{person}{Matt Calder}, \bibinfo{person}{Ashley
+  Flavel}, \bibinfo{person}{Ethan Katz-Bassett}, \bibinfo{person}{Ratul
+  Mahajan}, {and} \bibinfo{person}{Jitendra Padhye}.}
   \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Analyzing the Performance of an Anycast CDN}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2015 Internet Measurement
+  Conference}}. ACM, \bibinfo{pages}{531--537}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Callahan, Allman, and Rabinovich}{Callahan
   et~al\mbox{.}}{2013}]%
         {callahan2013modern}
-\bibfield{author}{\bibinfo{person}{T. Callahan}, \bibinfo{person}{M. Allman},
-  {and} \bibinfo{person}{M. Rabinovich}.} \bibinfo{year}{2013}\natexlab{}.
+\bibfield{author}{\bibinfo{person}{Thomas Callahan}, \bibinfo{person}{Mark
+  Allman}, {and} \bibinfo{person}{Michael Rabinovich}.}
+  \bibinfo{year}{2013}\natexlab{}.
 \newblock \showarticletitle{On modern DNS behavior and properties}.
-\newblock \bibinfo{journal}{{\em ACM SIGCOMM Computer Communication Review\/}}
+\newblock \bibinfo{journal}{\emph{ACM SIGCOMM Computer Communication Review}}
   \bibinfo{volume}{43}, \bibinfo{number}{3} (\bibinfo{year}{2013}),
   \bibinfo{pages}{7--15}.
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Cloudflare}{Cloudflare}{[n. d.]a}]%
+\bibitem[\protect\citeauthoryear{Cloudflare}{Cloudflare}{[n.d.]}]%
         {cloudflare_anycast}
 \bibfield{author}{\bibinfo{person}{Cloudflare}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
 \newblock \bibinfo{title}{Load Balancing without Load Balancers}.
 \newblock
 \newblock
+\urldef\tempurl%
+\url{blog.cloudflare.com/cloudflares-architecture-eliminating-single-p/}
 \showURL{%
-\url{blog.cloudflare.com/cloudflares-architecture-eliminating-single-p/}}
-
-
-\bibitem[\protect\citeauthoryear{Cloudflare}{Cloudflare}{[n. d.]b}]%
-        {cloudflare_dns_tutorial}
-\bibfield{author}{\bibinfo{person}{Cloudflare}.}
-\newblock \bibinfo{title}{What is DNS?}
-\newblock
-\newblock
-\showURL{%
-\url{cloudflare.com/learning/dns/what-is-dns/}}
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Colitti, Romijn, Uijterwaal, and
   Robachevsky}{Colitti et~al\mbox{.}}{2006}]%
         {colitti2006evaluating}
-\bibfield{author}{\bibinfo{person}{L. Colitti}, \bibinfo{person}{E. Romijn},
-  \bibinfo{person}{H. Uijterwaal}, {and} \bibinfo{person}{A. Robachevsky}.}
-  \bibinfo{year}{2006}\natexlab{}.
+\bibfield{author}{\bibinfo{person}{Lorenzo Colitti}, \bibinfo{person}{Erik
+  Romijn}, \bibinfo{person}{Henk Uijterwaal}, {and} \bibinfo{person}{Andrei
+  Robachevsky}.} \bibinfo{year}{2006}\natexlab{}.
 \newblock \showarticletitle{Evaluating the effects of anycast on DNS root name
   servers}.
-\newblock \bibinfo{journal}{{\em RIPE document RIPE-393\/}}
-  \bibinfo{volume}{6} (\bibinfo{year}{2006}).
+\newblock \bibinfo{journal}{\emph{RIPE document RIPE-393}}  \bibinfo{volume}{6}
+  (\bibinfo{year}{2006}).
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{de~Oliveira~Schmidt, Heidemann, and
   Kuipers}{de~Oliveira~Schmidt et~al\mbox{.}}{2017}]%
         {de2017anycast}
-\bibfield{author}{\bibinfo{person}{R. de Oliveira~Schmidt}, \bibinfo{person}{J.
-  Heidemann}, {and} \bibinfo{person}{J.~H. Kuipers}.}
-\newblock \showarticletitle{Anycast Latency: How Many Sites Are Enough?}. In
-  \bibinfo{booktitle}{{\em International Conference on Passive and Active
-  Network Measurement},}. Springer, \bibinfo{pages}{188--200}
+\bibfield{author}{\bibinfo{person}{Ricardo de Oliveira~Schmidt},
+  \bibinfo{person}{John Heidemann}, {and} \bibinfo{person}{Jan~Harm Kuipers}.}
   \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Anycast Latency: How Many Sites Are Enough?}. In
+  \bibinfo{booktitle}{\emph{International Conference on Passive and Active
+  Network Measurement}}. Springer, \bibinfo{pages}{188--200}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Enghardt, Zinner, and Feldmann}{Enghardt
   et~al\mbox{.}}{2019}]%
         {enghardt2019web}
-\bibfield{author}{\bibinfo{person}{T. Enghardt}, \bibinfo{person}{T. Zinner},
-  {and} \bibinfo{person}{A. Feldmann}.}
-\newblock \showarticletitle{Web performance pitfalls}. In
-  \bibinfo{booktitle}{{\em International Conference on Passive and Active
-  Network Measurement},}. Springer, \bibinfo{pages}{286--303}
+\bibfield{author}{\bibinfo{person}{Theresa Enghardt}, \bibinfo{person}{Thomas
+  Zinner}, {and} \bibinfo{person}{Anja Feldmann}.}
   \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Web performance pitfalls}. In
+  \bibinfo{booktitle}{\emph{International Conference on Passive and Active
+  Network Measurement}}. Springer, \bibinfo{pages}{286--303}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Flavel, Mani, Maltz, Holt, Liu, Chen, and
   Surmachev}{Flavel et~al\mbox{.}}{2015}]%
         {flavel2015fastroute}
-\bibfield{author}{\bibinfo{person}{A. Flavel}, \bibinfo{person}{P. Mani},
-  \bibinfo{person}{D. Maltz}, \bibinfo{person}{N. Holt}, \bibinfo{person}{J.
-  Liu}, \bibinfo{person}{Y. Chen}, {and} \bibinfo{person}{O. Surmachev}.}
-\newblock \showarticletitle{Fastroute: A scalable load-aware anycast routing
-  architecture for modern CDNs}. In \bibinfo{booktitle}{{\em 12th
-  $\{$USENIX$\}$ Symposium on Networked Systems Design and Implementation
-  ($\{$NSDI$\}$ 15)},}. \bibinfo{pages}{381--394}
+\bibfield{author}{\bibinfo{person}{Ashley Flavel},
+  \bibinfo{person}{Pradeepkumar Mani}, \bibinfo{person}{David Maltz},
+  \bibinfo{person}{Nick Holt}, \bibinfo{person}{Jie Liu},
+  \bibinfo{person}{Yingying Chen}, {and} \bibinfo{person}{Oleg Surmachev}.}
   \bibinfo{year}{2015}\natexlab{}.
+\newblock \showarticletitle{Fastroute: A scalable load-aware anycast routing
+  architecture for modern CDNs}. In \bibinfo{booktitle}{\emph{12th
+  $\{$USENIX$\}$ Symposium on Networked Systems Design and Implementation
+  ($\{$NSDI$\}$ 15)}}. \bibinfo{pages}{381--394}.
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Goldlust}{Goldlust}{[n. d.]}]%
-        {bind9_config}
-\bibfield{author}{\bibinfo{person}{S. Goldlust}.}
-\newblock \bibinfo{title}{Early Refresh of Cache Records}.
-\newblock
-\newblock
-\showURL{%
-\url{kb.isc.org/docs/aa-01122}}
-
-
-\bibitem[\protect\citeauthoryear{Google}{Google}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{Google}{Google}{[n.d.]}]%
         {google_public_dns}
-\bibfield{author}{\bibinfo{person}{Google}.}
+\bibfield{author}{\bibinfo{person}{Google}.} \bibinfo{year}{[n.d.]}\natexlab{}.
 \newblock
 \newblock
+\urldef\tempurl%
+\url{developers.google.com/speed/public-dns}
 \showURL{%
-\url{developers.google.com/speed/public-dns}}
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Jung, Sit, Balakrishnan, and Morris}{Jung
   et~al\mbox{.}}{2002}]%
         {jung2002dns}
-\bibfield{author}{\bibinfo{person}{J. Jung}, \bibinfo{person}{E. Sit},
-  \bibinfo{person}{H. Balakrishnan}, {and} \bibinfo{person}{R. Morris}.}
+\bibfield{author}{\bibinfo{person}{Jaeyeon Jung}, \bibinfo{person}{Emil Sit},
+  \bibinfo{person}{Hari Balakrishnan}, {and} \bibinfo{person}{Robert Morris}.}
   \bibinfo{year}{2002}\natexlab{}.
 \newblock \showarticletitle{DNS performance and the effectiveness of caching}.
-\newblock \bibinfo{journal}{{\em IEEE/ACM Transactions on networking\/}}
+\newblock \bibinfo{journal}{\emph{IEEE/ACM Transactions on networking}}
   \bibinfo{volume}{10}, \bibinfo{number}{5} (\bibinfo{year}{2002}),
   \bibinfo{pages}{589--603}.
 \newblock
@@ -264,177 +239,141 @@
 \bibitem[\protect\citeauthoryear{Katabi and Wroclawski}{Katabi and
   Wroclawski}{2000}]%
         {katabi2000framework}
-\bibfield{author}{\bibinfo{person}{D. Katabi} {and} \bibinfo{person}{J.
+\bibfield{author}{\bibinfo{person}{Dina Katabi} {and} \bibinfo{person}{John
   Wroclawski}.} \bibinfo{year}{2000}\natexlab{}.
 \newblock \showarticletitle{A framework for scalable global IP-anycast (GIA)}.
-\newblock \bibinfo{journal}{{\em ACM SIGCOMM Computer Communication Review\/}}
+\newblock \bibinfo{journal}{\emph{ACM SIGCOMM Computer Communication Review}}
   \bibinfo{volume}{30}, \bibinfo{number}{4} (\bibinfo{year}{2000}),
   \bibinfo{pages}{3--15}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{Kurose and Ross}{Kurose and Ross}{2010}]%
-        {kurose2010computer}
-\bibfield{author}{\bibinfo{person}{J. Kurose} {and} \bibinfo{person}{K. Ross}.}
-  \bibinfo{year}{2010}\natexlab{}.
-\newblock \showarticletitle{Computer networks: A top down approach featuring
-  the internet}.
-\newblock \bibinfo{journal}{{\em Peorsoim Addison Wesley\/}}
-  (\bibinfo{year}{2010}).
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Lentz, Levin, Castonguay, Spring, and
   Bhattacharjee}{Lentz et~al\mbox{.}}{2013}]%
         {lentz2013d}
-\bibfield{author}{\bibinfo{person}{M. Lentz}, \bibinfo{person}{D. Levin},
-  \bibinfo{person}{J. Castonguay}, \bibinfo{person}{N. Spring}, {and}
-  \bibinfo{person}{B. Bhattacharjee}.}
-\newblock \showarticletitle{D-mystifying the D-root Address Change}. In
-  \bibinfo{booktitle}{{\em Proceedings of the 2013 conference on Internet
-  measurement conference},}. ACM, \bibinfo{pages}{57--62}
+\bibfield{author}{\bibinfo{person}{Matthew Lentz}, \bibinfo{person}{Dave
+  Levin}, \bibinfo{person}{Jason Castonguay}, \bibinfo{person}{Neil Spring},
+  {and} \bibinfo{person}{Bobby Bhattacharjee}.}
   \bibinfo{year}{2013}\natexlab{}.
+\newblock \showarticletitle{D-mystifying the D-root Address Change}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2013 conference on Internet
+  measurement conference}}. ACM, \bibinfo{pages}{57--62}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Li, Levin, Spring, and Bhattacharjee}{Li
   et~al\mbox{.}}{2018}]%
         {li_levin_spring_bhattacharjee_2018}
-\bibfield{author}{\bibinfo{person}{Z. Li}, \bibinfo{person}{D. Levin},
-  \bibinfo{person}{N. Spring}, {and} \bibinfo{person}{B. Bhattacharjee}.}
-\newblock \showarticletitle{Internet anycast: performance, problems, \&
-  potential.}. In \bibinfo{booktitle}{{\em SIGCOMM},}. \bibinfo{pages}{59--73}
+\bibfield{author}{\bibinfo{person}{Zhihao Li}, \bibinfo{person}{Dave Levin},
+  \bibinfo{person}{Neil Spring}, {and} \bibinfo{person}{Bobby Bhattacharjee}.}
   \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Internet anycast: performance, problems, \&
+  potential.}. In \bibinfo{booktitle}{\emph{SIGCOMM}}. \bibinfo{pages}{59--73}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Liang, Jiang, Duan, Li, and Wu}{Liang
   et~al\mbox{.}}{2013}]%
         {liang2013measuring}
-\bibfield{author}{\bibinfo{person}{J. Liang}, \bibinfo{person}{J. Jiang},
-  \bibinfo{person}{H. Duan}, \bibinfo{person}{K. Li}, {and} \bibinfo{person}{J.
-  Wu}.}
+\bibfield{author}{\bibinfo{person}{Jinjin Liang}, \bibinfo{person}{Jian Jiang},
+  \bibinfo{person}{Haixin Duan}, \bibinfo{person}{Kang Li}, {and}
+  \bibinfo{person}{Jianping Wu}.} \bibinfo{year}{2013}\natexlab{}.
 \newblock \showarticletitle{Measuring query latency of top level DNS servers}.
-  In \bibinfo{booktitle}{{\em International Conference on Passive and Active
-  Network Measurement},}. Springer, \bibinfo{pages}{145--154}
-  \bibinfo{year}{2013}\natexlab{}.
-\newblock
-
-
-\bibitem[\protect\citeauthoryear{McQuistin, Uppu, and Flores}{McQuistin
-  et~al\mbox{.}}{2019}]%
-        {mcquistin2019taming}
-\bibfield{author}{\bibinfo{person}{S. McQuistin}, \bibinfo{person}{S.~P. Uppu},
-  {and} \bibinfo{person}{M. Flores}.}
-\newblock \showarticletitle{Taming Anycast in the Wild Internet}. In
-  \bibinfo{booktitle}{{\em Proceedings of the Internet Measurement
-  Conference},}. \bibinfo{pages}{165--178} \bibinfo{year}{2019}\natexlab{}.
+  In \bibinfo{booktitle}{\emph{International Conference on Passive and Active
+  Network Measurement}}. Springer, \bibinfo{pages}{145--154}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Metz}{Metz}{2002}]%
         {metz2002ip}
-\bibfield{author}{\bibinfo{person}{C. Metz}.} \bibinfo{year}{2002}\natexlab{}.
+\bibfield{author}{\bibinfo{person}{Christopher Metz}.}
+  \bibinfo{year}{2002}\natexlab{}.
 \newblock \showarticletitle{IP anycast point-to-(any) point communication}.
-\newblock \bibinfo{journal}{{\em IEEE Internet Computing\/}}
+\newblock \bibinfo{journal}{\emph{IEEE Internet Computing}}
   \bibinfo{volume}{6}, \bibinfo{number}{2} (\bibinfo{year}{2002}),
   \bibinfo{pages}{94--98}.
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Mockapetris}{Mockapetris}{[n. d.]}]%
-        {rfc_1035}
-\bibfield{author}{\bibinfo{person}{P. Mockapetris}.}
-\newblock \bibinfo{title}{Domain Names - Implementation and Specification}.
-\newblock
-\newblock
-\showURL{%
-\url{ietf.org/rfc/rfc1035.txt}}
-
-
 \bibitem[\protect\citeauthoryear{Moura, Schmidt, Heidemann, de~Vries, Muller,
   Wei, and Hesselman}{Moura et~al\mbox{.}}{2016}]%
         {moura2016anycast}
-\bibfield{author}{\bibinfo{person}{G. Moura}, \bibinfo{person}{R.~d.~O.
-  Schmidt}, \bibinfo{person}{J. Heidemann}, \bibinfo{person}{W.~B. de Vries},
-  \bibinfo{person}{M. Muller}, \bibinfo{person}{L. Wei}, {and}
-  \bibinfo{person}{C. Hesselman}.}
+\bibfield{author}{\bibinfo{person}{Giovane Moura}, \bibinfo{person}{Ricardo
+  de~O Schmidt}, \bibinfo{person}{John Heidemann}, \bibinfo{person}{Wouter~B de
+  Vries}, \bibinfo{person}{Moritz Muller}, \bibinfo{person}{Lan Wei}, {and}
+  \bibinfo{person}{Cristian Hesselman}.} \bibinfo{year}{2016}\natexlab{}.
 \newblock \showarticletitle{Anycast vs. DDoS: Evaluating the November 2015 root
-  DNS event}. In \bibinfo{booktitle}{{\em Proceedings of the 2016 Internet
-  Measurement Conference},}. ACM, \bibinfo{pages}{255--270}
-  \bibinfo{year}{2016}\natexlab{}.
+  DNS event}. In \bibinfo{booktitle}{\emph{Proceedings of the 2016 Internet
+  Measurement Conference}}. ACM, \bibinfo{pages}{255--270}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Partridge, Mendez, and Milliken}{Partridge
-  et~al\mbox{.}}{[n. d.]}]%
+  et~al\mbox{.}}{[n.d.]}]%
         {rfc_1546}
-\bibfield{author}{\bibinfo{person}{C. Partridge}, \bibinfo{person}{T. Mendez},
-  {and} \bibinfo{person}{W. Milliken}.}
+\bibfield{author}{\bibinfo{person}{Craig Partridge}, \bibinfo{person}{Trevor
+  Mendez}, {and} \bibinfo{person}{Walter Milliken}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
 \newblock \bibinfo{title}{Host Anycasting Service}.
 \newblock
 \newblock
+\urldef\tempurl%
+\url{tools.ietf.org/html/rfc1546}
 \showURL{%
-\url{tools.ietf.org/html/rfc1546}}
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Sarat, Pappas, and Terzis}{Sarat
   et~al\mbox{.}}{2006}]%
         {sarat2006use}
-\bibfield{author}{\bibinfo{person}{S. Sarat}, \bibinfo{person}{V. Pappas},
-  {and} \bibinfo{person}{A. Terzis}.}
-\newblock \showarticletitle{On the use of anycast in DNS}. In
-  \bibinfo{booktitle}{{\em Proceedings of 15th International Conference on
-  Computer Communications and Networks},}. IEEE, \bibinfo{pages}{71--78}
+\bibfield{author}{\bibinfo{person}{Sandeep Sarat}, \bibinfo{person}{Vasileios
+  Pappas}, {and} \bibinfo{person}{Andreas Terzis}.}
   \bibinfo{year}{2006}\natexlab{}.
+\newblock \showarticletitle{On the use of anycast in DNS}. In
+  \bibinfo{booktitle}{\emph{Proceedings of 15th International Conference on
+  Computer Communications and Networks}}. IEEE, \bibinfo{pages}{71--78}.
 \newblock
 
 
 \bibitem[\protect\citeauthoryear{Sundaresan, Magharei, Feamster, Teixeira, and
   Crawford}{Sundaresan et~al\mbox{.}}{2013}]%
         {sundaresan2013web}
-\bibfield{author}{\bibinfo{person}{S. Sundaresan}, \bibinfo{person}{N.
-  Magharei}, \bibinfo{person}{N. Feamster}, \bibinfo{person}{R. Teixeira},
-  {and} \bibinfo{person}{S. Crawford}.} \bibinfo{year}{2013}\natexlab{}.
+\bibfield{author}{\bibinfo{person}{Srikanth Sundaresan},
+  \bibinfo{person}{Nazanin Magharei}, \bibinfo{person}{Nick Feamster},
+  \bibinfo{person}{Renata Teixeira}, {and} \bibinfo{person}{Sam Crawford}.}
+  \bibinfo{year}{2013}\natexlab{}.
 \newblock \showarticletitle{Web performance bottlenecks in broadband access
   networks}.
-\newblock \bibinfo{journal}{{\em ACM SIGMETRICS Performance Evaluation
-  Review\/}} \bibinfo{volume}{41}, \bibinfo{number}{1} (\bibinfo{year}{2013}),
+\newblock \bibinfo{journal}{\emph{ACM SIGMETRICS Performance Evaluation
+  Review}} \bibinfo{volume}{41}, \bibinfo{number}{1} (\bibinfo{year}{2013}),
   \bibinfo{pages}{383--384}.
 \newblock
 
 
-\bibitem[\protect\citeauthoryear{Verizon}{Verizon}{[n. d.]}]%
+\bibitem[\protect\citeauthoryear{Verizon}{Verizon}{[n.d.]}]%
         {edgecast_anycast}
 \bibfield{author}{\bibinfo{person}{Verizon}.}
+  \bibinfo{year}{[n.d.]}\natexlab{}.
 \newblock
 \newblock
+\urldef\tempurl%
+\url{verizondigitalmedia.com/media-platform/delivery/network/}
 \showURL{%
-\url{verizondigitalmedia.com/media-platform/delivery/network/}}
+\tempurl}
 
 
 \bibitem[\protect\citeauthoryear{Yu, Wessels, Larson, and Zhang}{Yu
   et~al\mbox{.}}{2012}]%
         {yu2012authority}
-\bibfield{author}{\bibinfo{person}{Y. Yu}, \bibinfo{person}{D. Wessels},
-  \bibinfo{person}{M. Larson}, {and} \bibinfo{person}{L. Zhang}.}
+\bibfield{author}{\bibinfo{person}{Yingdi Yu}, \bibinfo{person}{Duane Wessels},
+  \bibinfo{person}{Matt Larson}, {and} \bibinfo{person}{Lixia Zhang}.}
   \bibinfo{year}{2012}\natexlab{}.
 \newblock \showarticletitle{Authority server selection in DNS caching
   resolvers}.
-\newblock \bibinfo{journal}{{\em ACM SIGCOMM Computer Communication Review\/}}
+\newblock \bibinfo{journal}{\emph{ACM SIGCOMM Computer Communication Review}}
   \bibinfo{volume}{42}, \bibinfo{number}{2} (\bibinfo{year}{2012}),
   \bibinfo{pages}{80--86}.
 \newblock
-
-
-\bibitem[\protect\citeauthoryear{zakird}{zakird}{[n. d.]}]%
-        {private_ip_space}
-\bibfield{author}{\bibinfo{person}{zakird}.}
-\newblock \bibinfo{title}{Private IP List}.
-\newblock
-\newblock
-\showURL{%
-\url{github.com/zmap/zmap/blob/master/conf/blacklist.conf}}
 
 
 \end{thebibliography}
