@@ -5,7 +5,7 @@ The style file: ACM-Reference-Format.bst.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Database file #1: bib.bib.bib
+Database file #1: mybib.bib.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Warning--no key, author in root_servers
 Warning--no author, editor, organization, or key in root_servers
@@ -60,7 +60,7 @@ Warning--empty address in sarat2006use
 Warning--empty year in edgecast_anycast
 You've used 27 entries,
             5901 wiz_defined-function locations,
-            1449 strings with 18831 characters,
+            1449 strings with 18833 characters,
 and the built_in function-call counts, 30211 in all, are:
 = -- 3505
 > -- 1147

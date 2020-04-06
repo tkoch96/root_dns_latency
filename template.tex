@@ -2,7 +2,6 @@
 $if(fontfamily)$
 \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$
-\usepackage{lmodern}
 $endif$
 $if(linestretch)$
 \usepackage{setspace}
@@ -10,7 +9,6 @@ $if(linestretch)$
 $endif$
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
@@ -97,7 +95,7 @@ $if(natbib)$
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
 $if(biblatex)$
-\usepackage[backend=bibtex,style=numeric,hyperref=true,backref=true,maxnames=99]{biblatex}
+\usepackage[backend=bibtex,hyperref=true,backref=false,maxnames=99,style=trad-abbrv,firstinits=true]{biblatex}
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -144,11 +142,11 @@ $endif$
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-$if(numbersections)$
-\setcounter{secnumdepth}{5}
-$else$
-\setcounter{secnumdepth}{0}
-$endif$
+% $if(numbersections)$
+% \setcounter{secnumdepth}{5}
+% $else$
+% \setcounter{secnumdepth}{0}
+% $endif$
 $if(dir)$
 \ifxetex
   % load bidi as late as possible as it modifies e.g. graphicx
@@ -171,36 +169,38 @@ $endif$
 \input{macros}
 
 $if(title)$
-\title{$title$$if(subtitle)$\\\vspace{0.5em}{\large $subtitle$}$endif$}
+\title{$title$}
 $endif$
-\author{
-    $for(author)$
-    $if(author.name)$
-    $author.name$$if(author.affiliation)$ ($author.affiliation$)$endif$
-    $else$
-    $author$
-    $endif$
-    $sep$ \and 
-    $endfor$
-}
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+$if(titlenote)$
+\titlenote{$titlenote$}
+$endif$
+
+$for(author)$
+$if(author.name)$
+\author{$author.name$}
+$if(author.affiliation)$
+\affiliation{\institution{$author.affiliation$}}
+$endif$
+$else$
+$author$
+$endif$
+$endfor$
+
 \date{$date$}
 $for(header-includes)$
 $header-includes$
 $endfor$
 
 \begin{document}
+
 $if(title)$
 \maketitle
 $endif$
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
-$endif$
-
 $for(include-before)$
 $include-before$
-
 $endfor$
 $if(toc)$
 {
@@ -217,8 +217,21 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
 $body$
 
+% Do don't know why, but the pandocs pipeline started to include
+% google docs comments at the end of the body.  So to fix that
+% problem, the google doc requires an \iffalse as the last statement,
+% then the following \fi will stop that comment block, effectively
+% removing the comments from the final PDF.
+\fi
 $if(natbib)$
 $if(bibliography)$
 $if(biblio-title)$
@@ -228,7 +241,7 @@ $else$
 \renewcommand\refname{$biblio-title$}
 $endif$
 $endif$
-\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+{\small\balance\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}}
 
 $endif$
 $endif$
@@ -241,3 +254,4 @@ $include-after$
 
 $endfor$
 \end{document}
+

@@ -23,7 +23,7 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={If a Path is Inflated, and Noone Uses It, Is It Inefficient?},
+            pdftitle={If a Path is Inflated, and Noone Uses It, Is It Inefficient{[}a{]}?},
             colorlinks=true,
             linkcolor=blue,
             citecolor=blue,
@@ -50,7 +50,7 @@
 \input{packages}
 \input{macros}
 
-\title{If a Path is Inflated, and Noone Uses It, Is It Inefficient?}
+\title{If a Path is Inflated, and Noone Uses It, Is It Inefficient{[}a{]}?}
 
 \author{Anonymized}
 
@@ -107,7 +107,7 @@ Anycast is a means of distributing content that has been praised for its
 simplicity and performance, yet criticized for inflating user latencies
 in some cases. However, anycast CDNs and anycast DNS resolvers serve
 latency-sensitive content to millions presenting an apparent
-contradiction. To resolve this discrepancy in
+contradiction{[}b{]}{[}c{]}{[}d{]}. To resolve this discrepancy in
 understanding, we analyze anycast in two important settings: the root
 DNS and a large anycast CDN, placing an emphasis on how anycast's
 performance translates to end user latency. First, we question whether
@@ -116,15 +116,15 @@ it makes little difference in the root DNS due to heavy caching near end
 users -- root DNS resolution only accounts for at most 2 ms per day for
 most users. We then examine how anycast specifically impacts performance
 to end users, and again demonstrate users see negligible effects from
-anycast path inflation. Users of a large anycast
+anycast path inflation. Users of a large anycast{[}e{]}{[}f{]}{[}g{]}
 CDN, conversely, can experience a few ms per page load of anycast path
 inflation, with the effect becoming more prevalent in larger anycast
 deployments. The effects of the inflation, however, are dwarfed by the
 performance benefits users see by, on average, visiting closer anycast
-sites. Hence we demonstrate that although anycast can
+sites{[}h{]}{[}i{]}. Hence we demonstrate that although anycast can
 inflate latencies, the degree to which this affects users largely
 depends on the setting, and the prevalence of this inflation does not
-tell the whole story -- anycast still does a good job routing
+tell the whole stor{[}j{]}y -- anycast still does a good job routing
 users to sites.
 
 \section{Introduction}\label{introduction-1}
@@ -141,7 +141,7 @@ clients and decrease load on each anycast server
 that anycast provides sub-optimal performance for some users, compared
 to the lowest latency one could achieve given deployed replicas. Despite
 results demonstrating theoretical routing inefficiency, how these
-inefficiencies impact user experience is not well understood.
+inefficiencies impact user experience is not well understood.{[}k{]}
 Anycast, therefore, presents a paradox providing benefits of increased
 capacity and decreased latency while also purportedly hurting
 performance.
@@ -188,9 +188,9 @@ questions about how anycast specifically impacts these services. We find
 that, even though round-trip times differ significantly by root DNS
 anycast deployment size, these differences are negligible when looked at
 from a per-page load perspective, making at most an
-INSERT\_NUMBER millisecond difference. Similarly, even though we
+INSERT\_NUMBER{[}l{]} millisecond difference. Similarly, even though we
 find that increasing deployment size can lead to more inflation in the
-roots, this inflation negligibly factors into page load times
+roots{[}m{]}, this inflation negligibly factors into page load times
 (\autoref{sec:root_dns_anycast}). Conversely, we find that for an
 anycast CDN, although increasing deployment sizes does make anycast path
 inflation more prevalent, the latency per page load decreases by tens of
@@ -272,7 +272,7 @@ has been extensively studied in a variety of contexts
 
 {[} description of microsoft's CDN, with a focus on intricacies of
 rings, and how we use them to simulate deployments{]} To investigate
-anycast, To study anycast in a setting that contrasts the root
+anycast{[}n{]}, To study anycast in a setting that contrasts the root
 DNS, we leverage a large anycast CDN that serves millions of users from
 more than 100 front ends. Traffic destined for the large anycast CDN
 will enter the CDNs network at a peering point, and be routed to one of
@@ -297,7 +297,7 @@ Matter?}\label{does-dns-root-latency-matter}
 
 \label{sec:root_dns_latency} Before answering questions about anycast
 latency, we would first like to understand root DNS latency. Here we not
-only measure what root DNS latencies are, but also how this
+only measure what root DNS latencies are{[}o{]}, but also how this
 ground truth latency manifests itself in \textit{user perceived}
 latency. We approach this from two main perspectives: local and global.
 The former allows us to estimate the fraction of page load time (PLT)
@@ -461,15 +461,15 @@ latency is orders of magnitude more significant PPL, and latency PPL
 10th percentile vs 90th percentile is large{]}
 
 \section{Anycast Performance in
-CDNs}\label{anycast-performance-in-cdnsp}
+CDNs{[}p{]}}\label{anycast-performance-in-cdnsp}
 
 \label{sec:cdn_anycast} {[}path inflation per RTT/page load, by ring;
 Main idea is that inflation becomes more prevalent, but latency PPL
 still goes down{]}{[}inefficiency by ring; shows fewer users go to the
 closest site, but still latency PPL goes down{]} {[}geographic path
 inflation per RTT/page load, compared to the roots; CDN inflation
-\textless{} root inflation, argue that CDN works to control it
-via peering{[}case studies of intermetro variability, or
+\textless{} root inflation,{[}q{]} argue that CDN works to control it
+via peering{[}r{]}{]}{[}case studies of intermetro variability, or
 unexpectedly poor performance, highlighting the intricacies (time
 permitting){]}
 
@@ -569,13 +569,13 @@ Performance of an Anycast CDN (studies looking at recursive
 resolvers/caching) (maybe) John's TR of how different resolvers query at
 different times On Modern DNS Behavior and Properties DNS Performance
 and the Effectiveness of Caching D-mystifying the D-root Address Change
-Authority Server Selection of DNS Caching Resolvers Recursives in
+Authority Server Selection of DNS Caching Resolvers{[}s{]} Recursives in
 the Wild: Engineering Authoritative DNS Servers (studies looking at web
 performance/how user caching effects it) Measuring and mitigating web
 performance bottlenecks in broadband access networks WePR: A tool for
 Automated Web Performance Measurement Demystifying Page Load Performance
-with WProf Practical Challenge Response for DNS DNS Resolvers
-Considered Harmful Studies looking at root servers and queries
+with WProf{[}t{]} Practical Challenge Response for DNS DNS Resolvers
+Considered Harmful{[}u{]} Studies looking at root servers and queries
 that land at them On eliminating root nameservers from the DNS DNS
 Measurements at a Root Server A Day at the Root of the Internet
 
@@ -583,41 +583,41 @@ Measurements at a Root Server A Day at the Root of the Internet
 
 \section{Conclusion}\label{conclusion-1}
 
-ideally we would control the linebreak in the latex so it occurs
-after ``it,'' I'm not sure it is a contradiction. Aren't the
-people criticizing it well aware that it serves many users? I was
+{[}a{]}ideally we would control the linebreak in the latex so it occurs
+after ``it,'' {[}b{]}I'm not sure it is a contradiction. Aren't the
+people criticizing it well aware that it serves many users? {[}c{]}I was
 trying to get across that it is odd for (for example) Microsoft to use
 anycast to serve latency sensitive content if it is known Anycast
-inflates latencies. Yes, I think your instinct of wanting to
+inflates latencies. {[}d{]}Yes, I think your instinct of wanting to
 convey that is good, I was just suggesting thinking a bit more about the
-phrasing. I mean to change this to a
+phrasing. {[}e{]}What is ``the'' CDN? {[}f{]}I mean to change this to a
 macro, switching between ``a large anycast CDN'' and ``Microsoft's
 anycast CDN''.
 
 Do you think I need to talk more about what sort of data I use to draw
-these conclusions in the abstract? You might consider a brief
+these conclusions in the abstract? {[}g{]}You might consider a brief
 phrase like ``Analyzing global traces gathered from a large anycast CDN
 and from all root DNS servers worldwide''. Not necessary in the
 abstract, but can help. In the intro, you definitely want to talk a
-little about your data. It isn't clear what this is referring to,
-closer than what, etc Since these results and what we want to say
-about them are in flux, I will wait before clarifying. Will we
+little about your data. {[}h{]}It isn't clear what this is referring to,
+closer than what, etc {[}i{]}Since these results and what we want to say
+about them are in flux, I will wait before clarifying. {[}j{]}Will we
 also have an argument that it is less prevalent for CDNs? The analysis
-is in flux, and the data isn't perfect. This seems important but
-is buried in the middle of a paragraph I recommend not putting
+is in flux, and the data isn't perfect. {[}k{]}This seems important but
+is buried in the middle of a paragraph {[}l{]}I recommend not putting
 any placeholders in without markup. We should use markup like \tbd or
 \todo that makes it colored, bold, and perhaps renders as something like
-{[}{[}{[}TODO: INSERT NUMBER{]}{]}{]}you use this phrase a lot in
+{[}{[}{[}TODO: INSERT NUMBER{]}{]}{]}{[}m{]}you use this phrase a lot in
 the abstract and intro, but I'm not sure it's clear what you mean
-+mcalder@microsoft.com Is this a valid description of Microsoft's
+{[}n{]}+mcalder@microsoft.com Is this a valid description of Microsoft's
 anycast network, in the context that we leverage it? Please let me know
-if you think any major details are missing. perhaps a quick set
-of speed checker measurements this analysis is in flux
-might be an unfair comparison since the root DNS has many more
-nodes than Microsoft and more active debugging of bad routes,
-probably interesting that in 10 minutes they observe so many
-queries for COM TLD yet don't see any issue with that Might be an
-interesting tool to use Mark shared in an email -- shows time
+if you think any major details are missing. {[}o{]}perhaps a quick set
+of speed checker measurements {[}p{]}this analysis is in flux
+{[}q{]}might be an unfair comparison since the root DNS has many more
+nodes than Microsoft {[}r{]}and more active debugging of bad routes,
+probably {[}s{]}interesting that in 10 minutes they observe so many
+queries for COM TLD yet don't see any issue with that {[}t{]}Might be an
+interesting tool to use {[}u{]}Mark shared in an email -- shows time
 between DNS queries \& TCP connection starts can be big, which suggests
 DNS is not blocking
 

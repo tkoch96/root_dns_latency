@@ -1,37 +1,80 @@
-%\usepackage{caption}
-%\renewcommand{\captionfont}{\small} %small fonts for caption
-%\renewcommand{\captionlabelfont}{\small}
+\usepackage{xspace} % auto-eats spaces as needed
+\usepackage{verbatim} % to support to-dos / comment environment
+\usepackage{url} % links to bib items
+\usepackage{amsmath, amssymb} % math formulas, etc.
+\usepackage{graphicx} % PDF, EPS, and many other graphics formats
+\usepackage{multirow} % easier tables
+% \usepackage{subfig}
+\usepackage{float}
+\usepackage[nolist]{acronym}
+\usepackage{wasysym}
+\usepackage[svgnames,x11names]{xcolor}
+\usepackage{tabularx}
+\usepackage{xparse}
+\usepackage{pifont}
+\PassOptionsToPackage{usenames,dvipsnames}{xcolor}
+\usepackage{balance}
+\usepackage{soul}
+\definecolor{lightlightgray}{rgb}{.9, .9, .9}
 
-% \usepackage{url}
-% \usepackage{balance}
+\usepackage{cleveref}
+\crefformat{section}{#2\S#1#3}
+\Crefformat{section}{#2Section~#1#3}
+\crefname{section}{\S}{\S\S}
+\Crefname{section}{Section}{Sections}
+\crefname{equation}{Eq.}{Eqs.}
+\Crefname{equation}{Equation}{Equations}
+\crefname{table}{Table}{Tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{Fig.}{Figs.}
+\Crefname{figure}{Figure}{Figures}
 
-%% Adding URL breaks
-% \makeatletter
-% \g@addto@macro{\UrlBreaks}{\UrlOrds}
-% \makeatother
+%\usepackage{authblk}
+%
+%\makeatletter
+%\renewcommand\AB@affilsepx{, \protect\Affilfont}
+%\makeatother
+%\renewcommand\Authands{, }
 
-% \usepackage{lastpage}
+\def\UrlBreaks{\do\/\do-\do.}
+\def\UrlNoBreaks{\do:}
 
-%\usepackage[aboveskip=2pt]{subcaption} %for subfigures
+% subheaders
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Problem}{Problem}
+\newtheorem{Definition}{Definition}
 
-%\setlength{\textfloatsep}{0pt} %spacing between figures and texts
-%\setlength{\floatsep}{0pt} 
-%\setlength{\dblfloatsep}{0pt}
-%\setlength{\dbltextfloatsep}{0pt}
-%\setlength{\abovecaptionskip}{0pt}
-%\renewcommand{\footnotesize}{\scriptsize}
+% caption setup
+\usepackage{caption}
+\captionsetup[table]{position=bottom, skip=4pt}
+\captionsetup[figure]{position=bottom, skip=1pt}
+%\setlength{\textfloatsep}{0.7\baselineskip plus 0.2\baselineskip minus 0.5\baselineskip} 
 
-%\usepackage{etoolbox} % spacing between formula and text
-%\apptocmd\normalsize{%
-%\abovedisplayskip=0pt
-%\abovedisplayshortskip=0pt
-%\belowdisplayskip=0pt
-%\belowdisplayshortskip=0pt
-%}{}{}
+% \usepackage{caption}
+\setlength{\abovecaptionskip}{1pt}
+\setlength{\belowcaptionskip}{-6pt}
+% \captionsetup[table]{position=bottom, skip=4pt} 
+\renewcommand{\captionfont}{\small}
 
-%\let\oldfootnote\footnote %small footnote
-%\renewcommand{\footnote}[1]{{\oldfootnote{\scriptsize #1}}}
+% float parameters
+% needed to create an algorithm float
+% \usepackage{float}
+% \renewcommand{\topfraction}{0.99}
+% \renewcommand{\dbltopfraction}{0.99}
+% \renewcommand{\bottomfraction}{0.99}
+% \renewcommand{\floatpagefraction}{0.99}
+% \renewcommand{\dblfloatpagefraction}{0.99}
+% \setcounter{totalnumber}{99}
+% \setcounter{topnumber}{99}
+% \setcounter{dbltopnumber}{99}
 
+\usepackage{subfig}
 
-\usepackage{multirow}
-\usepackage{graphicx}
+% to make tabulars easier
+% from
+% https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+% v is one of t,c,b and h one of l,c,r
+% \thead[bc]{blah \\ blah}
+\usepackage{makecell}
+

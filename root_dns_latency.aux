@@ -17,15 +17,88 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \bibstyle{ACM-Reference-Format.bst}
+\AC@reset@newl@bel
 \citation{root_servers,cloudflare_anycast,akamai_anycast,route53_anycast,google_public_dns}
 \citation{calder2015analyzing,edgecast_anycast,amazon_cloudfront}
 \citation{katabi2000framework,metz2002ip,rfc_1546}
+\citation{sarat2006use,li_levin_spring_bhattacharjee_2018}
+\citation{colitti2006evaluating,moura2016anycast,de2017anycast,li_levin_spring_bhattacharjee_2018,mcquistin2019taming}
 \citation{root_servers}
 \newlabel{abstract-1}{{}{1}{Abstract}{section*.1}{}}
+\newlabel{abstract-1@cref}{{}{1}}
 \@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{introduction-1}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{introduction-1@cref}{{[section][1][]1}{1}}
 \newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
+\newlabel{sec:introduction@cref}{{[section][1][]1}{1}}
+\citation{metz2002ip}
+\citation{li_levin_spring_bhattacharjee_2018}
+\citation{wei2017does}
+\citation{cloudflare_dns_tutorial,rfc_1035}
+\citation{root_servers}
+\citation{colitti2006evaluating,moura2016anycast,de2017anycast,li_levin_spring_bhattacharjee_2018,mcquistin2019taming}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background: Anycast in Distributed Systems}{2}{section.2}}
+\newlabel{background-anycast-in-distributed-systems}{{2}{2}{Background: Anycast in Distributed Systems}{section.2}{}}
+\newlabel{background-anycast-in-distributed-systems@cref}{{[section][2][]2}{2}}
+\newlabel{sec:anycast_distributed_systems}{{2}{2}{Background: Anycast in Distributed Systems}{section.2}{}}
+\newlabel{sec:anycast_distributed_systems@cref}{{[section][2][]2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Potential Benefits of Anycast}{2}{subsection.2.1}}
+\newlabel{potential-benefits-of-anycast}{{2.1}{2}{Potential Benefits of Anycast}{subsection.2.1}{}}
+\newlabel{potential-benefits-of-anycast@cref}{{[subsection][1][2]2.1}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Root DNS anycast}{2}{subsection.2.2}}
+\newlabel{root-dns-anycast}{{2.2}{2}{Root DNS anycast}{subsection.2.2}{}}
+\newlabel{root-dns-anycast@cref}{{[subsection][2][2]2.2}{2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}CDN Anycast}{2}{subsection.2.3}}
+\newlabel{cdn-anycast}{{2.3}{2}{CDN Anycast}{subsection.2.3}{}}
+\newlabel{cdn-anycast@cref}{{[subsection][3][2]2.3}{2}}
+\citation{callahan2013modern}
+\citation{sundaresan2013web}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Does DNS Root Latency Matter?}{3}{section.3}}
+\newlabel{does-dns-root-latency-matter}{{3}{3}{Does DNS Root Latency Matter?}{section.3}{}}
+\newlabel{does-dns-root-latency-matter@cref}{{[section][3][]3}{3}}
+\newlabel{sec:root_dns_latency}{{3}{3}{Does DNS Root Latency Matter?}{section.3}{}}
+\newlabel{sec:root_dns_latency@cref}{{[section][3][]3}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data Sources}{3}{subsection.3.1}}
+\newlabel{data-sources}{{3.1}{3}{Data Sources}{subsection.3.1}{}}
+\newlabel{data-sources@cref}{{[subsection][1][3]3.1}{3}}
+\newlabel{sec:root_dns_latency_data_source}{{3.1}{3}{Data Sources}{subsection.3.1}{}}
+\newlabel{sec:root_dns_latency_data_source@cref}{{[subsection][1][3]3.1}{3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}How Often Does a User Interact with the Roots?}{3}{subsection.3.2}}
+\newlabel{how-often-does-a-user-interact-with-the-roots}{{3.2}{3}{How Often Does a User Interact with the Roots?}{subsection.3.2}{}}
+\newlabel{how-often-does-a-user-interact-with-the-roots@cref}{{[subsection][2][3]3.2}{3}}
+\newlabel{sec:root_dns_latency_roots}{{3.2}{3}{How Often Does a User Interact with the Roots?}{subsection.3.2}{}}
+\newlabel{sec:root_dns_latency_roots@cref}{{[subsection][2][3]3.2}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CDF of user DNS query latencies seen at a recursive resolve at ISI, over the course of one year. \relax }}{3}{figure.caption.2}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:all_dns_latencies_isi}{{1}{3}{CDF of user DNS query latencies seen at a recursive resolve at ISI, over the course of one year. \relax }{figure.caption.2}{}}
+\newlabel{fig:all_dns_latencies_isi@cref}{{[figure][1][]1}{3}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Root querying statistics gathered from the ISI RR for a representative month of 2018, and associated implications of how root latency impacts users of ISI. \relax }}{3}{table.caption.3}}
+\newlabel{tab:isi_cache_hit_rate_stats}{{1}{3}{Root querying statistics gathered from the ISI RR for a representative month of 2018, and associated implications of how root latency impacts users of ISI. \relax }{table.caption.3}{}}
+\newlabel{tab:isi_cache_hit_rate_stats@cref}{{[table][1][]1}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Root DNS latency for queries made by users of the ISI recursive resolver during 2018. user queries that did not generate a query to a root server were given a latency of 0. \relax }}{4}{figure.caption.4}}
+\newlabel{fig:isi_root_dns_latency}{{2}{4}{Root DNS latency for queries made by users of the ISI recursive resolver during 2018. user queries that did not generate a query to a root server were given a latency of 0. \relax }{figure.caption.4}{}}
+\newlabel{fig:isi_root_dns_latency@cref}{{[figure][2][]2}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Anycast Performance in the Root DNS}{4}{section.4}}
+\newlabel{anycast-performance-in-the-root-dns}{{4}{4}{Anycast Performance in the Root DNS}{section.4}{}}
+\newlabel{anycast-performance-in-the-root-dns@cref}{{[section][4][]4}{4}}
+\newlabel{sec:root_dns_anycast}{{4}{4}{Anycast Performance in the Root DNS}{section.4}{}}
+\newlabel{sec:root_dns_anycast@cref}{{[section][4][]4}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Does Anycast CDN Latency Matter?}{4}{section.5}}
+\newlabel{does-anycast-cdn-latency-matter}{{5}{4}{Does Anycast CDN Latency Matter?}{section.5}{}}
+\newlabel{does-anycast-cdn-latency-matter@cref}{{[section][5][]5}{4}}
+\newlabel{sec:does_anycast_matter_cdn}{{5}{4}{Does Anycast CDN Latency Matter?}{section.5}{}}
+\newlabel{sec:does_anycast_matter_cdn@cref}{{[section][5][]5}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Anycast Performance in CDNs}{4}{section.6}}
+\newlabel{anycast-performance-in-cdnsp}{{6}{4}{Anycast Performance in CDNs}{section.6}{}}
+\newlabel{anycast-performance-in-cdnsp@cref}{{[section][6][]6}{4}}
+\newlabel{sec:cdn_anycast}{{6}{4}{Anycast Performance in CDNs}{section.6}{}}
+\newlabel{sec:cdn_anycast@cref}{{[section][6][]6}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{4}{section.7}}
+\newlabel{related-work-1}{{7}{4}{Related Work}{section.7}{}}
+\newlabel{related-work-1@cref}{{[section][7][]7}{4}}
+\newlabel{sec:related}{{7}{4}{Related Work}{section.7}{}}
+\newlabel{sec:related@cref}{{[section][7][]7}{4}}
 \citation{moura2016anycast}
 \citation{sarat2006use}
 \citation{de2017anycast}
@@ -35,32 +108,6 @@
 \citation{colitti2006evaluating}
 \citation{de2017anycast}
 \citation{liang2013measuring}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Anycast in Distributed Systems}{2}{section.2}}
-\newlabel{anycast-in-distributed-systems}{{2}{2}{Anycast in Distributed Systems}{section.2}{}}
-\newlabel{sec:anycast_distributed_systems}{{2}{2}{Anycast in Distributed Systems}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Potential Benefits of Anycast}{2}{subsection.2.1}}
-\newlabel{potential-benefits-of-anycast}{{2.1}{2}{Potential Benefits of Anycast}{subsection.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Root DNS anycast}{2}{subsection.2.2}}
-\newlabel{root-dns-anycast}{{2.2}{2}{Root DNS anycast}{subsection.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}CDN Anycast}{2}{subsection.2.3}}
-\newlabel{cdn-anycast}{{2.3}{2}{CDN Anycast}{subsection.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Does Root Latency Matter?}{2}{section.3}}
-\newlabel{does-root-latency-matter}{{3}{2}{Does Root Latency Matter?}{section.3}{}}
-\newlabel{sec:root_dns_latency}{{3}{2}{Does Root Latency Matter?}{section.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Anycast in the Root DNS}{2}{section.4}}
-\newlabel{anycast-in-the-root-dns}{{4}{2}{Anycast in the Root DNS}{section.4}{}}
-\newlabel{sec:root_dns_anycast}{{4}{2}{Anycast in the Root DNS}{section.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Does Anycast Performance Matter for CDNs?}{2}{section.5}}
-\newlabel{does-anycast-performance-matter-for-cdns}{{5}{2}{Does Anycast Performance Matter for CDNs?}{section.5}{}}
-\newlabel{sec:does_anycast_matter_cdn}{{5}{2}{Does Anycast Performance Matter for CDNs?}{section.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Anycast Performance in CDNs}{2}{section.6}}
-\newlabel{anycast-performance-in-cdns}{{6}{2}{Anycast Performance in CDNs}{section.6}{}}
-\newlabel{sec:cdn_anycast}{{6}{2}{Anycast Performance in CDNs}{section.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{2}{section.7}}
-\newlabel{related-work-1}{{7}{2}{Related Work}{section.7}{}}
-\newlabel{sec:related}{{7}{2}{Related Work}{section.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Root DNS Anycast Performance}{2}{subsection.7.1}}
-\newlabel{root-dns-anycast-performance}{{7.1}{2}{Root DNS Anycast Performance}{subsection.7.1}{}}
 \citation{alzoubi2011practical}
 \citation{flavel2015fastroute}
 \citation{calder2015analyzing}
@@ -72,18 +119,24 @@
 \citation{asrese2016wepr}
 \citation{sundaresan2013web}
 \citation{enghardt2019web}
-\bibdata{bib.bib}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Root DNS Anycast Performance}{5}{subsection.7.1}}
+\newlabel{root-dns-anycast-performance}{{7.1}{5}{Root DNS Anycast Performance}{subsection.7.1}{}}
+\newlabel{root-dns-anycast-performance@cref}{{[subsection][1][7]7.1}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}CDN Anycast Performance}{5}{subsection.7.2}}
+\newlabel{cdn-anycast-performance}{{7.2}{5}{CDN Anycast Performance}{subsection.7.2}{}}
+\newlabel{cdn-anycast-performance@cref}{{[subsection][2][7]7.2}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Recursive Resolvers and the Benefits of Caching}{5}{subsection.7.3}}
+\newlabel{recursive-resolvers-and-the-benefits-of-caching}{{7.3}{5}{Recursive Resolvers and the Benefits of Caching}{subsection.7.3}{}}
+\newlabel{recursive-resolvers-and-the-benefits-of-caching@cref}{{[subsection][3][7]7.3}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Web Performance}{5}{subsection.7.4}}
+\newlabel{web-performance}{{7.4}{5}{Web Performance}{subsection.7.4}{}}
+\newlabel{web-performance@cref}{{[subsection][4][7]7.4}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{5}{section.8}}
+\newlabel{conclusion-1}{{8}{5}{Conclusion}{section.8}{}}
+\newlabel{conclusion-1@cref}{{[section][8][]8}{5}}
+\bibdata{mybib.bib}
 \bibcite{root_servers}{{1}{[n.d.]}{{roo}}{{??}}}
 \bibcite{akamai_anycast}{{2}{[n.d.]}{{aka}}{{??}}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}CDN Anycast Performance}{3}{subsection.7.2}}
-\newlabel{cdn-anycast-performance}{{7.2}{3}{CDN Anycast Performance}{subsection.7.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Recursive Resolvers and the Benefits of Caching}{3}{subsection.7.3}}
-\newlabel{recursive-resolvers-and-the-benefits-of-caching}{{7.3}{3}{Recursive Resolvers and the Benefits of Caching}{subsection.7.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Web Performance}{3}{subsection.7.4}}
-\newlabel{web-performance}{{7.4}{3}{Web Performance}{subsection.7.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{3}{section.8}}
-\newlabel{conclusion-1}{{8}{3}{Conclusion}{section.8}{}}
-\@writefile{toc}{\contentsline {section}{References}{3}{section*.3}}
 \bibcite{alzoubi2011practical}{{3}{2011}{{Alzoubi et~al\unhbox \voidb@x \hbox {.}}}{{Alzoubi, Lee, Rabinovich, Spatscheck, and Van Der~Merwe}}}
 \bibcite{route53_anycast}{{4}{[n.d.]a}{{Amazon}}{{Amazon}}}
 \bibcite{amazon_cloudfront}{{5}{[n.d.]b}{{Amazon}}{{Amazon}}}
@@ -111,7 +164,8 @@
 \bibcite{yu2012authority}{{27}{2012}{{Yu et~al\unhbox \voidb@x \hbox {.}}}{{Yu, Wessels, Larson, and Zhang}}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
-\newlabel{tocindent1}{5.0pt}
-\newlabel{tocindent2}{12.77776pt}
+\newlabel{tocindent1}{4.65pt}
+\newlabel{tocindent2}{11.49998pt}
 \newlabel{tocindent3}{0pt}
-\newlabel{TotPages}{{4}{4}{}{page.4}{}}
+\@writefile{toc}{\contentsline {section}{References}{6}{section*.6}}
+\newlabel{TotPages}{{6}{6}{}{page.6}{}}
