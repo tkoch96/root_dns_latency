@@ -20,88 +20,29 @@
 \citation{root_servers,cloudflare_anycast,akamai_anycast,route53_anycast,google_public_dns}
 \citation{calder2015analyzing,edgecast_anycast,amazon_cloudfront}
 \citation{katabi2000framework,metz2002ip,rfc_1546}
+\citation{sarat2006use,li_levin_spring_bhattacharjee_2018}
+\citation{colitti2006evaluating,moura2016anycast,de2017anycast,li_levin_spring_bhattacharjee_2018,mcquistin2019taming}
 \citation{root_servers}
-\citation{colitti2006evaluating}
-\citation{moura2016anycast}
-\citation{de2017anycast}
-\citation{li_levin_spring_bhattacharjee_2018}
-\citation{mcquistin2019taming}
-\citation{li_levin_spring_bhattacharjee_2018}
-\citation{moura2016anycast}
-\citation{li_levin_spring_bhattacharjee_2018}
-\citation{sarat2006use}
-\citation{mcquistin2019taming}
-\citation{li_levin_spring_bhattacharjee_2018}
-\citation{de2017anycast}
-\citation{moura2016anycast}
-\citation{ditl}
 \newlabel{abstract-1}{{}{1}{Abstract}{section*.1}{}}
-\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\@writefile{toc}{\contentsline {section}{Abstract}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \newlabel{introduction-1}{{1}{1}{Introduction}{section.1}{}}
 \newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
-\citation{kurose2010computer}
-\citation{cloudflare_dns_tutorial}
-\citation{rfc_1035}
-\citation{callahan2013modern}
-\citation{bind9_config}
-\citation{alexa_topsites}
-\citation{allman_eliminate}
-\@writefile{toc}{\contentsline {section}{\numberline {2}DNS -- A Practical Viewpoint}{2}{section.2}}
-\newlabel{dns-a-practical-viewpoint-1}{{2}{2}{DNS -- A Practical Viewpoint}{section.2}{}}
-\newlabel{sec:dns_practical_viewpoint}{{2}{2}{DNS -- A Practical Viewpoint}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Great Latency Savings Potential}{2}{subsection.2.1}}
-\newlabel{great-latency-savings-potential-1}{{2.1}{2}{Great Latency Savings Potential}{subsection.2.1}{}}
-\citation{yu2012authority}
-\citation{callahan2013modern}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Practical DNS Pitfalls}{3}{subsection.2.2}}
-\newlabel{practical-dns-pitfalls-1}{{2.2}{3}{Practical DNS Pitfalls}{subsection.2.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}A Close Look at a Recursive Resolver}{3}{section.3}}
-\newlabel{a-close-look-at-a-recursive-resolver-1}{{3}{3}{A Close Look at a Recursive Resolver}{section.3}{}}
-\newlabel{sec:rr_close_look}{{3}{3}{A Close Look at a Recursive Resolver}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Data Source}{3}{subsection.3.1}}
-\newlabel{data-source}{{3.1}{3}{Data Source}{subsection.3.1}{}}
-\newlabel{sec:rr_close_look_data}{{3.1}{3}{Data Source}{subsection.3.1}{}}
-\citation{sundaresan2013web}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CDF of user DNS query latencies seen at a recursive resolve at ISI, over the course of one year. \relax }}{4}{figure.caption.2}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:all_dns_latencies_isi}{{1}{4}{CDF of user DNS query latencies seen at a recursive resolve at ISI, over the course of one year. \relax }{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}How Often Does a User Interact with the Roots?}{4}{subsection.3.2}}
-\newlabel{how-often-does-a-user-interact-with-the-roots}{{3.2}{4}{How Often Does a User Interact with the Roots?}{subsection.3.2}{}}
-\newlabel{sec:rr_close_look_discussion}{{3.2}{4}{How Often Does a User Interact with the Roots?}{subsection.3.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Statistics gathered from the ISI RR for a representative month of 2018, and implications of these statistics assuming conservative values for web page load time (PLT), root DNS latency, and number of DNS lookups per page. \relax }}{4}{table.caption.3}}
-\newlabel{tab:isi_cache_hit_rate_stats}{{1}{4}{Statistics gathered from the ISI RR for a representative month of 2018, and implications of these statistics assuming conservative values for web page load time (PLT), root DNS latency, and number of DNS lookups per page. \relax }{table.caption.3}{}}
-\citation{private_ip_space}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Root DNS latency for queries made by users of the ISI recursive resolver during 2018. user queries that did not generate a query to a root server were given a latency of 0. \relax }}{5}{figure.caption.4}}
-\newlabel{fig:isi_root_dns_latency}{{2}{5}{Root DNS latency for queries made by users of the ISI recursive resolver during 2018. user queries that did not generate a query to a root server were given a latency of 0. \relax }{figure.caption.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Case Study - Pointless Root Queries in BIND 9}{5}{subsection.3.3}}
-\newlabel{case-study---pointless-root-queries-in-bind-9}{{3.3}{5}{Case Study - Pointless Root Queries in BIND 9}{subsection.3.3}{}}
-\newlabel{sec:pointless_queries_case_study}{{3.3}{5}{Case Study - Pointless Root Queries in BIND 9}{subsection.3.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}A Global Look at Root DNS Latency}{5}{section.4}}
-\newlabel{a-global-look-at-root-dns-latency}{{4}{5}{A Global Look at Root DNS Latency}{section.4}{}}
-\newlabel{sec:rr_global_look}{{4}{5}{A Global Look at Root DNS Latency}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Data Sources and Processing}{5}{subsection.4.1}}
-\newlabel{data-sources-and-processing-1}{{4.1}{5}{Data Sources and Processing}{subsection.4.1}{}}
-\newlabel{sec:rr_global_look_data}{{4.1}{5}{Data Sources and Processing}{subsection.4.1}{}}
+\citation{metz2002ip}
 \citation{li_levin_spring_bhattacharjee_2018}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Statistics displaying the extent to which the RR's of users in a large CDN represent RR's seen in the 2018 DITL captures. Also shown is the extent to which RR's of RIPE probes represent the 2018 DITL captures.\relax }}{6}{table.caption.5}}
-\newlabel{tab:dataset_matching_statistics}{{2}{6}{Statistics displaying the extent to which the RR's of users in a large CDN represent RR's seen in the 2018 DITL captures. Also shown is the extent to which RR's of RIPE probes represent the 2018 DITL captures.\relax }{table.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces A comparison of daily query volumes seen from various sets of RR's. Those RR's both in the data set of the large CDN and DITL have relatively high daily query volumes, as evidenced by the large tail of DCDN. \relax }}{6}{figure.caption.6}}
-\newlabel{fig:ditl_volume_comparisons}{{3}{6}{A comparison of daily query volumes seen from various sets of RR's. Those RR's both in the data set of the large CDN and DITL have relatively high daily query volumes, as evidenced by the large tail of DCDN. \relax }{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces A CDF of approximate latency a user experiences due to root DNS resolution, per day.\relax }}{6}{figure.caption.7}}
-\newlabel{fig:user_root_latency_per_day}{{4}{6}{A CDF of approximate latency a user experiences due to root DNS resolution, per day.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Root Latency Experienced by Users}{6}{subsection.4.2}}
-\newlabel{root-latency-experienced-by-users-1}{{4.2}{6}{Root Latency Experienced by Users}{subsection.4.2}{}}
-\newlabel{sec:rr_global_look_analysis}{{4.2}{6}{Root Latency Experienced by Users}{subsection.4.2}{}}
-\citation{de2017anycast}
-\citation{li_levin_spring_bhattacharjee_2018}
-\citation{li_levin_spring_bhattacharjee_2018}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Anycast Path Inflation}{7}{section.5}}
-\newlabel{anycast-path-inflation}{{5}{7}{Anycast Path Inflation}{section.5}{}}
-\newlabel{sec:api}{{5}{7}{Anycast Path Inflation}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Root DNS API}{7}{subsection.5.1}}
-\newlabel{root-dns-api}{{5.1}{7}{Root DNS API}{subsection.5.1}{}}
-\newlabel{sec:api_root}{{5.1}{7}{Root DNS API}{subsection.5.1}{}}
+\citation{wei2017does}
+\citation{cloudflare_dns_tutorial,rfc_1035}
+\citation{root_servers}
+\citation{colitti2006evaluating,moura2016anycast,de2017anycast,li_levin_spring_bhattacharjee_2018,mcquistin2019taming}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background: Anycast in Distributed Systems}{2}{section.2}\protected@file@percent }
+\newlabel{background-anycast-in-distributed-systems}{{2}{2}{Background: Anycast in Distributed Systems}{section.2}{}}
+\newlabel{sec:anycast_distributed_systems}{{2}{2}{Background: Anycast in Distributed Systems}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Potential Benefits of Anycast}{2}{subsection.2.1}\protected@file@percent }
+\newlabel{potential-benefits-of-anycast}{{2.1}{2}{Potential Benefits of Anycast}{subsection.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Root DNS anycast}{2}{subsection.2.2}\protected@file@percent }
+\newlabel{root-dns-anycast}{{2.2}{2}{Root DNS anycast}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}CDN Anycast}{2}{subsection.2.3}\protected@file@percent }
+\newlabel{cdn-anycast}{{2.3}{2}{CDN Anycast}{subsection.2.3}{}}
 \citation{moura2016anycast}
 \citation{sarat2006use}
 \citation{de2017anycast}
@@ -111,19 +52,23 @@
 \citation{colitti2006evaluating}
 \citation{de2017anycast}
 \citation{liang2013measuring}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{8}{section.6}}
-\newlabel{discussion}{{6}{8}{Discussion}{section.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Approximations and Limitations}{8}{subsection.6.1}}
-\newlabel{approximations-and-limitations}{{6.1}{8}{Approximations and Limitations}{subsection.6.1}{}}
-\newlabel{sec:discussion_approximations}{{6.1}{8}{Approximations and Limitations}{subsection.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Root DNS in Anycast}{8}{subsection.6.2}}
-\newlabel{root-dns-in-anycast}{{6.2}{8}{Root DNS in Anycast}{subsection.6.2}{}}
-\newlabel{sec:discussion_implications}{{6.2}{8}{Root DNS in Anycast}{subsection.6.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{8}{section.7}}
-\newlabel{related-work-1}{{7}{8}{Related Work}{section.7}{}}
-\newlabel{sec:related}{{7}{8}{Related Work}{section.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Root DNS Anycast Performance}{8}{subsection.7.1}}
-\newlabel{root-dns-anycast-performance}{{7.1}{8}{Root DNS Anycast Performance}{subsection.7.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Does DNS Root Latency Matter?}{3}{section.3}\protected@file@percent }
+\newlabel{does-dns-root-latency-matter}{{3}{3}{Does DNS Root Latency Matter?}{section.3}{}}
+\newlabel{sec:root_dns_latency}{{3}{3}{Does DNS Root Latency Matter?}{section.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Anycast Performance in the Root DNS}{3}{section.4}\protected@file@percent }
+\newlabel{anycast-performance-in-the-root-dns}{{4}{3}{Anycast Performance in the Root DNS}{section.4}{}}
+\newlabel{sec:root_dns_anycast}{{4}{3}{Anycast Performance in the Root DNS}{section.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Does Anycast CDN Latency Matter?}{3}{section.5}\protected@file@percent }
+\newlabel{does-anycast-cdn-latency-matter}{{5}{3}{Does Anycast CDN Latency Matter?}{section.5}{}}
+\newlabel{sec:does_anycast_matter_cdn}{{5}{3}{Does Anycast CDN Latency Matter?}{section.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Anycast Performance in CDNs{[}p{]}}{3}{section.6}\protected@file@percent }
+\newlabel{anycast-performance-in-cdnsp}{{6}{3}{Anycast Performance in CDNs{[}p{]}}{section.6}{}}
+\newlabel{sec:cdn_anycast}{{6}{3}{Anycast Performance in CDNs{[}p{]}}{section.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Related Work}{3}{section.7}\protected@file@percent }
+\newlabel{related-work-1}{{7}{3}{Related Work}{section.7}{}}
+\newlabel{sec:related}{{7}{3}{Related Work}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Root DNS Anycast Performance}{3}{subsection.7.1}\protected@file@percent }
+\newlabel{root-dns-anycast-performance}{{7.1}{3}{Root DNS Anycast Performance}{subsection.7.1}{}}
 \citation{alzoubi2011practical}
 \citation{flavel2015fastroute}
 \citation{calder2015analyzing}
@@ -135,16 +80,16 @@
 \citation{asrese2016wepr}
 \citation{sundaresan2013web}
 \citation{enghardt2019web}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}CDN Anycast Performance}{9}{subsection.7.2}}
-\newlabel{cdn-anycast-performance}{{7.2}{9}{CDN Anycast Performance}{subsection.7.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Recursive Resolvers and the Benefits of Caching}{9}{subsection.7.3}}
-\newlabel{recursive-resolvers-and-the-benefits-of-caching}{{7.3}{9}{Recursive Resolvers and the Benefits of Caching}{subsection.7.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Web Performance}{9}{subsection.7.4}}
-\newlabel{web-performance}{{7.4}{9}{Web Performance}{subsection.7.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{9}{section.8}}
-\newlabel{conclusion-1}{{8}{9}{Conclusion}{section.8}{}}
 \bibdata{bib.bib}
 \bibcite{root_servers}{{1}{[n. d.]}{{roo}}{{??}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}CDN Anycast Performance}{4}{subsection.7.2}\protected@file@percent }
+\newlabel{cdn-anycast-performance}{{7.2}{4}{CDN Anycast Performance}{subsection.7.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Recursive Resolvers and the Benefits of Caching}{4}{subsection.7.3}\protected@file@percent }
+\newlabel{recursive-resolvers-and-the-benefits-of-caching}{{7.3}{4}{Recursive Resolvers and the Benefits of Caching}{subsection.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Web Performance}{4}{subsection.7.4}\protected@file@percent }
+\newlabel{web-performance}{{7.4}{4}{Web Performance}{subsection.7.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{4}{section.8}\protected@file@percent }
+\newlabel{conclusion-1}{{8}{4}{Conclusion}{section.8}{}}
 \bibcite{akamai_anycast}{{2}{[n. d.]}{{aka}}{{??}}}
 \bibcite{ditl}{{3}{[n. d.]}{{dit}}{{??}}}
 \bibcite{alexa_topsites}{{4}{[n. d.]}{{ale}}{{??}}}
@@ -180,10 +125,10 @@
 \bibcite{edgecast_anycast}{{34}{[n. d.]}{{Verizon}}{{Verizon}}}
 \bibcite{yu2012authority}{{35}{2012}{{Yu et~al\unhbox \voidb@x \hbox {.}}}{{Yu, Wessels, Larson, and Zhang}}}
 \bibcite{private_ip_space}{{36}{[n. d.]}{{zakird}}{{zakird}}}
-\@writefile{toc}{\contentsline {section}{References}{10}{section*.9}}
 \newlabel{tocindent-1}{0pt}
 \newlabel{tocindent0}{0pt}
 \newlabel{tocindent1}{5.0pt}
 \newlabel{tocindent2}{12.77776pt}
 \newlabel{tocindent3}{0pt}
-\newlabel{TotPages}{{11}{11}{}{page.11}{}}
+\@writefile{toc}{\contentsline {section}{References}{5}{section*.3}\protected@file@percent }
+\newlabel{TotPages}{{5}{5}{}{page.5}{}}
