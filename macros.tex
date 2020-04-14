@@ -1,69 +1,66 @@
 %% conference information
-% \acmConference{CoNEXT '18}{December 4--7, 2018}{Heraklion/Crete, Greece}
-% \acmYear{2018}
-% \copyrightyear{2018}
+% \acmYear{2019}
+% \copyrightyear{2019}
+% \acmConference{CoNEXT '19}{December 9-12, 2019}{Orlando, Florida, USA}
 
-%% anonymize macros
-\newcommand\facebook{{Facebook}\xspace}
+\hyphenation{name-spaces}
+
+%% System name
+\newcommand\thepeering{\textsc{Peering}\xspace}
+\newcommand\peering{\textsc{Peering}\xspace}
+%\newcommand\peering{\textsc{BGPPlatform}\xspace}
+\newcommand\vbgp{\texttt{vBGP}\xspace}
+\newcommand\testbed{platform\xspace}
+\newcommand\testbeds{platforms\xspace}
 
 %%% Macros for convenience
 %% References
 \newcommand{\secref}[1]{\S\ref{sec:#1}}
 \newcommand{\figref}[1]{Figure~\ref{fig:#1}}
 \newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+%% to refer to lines in graphs
+\newcommand{\linename}[1]{\emph{#1}\xspace}
+\newcommand{\parab}[1]{\smallskip\noindent {\bf #1}}
 
 %% Common latin terms
 \newcommand{\etc}{\emph{etc.}\xspace}
 \newcommand{\ie}{\emph{i.e.,}\xspace}
 \newcommand{\eg}{\emph{e.g.,}\xspace}
 \newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\aka}{a.k.a\xspace}
 
 %% editing notes
-\newcommand\ekb[1]{{\color{blue}ekb: #1}}
+%\newcommand\ekb[1]{{\color{blue}[ekb: #1]}}
 \newcommand\tbd[1]{{\color{red}{\bf TBD: #1}}}
-\newcommand\new[1]{{\color{red}{#1}}}
-
-% HD-ratio
-\newcommand{\Ttotal}{\ensuremath{T_\mathrm{total}}}
-\newcommand{\Btotal}{\ensuremath{B_\mathrm{total}}}
-\newcommand{\Bmss}{\ensuremath{B_\mathrm{MSS}}}
-\newcommand{\Winit}{\ensuremath{W_\mathrm{init}}}
-\newcommand{\RbottleN}[1]{R_\mathrm{bottleneck}(#1)}
-\newcommand{\BssN}[1]{\ensuremath{B_\mathrm{SS}(#1)}}
-\newcommand{\WssN}[1]{\ensuremath{W_\mathrm{SS}(#1)}}
-\newcommand{\TmodelN}[1]{\ensuremath{T_\mathrm{model}(#1)}}
-\newcommand{\RTmin}{\ensuremath{\mathrm{RoundTrips}_\mathrm{min}}}
-\newcommand{\Rachievable}{\ensuremath{R_\mathrm{achievable}}}
-\newcommand{\Rachieved}{\ensuremath{R_\mathrm{achieved}}}
+%\newcommand\new[1]{#1}
+%\newcommand\cut[1]{}
+\definecolor{orange}{rgb}{1.0, 0.31, 0.0}
+%\newcommand\edit[2]{#2}
+%\newcommand\new[1]{{#1}}
+%\newcommand\cut[1]{{#1}}
 
 % terms
-\newcommand\bgp{BGP\xspace}
-\newcommand\as{AS\xspace}
-\newcommand\ases{ASes\xspace}
-\newcommand\asn{ASN\xspace}
-\newcommand\asns{ASNs\xspace}
-\newcommand\aspath{AS-path\xspace}
-\newcommand\aspaths{AS-paths\xspace}
-\newcommand\localpref{local-pref\xspace}
-\newcommand\med{MED\xspace}
-
-\newcommand\minrtt{\ensuremath{\mathrm{MinRTT}}\xspace}
-\newcommand\hdratio{HD-ratio\xspace}
-
-\newcommand\upperbound{\emph{upper bound}\xspace}
-\newcommand\beststatic{\emph{static best path}\xspace}
-\newcommand\bestdynamic{\emph{best path per time bucket}\xspace}
-
-\newcommand\prefixthree{\texttt{BadPeerPrefix}\xspace}
-\newcommand\prefixtwo{\texttt{DiurnalPrefix}\xspace}
-\newcommand\prefixone{\texttt{TransientPrefix}\xspace}
-
-\newcommand\popprefixtuple{$\left\langle \text{PoP, prefix} \right\rangle$\xspace}
-\newcommand\popprefixroutetuple{$\left\langle \text{PoP, prefix, route} \right\rangle$\xspace}
-\newcommand\popprefixroutetimetuple{$\left\langle \text{PoP, prefix, route, time window} \right\rangle$\xspace}
-
-\newcommand\popprefixroutetime{$\langle$PoP, prefix, route, time window$ \rangle$\xspace}
+\newcommand\noescape[1]{#1}
 
 \newcommand{\rightdownarrow}{\mathrel{\scalebox{1}[-1]{$\Rsh$}}}
-\newcommand{\cmark}{\color{OliveGreen}\ding{51}}%
-\newcommand{\xmark}{\color{BrickRed}\ding{55}}%
+\newcommand{\cmark}{\color{green}\ding{51}}
+\newcommand{\xmark}{\color{red}\ding{55}}
+
+\NewDocumentCommand{\rotseventy}{O{70} O{1em} m}{\makebox[#2][l]{\rotatebox{#1}{#3}}}
+
+%consistency
+\newcommand\tOne{Tier-1 \ac{isp}\xspace}
+\newcommand\tOnes{Tier-1 \acp{isp}\xspace}
+\newcommand\tTwo{Tier-2 \ac{isp}\xspace}
+\newcommand\tTwos{Tier-2 \acp{isp}\xspace}
+\newcommand\pfr{provider-free reachability\xspace}
+
+%because I want this functionality
+\newcommand\aclpi[1]{\textit{\aclp{#1}}~(\acsp{#1})\acused{#1}\xspace}
+\newcommand\acspu[1]{\acsp{#1}\acused{#1}\xspace}
+
+\definecolor{cy}{rgb}{0.66, 0.66, 0.66}
+\newcommand\twa[1]{\textit{\textcolor{cy}{[todd] #1}}}
+
+
+
