@@ -57,7 +57,13 @@ $(NAME).tex: $(NAME).trig
 	#      the footnotes in Google Docs text export
 	sed -i -r $(SED_REGEXP_FLAGS) 's/\[([0-9]+)\]/\[^\1\]/g; s/^(\[\^[0-9]+\])/\1:/g; s/^_{16}//' $(NAME).md
 	rm $(NAME).mdt
-	pandoc $(PANDOC_FLAGS) $(BIBLIO_FLAGS) $(NAME).md > $(NAME).tex
+	pandoc $(PANDOC_FLAGS) $(BIBLIO_FLAGS) $(NAME).md > $(NAME).tex~
+	# refs go before appendix, not after.  fix Hackily fix that here.
+	{ < $(NAME).tex~ sed '/^\\appendix/,$$d'; \
+	  < $(NAME).tex~ grep '\\bibliography{'; \
+	  < $(NAME).tex~ grep '^\\appendix'; \
+	  < $(NAME).tex~ sed '1,/^\\appendix/d'; \
+	} > $(NAME).tex
 	# Google docs now include comments inside of [letter], so remove that.
 	sed -i'orig' 's/[{][[][}][a-z].*[{][]][}]//g' $(NAME).tex
 
