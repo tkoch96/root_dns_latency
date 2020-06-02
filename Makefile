@@ -59,10 +59,10 @@ $(NAME).tex: $(NAME).trig
 	rm $(NAME).mdt
 	pandoc $(PANDOC_FLAGS) $(BIBLIO_FLAGS) $(NAME).md > $(NAME).tex~
 	# refs go before appendix, not after.  fix Hackily fix that here.
-	{ < $(NAME).tex~ sed '/^\\appendix/,$$d'; \
+	{ < $(NAME).tex~ sed -e '/^\\appendix/,$$d' ; \
 	  < $(NAME).tex~ grep '\\bibliography{'; \
 	  < $(NAME).tex~ grep '^\\appendix'; \
-	  < $(NAME).tex~ sed '1,/^\\appendix/d'; \
+	  < $(NAME).tex~ sed -e '1,/^\\appendix/d' -e '/\\bibliography{/d'  ; \
 	} > $(NAME).tex
 	# Google docs now include comments inside of [letter], so remove that.
 	sed -i'orig' 's/[{][[][}][a-z].*[{][]][}]//g' $(NAME).tex
