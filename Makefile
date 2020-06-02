@@ -58,12 +58,15 @@ $(NAME).tex: $(NAME).trig
 	sed -i -r $(SED_REGEXP_FLAGS) 's/\[([0-9]+)\]/\[^\1\]/g; s/^(\[\^[0-9]+\])/\1:/g; s/^_{16}//' $(NAME).md
 	rm $(NAME).mdt
 	pandoc $(PANDOC_FLAGS) $(BIBLIO_FLAGS) $(NAME).md > $(NAME).tex~
-	# refs go before appendix, not after.  fix Hackily fix that here.
-	{ < $(NAME).tex~ sed -e '/^\\appendix/,$$d' ; \
+	# Refs go before appendix (if any), not after.  Fix Hackily (manually move stuff around) fix that here.
+	if grep '\\appendix' <$(NAME).tex~; \
+	then { < $(NAME).tex~ sed -e '/^\\appendix/,$$d' ; \
 	  < $(NAME).tex~ grep '\\bibliography{'; \
 	  < $(NAME).tex~ grep '^\\appendix'; \
 	  < $(NAME).tex~ sed -e '1,/^\\appendix/d' -e '/\\bibliography{/d'  ; \
-	} > $(NAME).tex
+	} > $(NAME).tex; \
+	else cp $(NAME).tex~ $(NAME).tex; \
+	fi
 	# Google docs now include comments inside of [letter], so remove that.
 	sed -i'orig' 's/[{][[][}][a-z].*[{][]][}]//g' $(NAME).tex
 
