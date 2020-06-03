@@ -1,3 +1,6 @@
+@string{ieee-acm-ton = "{ACM/IEEE} Transactions on Networking"};
+@string{pub-ieee = "{IEEE}"};
+@string{ieee-infocom = " {IEEE} Infocom"};
 @string{acm-imc = " ACM Internet Measurement Conference"};
 @string{pub-acm = "{ACM}"};
 @string{proc = "Proceedings of the "};
@@ -491,3 +494,77 @@
 	dataseturl = "https://ant.isi.edu/datasets/dns/index.html#recursives",
 	doi = "https://doi.org/10.1145/3131365.3131366",
 }
+
+@Article{Heidemann97b,
+	author = "John Heidemann and Katia Obraczka and Joe Touch",
+	title = 	"Modelling the Performance of {HTTP} Over Several
+                        Transport Protocols",
+	journal = 	ieee-acm-ton,
+	year = 		1997,
+	sortdate = "1997-10-01",
+	project = "ant, lsam",
+	jsubject = "www",
+	volume =	5,
+	number =	5,
+	month =		oct,
+	pages =		"616--630",
+	location =	"johnh: folder: lsam",
+	location =	"johnh: folder: www/http",
+	keywords =	"http performance, p-http, t/tcp, ardp",
+	url =		"https://www.isi.edu/%7ejohnh/PAPERS/Heidemann96a.html",
+	psurl =		"https://www.isi.edu/%7ejohnh/PAPERS/Heidemann96a.ps.gz",
+	pdfurl =		"https://www.isi.edu/%7ejohnh/PAPERS/Heidemann96a.pdf",
+	myorganization =	usc-isi,
+	copyrightholder = pub-ieee,
+	copyrightterms = copyright-ieee-1995,
+	availability = {
+Papers copies must be gotten from IEEE.
+A <a href="Heidemann96a.html">version with slightly different formatting</a>
+  is available electronically.
+},
+	abstract = "
+This paper considers the interaction of HTTP
+  with several transport protocols,
+  including TCP,
+  Transaction TCP,
+  a UDP-based request--response protocol,
+  and HTTP with persistent TCP connections.
+We present an analytic model for
+  each of these protocols
+  and use that model to evaluate
+  network overhead  carrying HTTP traffic
+  across a variety of network characteristics.
+This model includes a analysis of the transient affects of TCP slow-start.
+We validate this model by comparing it to 
+  network packet traces measured with two protocols
+  (HTTP and persistent HTTP)
+  over local and wide-area networks.
+We show that the model is accurate within 5\% of measured performance
+  for wide-area networks, but can underestimate latency
+  when the bandwidth is high and delay is low.
+We use the model to compare the connection-setup costs 
+  of these protocols, bounding the possible performance improvement.
+We evaluate these costs for a range of network characteristics,
+  finding that setup optimizations are relatively unimportant
+  for current modem, ISDN, and LAN users
+  but can provide moderate to substantial performance
+  improvement over high-speed WANs.
+We also use the model to predict performance over future network characteristics.
+",
+}
+
+@InProceedings{Cardwell00a,
+	 author = "Neal Cardwell and Stefan Savage and Tom Anderson",
+	 title = 	"Modelling {TCP} Latency",
+	 booktitle = 	proc # ieee-infocom,
+	 year = 		2000,
+	 publisher =	pub-ieee,
+	 address =	"Tel-Aviv, Israel",
+	 month =		mar,
+	 pages =		"to appear",
+	 location =	"johnh: pafiles",
+	 location =	"johnh: folder: networking/tcp/model",
+	 keywords =	"xxx",
+	 url =		"http://www.cs.washington.edu/homes/cardwell/papers/infocom2000tcp.pdf",
+}
+
