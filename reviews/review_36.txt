@@ -1,0 +1,507 @@
+=========================================================================================
+=========================================================================================
+=========================================================================================
+Major Changes Summary
+=========================================================================================
+=========================================================================================
+=========================================================================================
+- The story of the paper needs to be rethought, or the length of the paper should be shortened. Reviewer B (who had many insightful comments and seemed to have the most reasonable interpretation of the paper) opined that the paper needs to be more than the punchline we gave it (root DNS latency doesn't matter & anycast in CDNs is quite good) for it to be interesting enough to warrant a long submission. Hence there are two major directions we can go
+	1. Keep the same major content, but shorten the paper, removing the more egregious estimations. Leave the punchline the way it is. The problem with this approach is that a lot of work will be wasted, and the key points are perhaps just a bit too long to fit into a short paper.
+	2. Refine the story of the paper to be have a more interesting/encompassing punchline than the one above, and either justify or remove the more egregious estimations. Key things we want to add, or at least mention are
+		a. How our analysis and results specifically compare to prior work. Some specifics are routing and anycast path inflation.
+		b. Either perform some sort of routing analysis or discuss why we don't consider it and how our results affect past understandings of routing.
+- The reviewers found the 'daily root latency' section a little weak (both confusing and not technically sound), but I believe this section has potential to be stronger. Spending more time clearly explaining what we do and why we do it, as well as what we exclude from the analysis, why, and why it doesn't really matter are some points to hit.
+	- One reviewer found this as 'trying to make numbers look small', which wasn't our intention at all. Looking into ways to frame this as an upper bound on root DNS latency estimates is important.
+- A lot of the gripes in the paper were a result of us putting things in the appendices, which one reviewer neglected to read. I.e. the fraction of all reviewer comments that involved an appendix in some way is quite large. I'm not sure what to do about this, except to be sure that absolutely all the essential ideas are in the main body.
+- The paper is 'estimates on top of estimates'. Having perhaps one more section (aside from the CDN sections) where we use precise measurements will ground the study firmly. For example, replacing/augmenting the ISI data with ground truth measurements for a test user on a network might sit favorably in the eyes of reviewers. But we should also drive home that root DNS latency is quite difficult to measure, which is why we use estimates. We might obviate the need for this assuming we reframe/expand the paper (thus expanding the analysis we do).
+
+
+
+=========================================================================================
+=========================================================================================
+=========================================================================================
+Sorted Reviews
+=========================================================================================
+=========================================================================================
+=========================================================================================
+
+Reviews are labeled as [reviewer_id-type_of_review-relevant_section_of_paper]
+
+=========================================================================================
+Positive -- Reviews that summarize the paper, or paint it in a positive light
+=========================================================================================
+
+[A-positive-Overall] provides an alternative view on the importance of delay for root DNS.
+	- Importance: no-op
+[A-positive-Overall] compares the difference in requirements between CDNs and DNS root.
+	- Importance: no-op
+[B-positive-overall] The paper's punch line seems useful.  I.e., previous studies focusing on anycast for DNS are not necessarily applicable to other anycast situations (e.g., CDNs).
+	- Importance: no-op
+[B-positive-overall] The paper has CDN-internal measurements and so the data offered is nice.
+	- Importance: no-op
+[C-positive-overall] Detailed analysis of popular anycast services.
+	- Importance: no-op
+
+=========================================================================================
+Story -- reviews that express a problem with the overall story of the paper
+=========================================================================================
+============================== Major Issues ==============================
+[B-story-overall] In places, the analysis and conclusions don't feel rooted in the data, but in estimates on top of estimates.  Especially for DNS, where the data itself is less telling.
+- Importance: major issue
+- Response: This is relevant for sections involving the root DNS. Estimates seemed to be the best we could do, since precisely measuring how root DNS affects users browsing the web (let alone other activities on the computer) would require fine-grained user data. Perhaps more carefully explaining the dilemna of measuring root DNS latency, and carefully enumerating/justifying assumptions would be ways to qualify objections. Other possibilities include more experiments (e.g. a test user browsing the web and measuring exactly the amount of time the test user waits for root DNS queries).
+
+[C-story-overall] Given that you use 10 RTTs as estimations for the CDN latencies one should expect there to be at least an order of magnitude difference is the delays when compared to RootDNS which needs 1 RTT. Why do you need 3 pages of analysis for this?
+- Importance: major issue
+- Response: Yes, this does make the main punchline of the section obvious, and it's hardly interesting. We need to re-focus this analysis to point out other ways in which looking at CDN's as well cast our understanding of anycast inflation in a new light. Some initial thoughts are looking at per-RTT inflation, looking at causes of inflation, looking at how our use of DITL instead of RIPE changes our understanding of inflation in the root DNS.
+
+[B-story-overall] The paper is somewhat repetitive.  In 4.1 the paper concludes that basically delay to the roots is no big deal.  At this point it just isn't clear why DNS is discussed further in the paper at all.  Yet, it keeps coming back. 
+- Importance: major issue
+[B-story-S5.1] 5.1: I find this whole section to be sort of useless.  You have already told me delays to the DNS roots don't matter.  And, yet, here we analyze the performance of anycast in delivering DNS responses.  I am not sure what I am supposed to learn from here that we didn't already know from previous DNS/anycast studies (which you cite).
+- Importance: major issue
+- Response: Agree, and 'why talk about DNS inflation if its negligible' was one point we brought up amongst ourselves when structuring the paper. This relates to the previous point about 3 pages of analysis for a simple idea, and I believe one solution is to reframe the section, potentially adding new analysis but definitely highlighting how our analysis compares to old work. That is, I believe the analysis we have done could be discussed in a slightly different way that would make the paper interesting, but as its currently written it is not interesting.
+
+============================== Minor Issues ==============================
+[C-story-overall] Overall, you are looking at a nice and timely topic: The performance of anycast. The idea of using a comparison of two different services that are built on top of anycast is also, in principle, cool. However, as the paper stands it does not deliver as the goals of the services are different and, thus, the design differs. This makes it difficult to do a comparative evaluation as the paper structure in the end shows.
+- Importance: minor issue
+- Response: The goal (thus design) of the services differing was our point, and we used to to show anycast in a better light than previous work. The reviewer doesn't explicitly state what they mean, but I suppose they felt we were comparing apples and oranges (which is part of the point). Perhaps emphasizing that we explicitly acknowledge they are very different, but this is part of our point is something we need to do (more)?
+[C-story-overall] This is basically two papers in one: an analysis of the root DNS overhead and an analysis of anycast CDNS as highlighted by the 7-page detailed appendix.
+- Importance: minor issue
+- Response: I don't fully understand how the appendices relate to this (I see these as a result of our many assumptions/estimations) but perhaps we can re-evaluate the extent to which we compare and constrast the two services (if we add more analysis).
+
+
+
+=========================================================================================
+Missing -- reviews that stress that some component of the paper or analysis is missing
+=========================================================================================
+============================== Major Issues ==============================
+[C-missing-overall] A more detailed discussion on how your anycast DNS results differ from previous work is needed.
+- Importance: major issue
+- Response: I agree. We should potentially recast some of our results away from the obvious and more towards how they differ from prior understanding (as discussed above).
+[A-missing-Overall] You do not take routing into consideration, nor the experienced/measured RTT. This is very different from past studies. Can you still make statements about past studies not being pertinent?
+- Importance: major issue
+- Response: Related to the previous issue, we do not mention why we do so many things differently from prior work. We do this in part to cast a new light on things (rather than recreating old results), partly to get a global view, partly so we can compare somewhat directly between the CDN and root DNS. We should perhaps explicitly state where we differ from prior work for basic analysis (like inflation), with comparisons and justifications for certain choices.
+============================== Minor Issues ==============================
+[C-missing-overall] What is confusing in your comparison is that you are not doing a routing comparison of the CDN anycast sites vs. the root DNS anycast sites... Why not?
+- Importance: minor issue
+- Response: as emphasized by a review above, the key difference between root DNS anycast and CDN anycast is the # of RTTs per page load, which just makes everything orders of magnitude different. Analyzing routing wouldn't have related to the messsage we were trying to convey. I suppose we could look at CDN routing (root DNS routing has been explored recently, and is poor), but the RTT problem makes it negligible and begs the question 'why look at it, if it doesn't matter'. Also the AS paths towards Microsoft are likely boring since Microsoft peers with so many users.
+[A-missing-Overall] you have the catchment for most of the DNS root letters so why do you not study the effect of routing on the inflation for the DNS. This is done for the CDN but not for the DNS. Previous studies were investigation that aspect of inflation. If you do not consider it you cannot really say that there is no improvements to be done regarding that aspect for the DNS because you do not know how bad it is.
+- Importance: minor issue
+- Response: Using DITL to look at root DNS catchments is an interesting idea, and would provide a global view. But, similar to the above question, the point of the paper is that root DNS inefficiency does not matter. I suppose we could look at it to show that its horrendous compared to the CDN (but we've already drilled this point). We also don't make the claim that there are no improvements to be made. These improvements would simply be negligible in the case of the root DNS.
+[A-missing-Overall] A study of unicast and anycast path inflation would be useful to grasp the difference in your two settings (DNS and CDN).
+- Importance: minor issue
+- Response: It would be interesting to compare unicast and anycast inflation, but since our punchline is 'performance doesn't matter', dissecting performance differences wouldn't have made sense in this paper. This suggestion and the above suggestions are potentially great ideas for a paper that focuses on differences between CDN & root anycast routing / performance on a higher level than "does it matter". 
+
+
+=========================================================================================
+Clarification -- reviews that highlight the need for us to clarify something
+=========================================================================================
+============================== Major Issues ==============================
+[A-clarification-Overall] the distinction between unicast and anycast path inflation that is made is confusing. Please emphasize on why it is enough to look at anycast path inflation? Is unicast path inflation included in anycast path inflation?
+- Importance: major issue
+[A-clarification-Overall] It will help to add more explanation to why you set unicast path inflation to 0. How do you compare to the best unicast path to measure inflation?
+- importance: major issue
+- Response: We were not clear enough when we explained that we set UPI to zero, and just looked at 'inflation' to show that it was relatively negligible for the two services (but especially DNS). Perhaps we can more explicitly state this, or dedicate a larger block to discussing UPI vs API?
+
+
+[A-clarification-S5.1] 0.4% of geolocated DITL query is very little. You are talking about the ability to locate recursive? Is the study representative then?
+- importance: major issue
+[C-clarification-S5.1] Regarding your path inflation data this reviewer is confused. Given that you can only geolocate 0.4% of the DITL query volume how representative is this data? How come that you can do any claims here?
+- importance: major issue
+- Response: We used (admittedly) confusing (and arguably incorrect) language here that suggested we only ran the analysis in S5.1 on a very small subset of the DITL data. This is not true, the 0.4% refers to the fraction of DITL data we were precisely able to geolocate; i.e., that was attributable to public DNS resolvers with location information listed online.
+
+[B-clarification-S3.1] 3.1: I can't figure out which roots are being used.  The paper notes g-root data is missing, and b-root and i-root anonymize the DITL data. But, then says g- and i- root are excluded. Do you mean b-and i-?
+- importance: major issue
+[C-clarification-S3.1] Why are you excluding I but not B even though they are partially or fully anonymized?
+- importance: major issue
+- Response: We need to treat this with more care, since reviewers had a problem with the roots we excluded, coupled with our claim that the analysis was 'global'. 
+
+
+[B-clarification-3.1] 3.1: Table 1: When we encounter this table, I can't make sense of the second row (intersection of DITL, DNS and RIPE).  Later there is some back reference to this, but at least foreshadow when the table is introduced.
+- importance: major issue
+[B-clarification-3.1] 3.1: Table 1: The bigger issue with this table is that I cannot tell what it means.  I have re-read the text several times and I just simply don't understand what this table is supposed to show me.  
+- importance: major issue
+[B-clarification-3.1] The text says how the analysis was done.  But, I cannot figure out why you did it or what the goal in doing it was or what sort of insight comes out of doing it.
+- importance: major issue
+- Response: This is a major issue given the strong wording from the reviewer -- that they had no idea why we did this. This needs to be explained more clearly and include a topic sentence like 'we did lots of preprocessing, mostly so that we could use the Microsoft data'.
+
+[B-clarification-S4.2] 4.2: More analysis built on lots of estimates in here.  E.g., "it usually takes at least 10 RTTs to load a web page".  I have no idea what that means or how I'd do a similar analysis on different data. What is "usually"?  Median?  25th percentile?  99th percentile?
+- importance: major issue
+[C-clarification-S4.2] [Using 10 as the number of RTTs in a page load] is a very very strange estimate even if you use it as lower bound as ***only*** mentioned in the appendix itself.
+- importance: major issue
+- Response: We did not mention the fact that 10 RTTs is a lower bound in the main body. We need to move this to the main body, and stress that its only a very rough estimate and not too important.
+
+[C-clarification-S3.1] It seems that you are excluding a huge number of queries... Why are they of no use to you?
+- importance: major issue
+- Response: We need to either potentially exclude less data, or ensure we state why we exlcude each and every data point (and justify it) in the main body of the text. One idea for exlcuding less data and being more transparent is to use the APNIC user data as the default data set, and use Microsoft user counts as a secondary source (since they give largely the same results).
+
+
+============================== Minor Issues ==============================
+[C-clarification-S3.2] For all your CDN latencies this reviewer is confused about the data ... To which extend do you only include requests that can be handled by the frontends without any need for any communication with the backends... The latter can really skew your results and increase latencies substantially. Since there is no discussion of this in the paper this reviewer is highly confused.
+- importance: minor issue
+[B-clarification-S3.2] 3.2: It'd be nice if you could spend a couple sentences sketching the measurements instead of sending me to [23,24].  I don't need an in-depth treatment, but a little high-level reminder would be great.
+- importance: minor issue
+[A-clarification-Overall] description of the rings is not clear. What is the role of each ring? How are users dispatched to different rings? They all seem to cover the globe. Are different rings really good representatives of different scales of deployments?
+- Importance: minor issue
+- Response: Explaining the rings even more would likely de-anonymize the data (which is why we were terse). Considering the confusion about what exactly we measured with the CDN (elsewhere in the reviews), expanding upon the section regarding the rings & associated data with clear descriptions might be something we should consider.
+
+[A-clarification-S4.2] 4.2 Latenticies per page load are obtained from the median RTT times by median number of RTT. Does this not hide a lot of useful information regarding performance? Please provide some information on the distribution of RTTs. Regarding the median number of RTTs you use 10 but this seems small in view of fig 13. in the appendix.
+- importance: minor issue
+- Medians are taken over large user populations, and so are representative. We do not take the median number of RTTs, we used ~ the minimum number of RTTs. We did this intentionally, but did not explain it well in the main body. Hence we multiply (single) minimum * median, so we don't lose too much information -- we just scale the medians.
+
+[A-clarification-S4.2] 4.2 you use user/resolver location for some of the study. Which information do you use?
+- importance: minor issue 
+- Response: We do not explicitly say what we use in Section 4.2, but say it earlier in the text. Perhaps repeat it in Section 4.2.
+
+
+[C-clarification-S5.2] The conclusion for anycast CDN is strange: "the latency per page load can decrease by hundreds of milliseconds ... results in more path inflation." What does "more" mean? For what fraction does it decrease?
+- importance: minor issue
+[C-clarification-S5.2] "The path inflation per RTT for the anycast CDN is about half that of the root deployments. Hence, even with greater path inflation... help CDNs..:" so this is strange... where is the path inflation larger CDN or DNS?
+- importance: minor issue
+- Response: We should be more descriptive here (and elsewhere) when we use vague words such as 'more'.
+
+[C-clarification-S5.2] For the CDN you are making confusing statements as well: "they may occasionally be routed to different sites due to load balancing" How is this possible? One of the major drawback of anycast CDNs is the inability to do load balancing for /24s....
+- importance: minor issue
+- Response: We should emphasize that we mean load balancing external to the AS that just so happens to result in users from the same <region, AS> reaching a different PoP (and thus front-end).
+
+[C-comment-S5.2] However, not all IPs from a /24 are necessarily in the same geographic region... For example, full mobile operators may be hiding behind a NAT that is using a few /24s....
+- importance: minor issue
+- Response: Yes, this is part of the innaccuracy. If we use the APNIC user data, we do not need to aggregate by /24, and so don't have to make this assumption. We should consider doing this.
+============================== Nits ==============================
+[A-clarification-fig_4a] picturing relative delays does not help understanding. If RIPE Atlas can be used to measure the performance of the CDN, why is the absolute CDF of delay proprietary? You could at least provide the interquartile range of RTTs to give a clearer picture of the behavior. It would be useful to compare the distributions that can be observed with RIPE Atlas probes to the ones obtained from the CDN user base (even if limited to the interquartile portion of the distribution)
+- importance: nit
+- Response: This is simply policy, no way around this. We could make a graph showing performance differences for comparable RIPE probes, but that's quite a bit more work than seems necessary.
+[A-clarification-fig_1] Fig 1. is not very instructive in that some deployments do not seem to appear on the figure, or there is a color mismatch between the map and the legend. For example, where is R110? I further do not see the information about the size of the user base on the figure.
+- importance: nit
+- Response: The information in the figure is correct. The reviewer doesn't see R110 because its often a secondary server in an already-served area. Perhaps emphasize this.
+[A-clarification-S4.2] What are the RIPE Atlas measurement ids used for this study?
+- importance: nit
+- Response: Seems a little silly to put this. I've never seen anyone ask for RIPE measurement IDs, but would be happy to provide them.
+[A-clarification-S5.2] Why then not apply eq 3 for the DNS as well.
+- importance: nit
+- Response: This is impossible because we don't have latency information. That is a key point in S5, which we explicitly state. If the reviewer implies we should be using RIPE probes with real latency measurements, that is an entirely different point which was brought up elsewhere.
+
+
+=========================================================================================
+Technical -- reviews that (at least somewhat) legimitately question the technical soundness of a methodology
+=========================================================================================
+============================== Major Issues ==============================
+[B-technical-S4.1] 4.1: This quickly gets far away from actual data.  The two bits of data I took away are the median cache miss rate of 0.5% and the RIPE Atlas-to-root server delay distributions in figure 3.  Together these say I don't expect transactions with the roots to be a big cost in general terms.  The remainder of the analysis is really sort of estimates on top of assumptions and what we get out isn't clear.
+ - importance: major issue
+[B-technical-S4.1] We set S at the 95th percentile.  But, then l_r seems well over the 95th percentile (figure 3).  And, we use the median cache miss rate.  And, it just isn't clear how W is chosen except that footnote 4 says it is "conservative".  This just seems all over the map.  This is a lot of work, but it ultimately doesn't get me to anywhere that figure 3 + 0.5% cache miss rate gets us. I.e., the impact is small.
+- importance: major issue
+[C-technical-S4.1] The bounds that you are computing are based on strange assumptions. For example, why the heck are you sing W=3s and l_r = 0.5s to compute your exaggerated upper bound which you are then using, later on, to argue that root DNS lookup still accumulates some time....
+- importance: major issue
+ - Response: The reviewer seems to think it's obvious that with a cache miss rate of .5% the resulting latency for a user is negligible. I suppose we thought it was necessary to show this. One thing we should consider is substituting this with actual measurements from users (even on a small scale), since these will be better than the spit-ball metrics we use. This beginning part of the section really detracts from the rest of the work. At a minimum, we should replace 3s (for which I neglected to cite HTTP Archive) and 500 ms with statistics better grounded in real data.
+
+
+[C-technical-overall] You are using a lot of assumptions that are unclear to this reviewer.
+- importance: major issue
+- Response: Brought up earlier (also clarification). In general we should strive to identify all assumptions and ensure they are systematically and fully justified.
+[C-technical-S3.1] Why are you using data from 2018 and not 2019?
+- importance: major issue
+[C-technical-S3.1] Why is it OK to use data from 2019 to augment data from 2018? 
+- importance: major issue
+- Response: We should have explicitly mentioned that we acknowledge the time difference & that it might have deleterious effects. Ideally our next submission will contain more recent data, or at least join data sets using similar time periods. We could also say this about the APNIC dataset which is from 2014 (whereas DITL is from 2018 and the IP->AS mapping is from 2020). The only acceptable solution with the APNIC set might be to use more recent information (which is likely impossible).
+============================== Minor Issues ==============================
+[A-technical-S2.3] 2.3 The estimation of the number of times the root DNS needs to be queries per user depends on the cache sizes in - recursive resolvers. Are caches large enough such that information is never removed before the TTL expires?
+- importance: minor issue
+- Response: This is an interesting point, and perhaps should be mentioned. There is nothing we can do to compensate for this, however.
+[A-technical-S5.2] eq 3, you remove everything below 0. Isn't it where the interesting information lies?
+- importance: minor issue
+- Response: This is like interesting information from a routing perspective, but we didn't concern ourselves with these details. Ultimately looking at these cases would be interesting in a study that looked at routing. 
+[C-technical-S3.1] [Joining RR by /24] is highly questionable as sites using DHCP etc are unlikely to always hand out IPs from the same /24... Why do you need this scaling? By how much do you scale the data in this way? Just moving such a discussion to an appendix is not the way to go. Indeed, none of the arguments in A.2 accounts for merging data from 2018 with data from 2019!
+- importance: minor issue
+- Response: we were not explicit enough in pointing out how Table 2 demonstrates the need for us to join by /24. I disagree that moving the discussion to an appendix was the wrong move. We could look at forming some sort of upper bound here. The trouble is that sum(a_i/b_i) != sum(a_i) / sum(b_i) where a_i = RR queries and b_i = user counts. Upper bounding sum(a_i) / sum(b_i) while retaining coverage is one direction.
+
+[C-technical-S4.2] It is also not clear why you can use the RIPE data to calculate latencies per page loads from # of RTTs... What kind of assumptions do you use in this in terms of window sizes, congestion, etc..
+Just using 10 RTTs to load a Web page is strange... Especially, as not all Web content of a page may come from the CDN and it may require multiple requests for multiple objects... 
+- importance: minor issue
+- Response: This is more technical than the other gripes about the 10 RTTs thing. We may need to justify our decision beyond what we have already done.
+
+[B-technical-S4.1] Cache hits are Bernoulli trials.  Are they?
+- importance: minor issue
+- Response: No they are not Bernoulli trials, but harping on this point isn't necessarily the way to go either. There are a few options: 1) use the Bernoulli trial analogy and be innaccurate, 2) talk about an actual model, but spend more unnecessary time, or 3) don't mention anything and just say 'on average', hoping they get the gist. Since we will likely restructure this sub-section, this is probably irrelevant. 
+
+============================== Nits ==============================
+[C-technical-3.1] Why are the CDN based page lookups representative of DNS requests to non CDN hosted sites? IPs change over time even beyond /24s...
+- importance: nit
+- Response: They are not, in general, but the point of Table 2 is to demonstrate the extent to which each dataset is representative of the other. We already plan to explain this in more detail.
+
+
+=========================================================================================
+=========================================================================================
+=========================================================================================
+Individual Reviews, labelled by type
+=========================================================================================
+=========================================================================================
+=========================================================================================
+
+Review #36A
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Reviewer confidence
+-------------------
+3. High
+
+Paper summary
+-------------
+Anycast is used to support different services. Two examples are DNS and CDN. The authors compare sensitivity to delay for the two services. They state that sub-optimal delay performance for the the root DNS may not be important because the root DNS is not queried that often. Content is often cached and users will only perceive 10-15 ms delay increase over a whole day. They compare this to the delay to retrieve web content. Page load time takes a few RTTs (10 in average, they say) and content is larger. In that case sub-optimal delay is more critical. The second aspect studied is the path inflation. That is, how much delay is lost reaching the anycast site compared to the best geographical delay (for DNS and CDN) or for the CDN compared to the closest front end latency. They show that more sites lead to more path inflation for both the DNS and the CDN. But they say that for the CDN the inflation is not big compared to the base line delay to access the content. It only increases delay by a small portion because CDNs are well engineered toward delay minimization. They state that DNS roots deployments are not optimized toward delay as there is little incentive to do this since it has little impact on users.
+
+Technical correctness
+---------------------
+4. Good
+
+Strengths
+---------
+- [A-positive-Overall] provides an alternative view on the importance of delay for root DNS.
+- [A-positive-Overall] compares the difference in requirements between CDNs and DNS root.
+
+Things to improve
+-----------------
+- [A-clarification-Overall] description of the rings is not clear. What is the role of each ring? How are users dispatched to different rings? They all seem to cover the globe. Are different rings really good representatives of different scales of deployments?
+- [A-clarification-Overall] the distinction between unicast and anycast path inflation that is made is confusing. Please emphasize on why it is enough to look at anycast path inflation? Is unicast path inflation included in anycast path inflation?
+- [A-missing-Overall] you have the catchment for most of the DNS root letters so why do you not study the effect of routing on the inflation for the DNS. This is done for the CDN but not for the DNS. Previous studies were investigation that aspect of inflation. If you do not consider it you cannot really say that there is no improvements to be done regarding that aspect for the DNS because you do not know how bad it is.
+- [A-clarification-fig_4a] picturing relative delays does not help understanding. If RIPE Atlas can be used to measure the performance of the CDN, why is the absolute CDF of delay proprietary? You could at least provide the interquartile range of RTTs to give a clearer picture of the behavior. It would be useful to compare the distributions that can be observed with RIPE Atlas probes to the ones obtained from the CDN user base (even if limited to the interquartile portion of the distribution)
+
+Comments for author
+-------------------
+- [A-grammatical-S1] 1. of the its role -> remove "the"
+- [A-technical-S2.3] 2.3 The estimation of the number of times the root DNS needs to be queries per user depends on the cache sizes in - recursive resolvers. Are caches large enough such that information is never removed before the TTL expires?
+- [A-clarification-fig_1] Fig 1. is not very instructive in that some deployments do not seem to appear on the figure, or there is a color mismatch between the map and the legend. For example, where is R110? I further do not see the information about the size of the user base on the figure.
+- [A-clarification-S4.2] What are the RIPE Atlas measurement ids used for this study?
+- [A-grammatical-S4.1] 4.1 quieres -> queries
+- [A-visual-F3] Legend of fig 3 is too small
+- [A-clarification-S4.2] 4.2 Latenticies per page load are obtained from the median RTT times by median number of RTT. Does this not hide a lot of useful information regarding performance? Please provide some information on the distribution of RTTs. Regarding the median number of RTTs you use 10 but this seems small in view of fig 13. in the appendix.
+- [A-clarification-S4.2] 4.2 you use user/resolver location for some of the study. Which information do you use? [A-clarification-S5.2] Why then not apply eq 3 for the DNS as well.
+- [A-comment-fig_5b] Fig 5 b does not add much new insight.
+- 5.1
+-- [A-clarification-Overall] It will help to add more explanation to why you set unicast path inflation to 0. How do you compare to the best unicast path to measure inflation?
+-- [A-visual-fig_6] Figure 6, top x axis. Isn't the unit in seconds?
+-- [A-clarification-5.1] 0.4% of geolocated DITL query is very little. You are talking about the ability to locate recursive? Is the study representative then?
+-- [A-missing-Overall] You do not take routing into consideration, nor the experienced/measured RTT. This is very different from past studies. Can you still make statements about past studies not being pertinent?
+-- [A-missing-Overall] A study of unicast and anycast path inflation would be useful to grasp the difference in your two settings (DNS and CDN).
+-- [A-grammatical-S5.1] in the perspective in two ways -> remove "the"
+-- [A-question-S5.1] Do you measure inflation from any RIPE Atlas to any x in x-root?
+- 5.2
+-- [A-technical-S5.2] eq 3, you remove everything below 0. Isn't it where the interesting information lies?
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #36B
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Reviewer confidence
+-------------------
+2. Medium
+
+Paper summary
+-------------
+This paper investigates anycast performance in the context of both
+the DNS root servers and a CDN.  The punch line is that (a) anycast
+doesn't work optimally for DNS but that doesn't matter and (b)
+anycast works much better for the CDN so DNS is not indicative of
+all anycast situations.
+
+Technical correctness
+---------------------
+3. Average
+
+Strengths
+---------
+  + [B-positive-overall] The paper's punch line seems useful.  I.e., previous studies
+    focusing on anycast for DNS are not necessarily applicable to
+    other anycast situations (e.g., CDNs).
+
+  + [B-positive-overall] The paper has CDN-internal measurements and so the data offered
+    is nice.
+
+Things to improve
+-----------------
+  - [B-story-overall] In places, the analysis and conclusions don't feel rooted in the
+    data, but in estimates on top of estimates.  Especially for
+    DNS, where the data itself is less telling.
+
+  - [B-story-overall] The paper is somewhat repetitive.  In 4.1 the paper concludes
+    that basically delay to the roots is no big deal.  At this point
+    it just isn't clear why DNS is discussed further in the paper at
+    all.  Yet, it keeps coming back. 
+
+  - [B-comment-S4.1] The notion of an expected daily latency is not particularly
+    useful.
+
+Comments for author
+-------------------
+[B-clarification-S3.1] 3.1: I can't figure out which roots are being used.  The paper notes
+g-root data is missing, and b-root and i-root anonymize the DITL
+data.  But, then says g- and i- root are excluded.  Do you mean b-
+and i-?
+
+[B-clarification-3.1] 3.1: Table 1: When we encounter this table, I can't make sense of
+the second row (intersection of DITL, DNS and RIPE).  Later there is
+some back reference to this, but at least foreshadow when the table
+is introduced.
+
+[B-clarification-3.1] 3.1: Table 1: The bigger issue with this table is that I cannot tell
+what it means.  I have re-read the text several times and I just
+simply don't understand what this table is supposed to show me.  [B-clarification-3.1] The
+text says how the analysis was done.  But, I cannot figure out why
+you did it or what the goal in doing it was or what sort of insight
+comes out of doing it.
+
+[B-comment-overall] 3.1/3.2: The paper leans on a number of bits of internal data, such
+as a database of users/recursive, IP-to-ASN mappings, geoIP, etc.
+It's difficult to gain confidence that these sorts of foundations of
+your analysis are accurate.  For sure some of this is because
+nothing public exists (e.g., estimate of how many users per
+recursive).  But, in some cases, a public source exists (e.g., CAIDA
+or Team Cymru's IP-to-AS databases).  It would have been helpful to
+better understand why these were used and how accurate they are.  At
+a minimum these aspects of the paper make the analysis nearly
+impossible to directly verify.
+
+[B-clarification-S3.2] 3.2: It'd be nice if you could spend a couple sentences sketching
+the measurements instead of sending me to [23,24].  I don't need an
+in-depth treatment, but a little high-level reminder would be great.
+
+[B-comment-S4.1] 4.1: I find this whole notion of an expected daily latency to be far
+from what users actually care about---even though the paper wants to
+focus on DNS lookups users care about (excluding those that don't
+fit that mold). This framing turns latency into some abstract
+notion that is really hard to reason about because we understand
+"it's taking a long/short time to do this task", but not "DNS sure
+was fast/slow today".  This sort of scaling of things always feels
+to me like we're trying to make numbers look big or small.
+
+[B-technical-S4.1] 4.1: This quickly gets far away from actual data.  The two bits of
+data I took away are the median cache miss rate of 0.5% and the RIPE
+Atlas-to-root server delay distributions in figure 3.  Together
+these say I don't expect transactions with the roots to be a big
+cost in general terms.  The remainder of the analysis is really sort
+of estimates on top of assumptions and what we get out isn't clear.
+Cache hits are Bernoulli trials.  Are they?  We set S at the 95th
+percentile.  But, then l_r seems well over the 95th percentile
+(figure 3).  And, we use the median cache miss rate.  And, it just
+isn't clear how W is chosen except that footnote 4 says it is
+"conservative".  This just seems all over the map.  This is a lot of
+work, but it ultimately doesn't get me to anywhere that figure 3 +
+0.5% cache miss rate gets us.  I.e., the impact is small.
+
+[B-comment-S4.2] 4.2: The high-order result given in the first paragraph is clearly
+obvious.  It's fine enough to put data behind that.  But, let's not
+pretend this is somehow a surprising result.
+
+[B-comment-S4.2] : I find this relative latency analysis to degrade the usefulness
+of the results a bunch.  It just makes things difficult to
+determine.  The relative difference between 1ms and 2ms is the same
+as between 1sec and 2sec, but I care about the latter much more.  I
+understand there are constraints on using proprietary data, but
+unfortunately, these constraints also bound the usefulness.
+
+[B-clarification-S4.2] 4.2: More analysis built on lots of estimates in here.  E.g., "it
+usually takes at least 10 RTTs to load a web page".  I have no idea
+what that means or how I'd do a similar analysis on different data.
+What is "usually"?  Median?  25th percentile?  99th percentile?
+
+[B-story-S5.1] 5.1: I find this whole section to be sort of useless.  You have
+already told me delays to the DNS roots don't matter.  And, yet,
+here we analyze the performance of anycast in delivering DNS
+responses.  I am not sure what I am supposed to learn from here that
+we didn't already know from previous DNS/anycast studies (which you
+cite).
+
+[B-comment-S5.2] 5.2: This is a much better contribution than 5.1 in that you told us
+that web delays matter and this seems new relative to the existing
+literature.  This result seems useful.  And, in fact I really like
+it---as the paper discusses---as a counterpoint to previous work
+that casts anycast in a lousy light based on DNS measurements.  If
+this had been a short paper that focused on this punch line I think
+it likely would have been great.
+
+Disclaimer: I did not read any of the appendices.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+Review #36C
+===========================================================================
+
+Overall merit
+-------------
+1. Reject
+
+Reviewer confidence
+-------------------
+2. Medium
+
+Paper summary
+-------------
+This paper studies the delay introduced by root DNS lookups as well as the path inflation for anycast RootDNS services and anycast CDNs.
+
+Technical correctness
+---------------------
+2. Poor
+
+Strengths
+---------
+[C-positive-overall] Detailed analysis of popular anycast services.
+
+Things to improve
+-----------------
+[C-story-overall] This is basically two papers in one: an analysis of the root DNS overhead and an analysis of anycast CDNS as highlighted by the 7-page detailed appendix.
+[C-technical-overall] You are using a lot of assumptions that are unclear to this reviewer.
+[C-missing-overall] A more detailed discussion on how your anycast DNS results differ from previous work is needed.
+
+Comments for author
+-------------------
+[C-story-overall] Overall, you are looking at a nice and timely topic: The performance of anycast. The idea of using a comparison of two different services that are built on top of anycast is also, in principle, cool. However, as the paper stands it does not deliver as the goals of the services are different and, thus, the design differs. This makes it difficult to do a comparative evaluation as the paper structure in the end shows.
+
+[C-comment-S5.1] So the conclusion for root DNS is: "increasing deployment size can lead to more users experiencing path inflation; however, the amount of inflation is tiny". (But, what about the fraction of users that benefit???)
+
+[C-clarification-S5.2] The conclusion for anycast CDN is strange: "the latency per page load can decrease by hundreds of milliseconds ... results in more path inflation." What does "more" mean? For what fraction does it decrease?
+
+[C-clarification-S5.2] "The path inflation per RTT for the anycast CDN is about half that of the root deployments. Hence, even with greater path inflation... help CDNs..:" so this is strange... where is the path inflation larger CDN or DNS?
+
+[C-technical-S3.1] Why are you using data from 2018 and not 2019?
+
+[C-technical-S3.1] Why are you excluding I but not B even though they are partially or fully anonymized?
+
+[C-clarification-S3.1] It seems that you are excluding a huge number of queries... Why are they of no use to you?
+
+[C-technical-S3.1] Why is it OK to use data from 2019 to augment data from 2018? [C-technical-3.1] Why are the CDN based page lookups representative of DNS requests to non CDN hosted sites? IPs change over time even beyond /24s...
+[C-grammatical-S3.1] The English is broken here "We then join the DITL captures and CDN user counts by the recursive resolver /24, " [C-technical-S3.1] This is highly questionable as sites using DHCP etc are unlikely to always hand out IPs from the same /24... Why do you need this scaling? By how much do you scale the data in this way? Just moving such a discussion to an appendix is not the way to go. Indeed, none of the arguments in A.2 accounts for merging data from 2018 with data from 2019!
+
+[C-clarification-S4.1] The bounds that you are computing are based on strange assumptions. For example, why the heck are you sing W=3s and l_r = 0.5s to compute your exaggerated upper bound which you are then using, later on, to argue that root DNS lookup still accumulates some time....
+
+[C-comment-S4.1] Indeed, given the effectiveness of DNS root caching it is strange why you can claim that "We find that users likely spend less than 10ms waiting for root DNS resolution during a page load." how many page loads even involve a root DNS resolution. Yes, you, later on, show that there are superfluous DNS root lookup but not one for every single web page....
+
+[C-comment-S4.1] This reviewer also finds it strange that you claim "Figure 2 provides a truly global view of how users incur latency due to the root DNS." After all, you did not include queries from multiple root DNS servers.
+
+[C-comment-S4.2] Moving over to CDN latency this reviewer is confused that you even need to state the following: "we conclude that anycast latency results in orders of magnitude more visible delay to users for page loads ... see due to the root DNS."
+
+[C-clarification-S3.2] For all your CDN latencies this reviewer is confused about the data ... To which extend do you only include requests that can be handled by the frontends without any need for any communication with the backends... The latter can really skew your results and increase latencies substantially. Since there is no discussion of this in the paper this reviewer is highly confused.
+
+[C-technical-S4.2] It is also not clear why you can use the RIPE data to calculate latencies per page loads from # of RTTs... What kind of assumptions do you use in this in terms of window sizes, congestion, etc..
+Just using 10 RTTs to load a Web page is strange... Especially, as not all Web content of a page may come from the CDN and it may require multiple requests for multiple objects... [C-clarification-S4.2] This is a very very strange estimate even if you use it as lower bound as ***only*** mentioned in the appendix itself.
+
+[C-story-overall] Given that you use 10 RTTs as estimations for the CDN latencies one should expect there to be at least an order of magnitude difference is the delays when compared to RootDNS which needs 1 RTT. Why do you need 3 pages of analysis for this?
+
+[C-clarification-S5.1] Regarding your path inflation data this reviewer is confused.
+Given that you can only geolocate 0.4% of the DITL query volume how representative is this data? How come that you can do any claims here?
+
+[C-clarification-S5.2] For the CDN you are making confusing statements as well:
+"they may occasionally be routed to different sites due to load balancing" How is this possible? One of the major drawback of anycast CDNs is the inability to do load balancing for /24s....
+[C-comment-S5.2] However, not all IPs from a /24 are necessarily in the same geographic region... For example, full mobile operators may be hiding behind a NAT that is using a few /24s....
+
+[C-missing-overall] What is confusing in your comparison is that you are not doing a routing comparison of the CDN anycast sites vs. the root DNS anycast sites... Why not?
