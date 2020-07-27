@@ -1,0 +1,138 @@
+Review #36B
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Reviewer confidence
+-------------------
+2. Medium
+
+Paper summary
+-------------
+This paper investigates anycast performance in the context of both
+the DNS root servers and a CDN.  The punch line is that (a) anycast
+doesn't work optimally for DNS but that doesn't matter and (b)
+anycast works much better for the CDN so DNS is not indicative of
+all anycast situations.
+
+Technical correctness
+---------------------
+3. Average
+
+Strengths
+---------
+  + The paper's punch line seems useful.  I.e., previous studies
+    focusing on anycast for DNS are not necessarily applicable to
+    other anycast situations (e.g., CDNs).
+
+  + The paper has CDN-internal measurements and so the data offered
+    is nice.
+
+Things to improve
+-----------------
+  - In places, the analysis and conclusions don't feel rooted in the
+    data, but in estimates on top of estimates.  Especially for
+    DNS, where the data itself is less telling.
+
+  - The paper is somewhat repetitive.  In 4.1 the paper concludes
+    that basically delay to the roots is no big deal.  At this point
+    it just isn't clear why DNS is discussed further in the paper at
+    all.  Yet, it keeps coming back. 
+
+  - The notion of an expected daily latency is not particularly
+    useful.
+
+Comments for author
+-------------------
+3.1: I can't figure out which roots are being used.  The paper notes
+g-root data is missing, and b-root and i-root anonymize the DITL
+data.  But, then says g- and i- root are excluded.  Do you mean b-
+and i-?
+
+3.1: Table 1: When we encounter this table, I can't make sense of
+the second row (intersection of DITL, DNS and RIPE).  Later there is
+some back reference to this, but at least foreshadow when the table
+is introduced.
+
+3.1: Table 1: The bigger issue with this table is that I cannot tell
+what it means.  I have re-read the text several times and I just
+simply don't understand what this table is supposed to show me.  The
+text says how the analysis was done.  But, I cannot figure out why
+you did it or what the goal in doing it was or what sort of insight
+comes out of doing it.
+
+3.1/3.2: The paper leans on a number of bits of internal data, such
+as a database of users/recursive, IP-to-ASN mappings, geoIP, etc.
+It's difficult to gain confidence that these sorts of foundations of
+your analysis are accurate.  For sure some of this is because
+nothing public exists (e.g., estimate of how many users per
+recursive).  But, in some cases, a public source exists (e.g., CAIDA
+or Team Cymru's IP-to-AS databases).  It would have been helpful to
+better understand why these were used and how accurate they are.  At
+a minimum these aspects of the paper make the analysis nearly
+impossible to directly verify.
+
+3.2: It'd be nice if you could spend a couple sentences sketching
+the measurements instead of sending me to [23,24].  I don't need an
+in-depth treatment, but a little high-level reminder would be great.
+
+4.1: I find this whole notion of an expected daily latency to be far
+from what users actually care about---even though the paper wants to
+focus on DNS lookups users care about (excluding those that don't
+fit that mold).  This framing turns latency into some abstract
+notion that is really hard to reason about because we understand
+"it's taking a long/short time to do this task", but not "DNS sure
+was fast/slow today".  This sort of scaling of things always feels
+to me like we're trying to make numbers look big or small.
+
+4.1: This quickly gets far away from actual data.  The two bits of
+data I took away are the median cache miss rate of 0.5% and the RIPE
+Atlas-to-root server delay distributions in figure 3.  Together
+these say I don't expect transactions with the roots to be a big
+cost in general terms.  The remainder of the analysis is really sort
+of estimates on top of assumptions and what we get out isn't clear.
+Cache hits are Bernoulli trials.  Are they?  We set S at the 95th
+percentile.  But, then l_r seems well over the 95th percentile
+(figure 3).  And, we use the median cache miss rate.  And, it just
+isn't clear how W is chosen except that footnote 4 says it is
+"conservative".  This just seems all over the map.  This is a lot of
+work, but it ultimately doesn't get me to anywhere that figure 3 +
+0.5% cache miss rate gets us.  I.e., the impact is small.
+
+4.2: The high-order result given in the first paragraph is clearly
+obvious.  It's fine enough to put data behind that.  But, let's not
+pretend this is somehow a surprising result.
+
+4.2: I find this relative latency analysis to degrade the usefulness
+of the results a bunch.  It just makes things difficult to
+determine.  The relative difference between 1ms and 2ms is the same
+as between 1sec and 2sec, but I care about the latter much more.  I
+understand there are constraints on using proprietary data, but
+unfortunately, these constraints also bound the usefulness.
+
+4.2: More analysis built on lots of estimates in here.  E.g., "it
+usually takes at least 10 RTTs to load a web page".  I have no idea
+what that means or how I'd do a similar analysis on different data.
+What is "usually"?  Median?  25th percentile?  99th percentile?
+
+5.1: I find this whole section to be sort of useless.  You have
+already told me delays to the DNS roots don't matter.  And, yet,
+here we analyze the performance of anycast in delivering DNS
+responses.  I am not sure what I am supposed to learn from here that
+we didn't already know from previous DNS/anycast studies (which you
+cite).
+
+5.2: This is a much better contribution than 5.1 in that you told us
+that web delays matter and this seems new relative to the existing
+literature.  This result seems useful.  And, in fact I really like
+it---as the paper discusses---as a counterpoint to previous work
+that casts anycast in a lousy light based on DNS measurements.  If
+this had been a short paper that focused on this punch line I think
+it likely would have been great.
+
+Disclaimer: I did not read any of the appendices.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
