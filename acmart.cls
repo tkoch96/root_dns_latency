@@ -2508,8 +2508,9 @@
     \fi
   \else % Proceedings
     \fancyfoot[C]{\if@ACM@printfolios\footnotesize\thepage\fi}%
-    \fancyhead[LO]{\ACM@linecountL\@headfootfont\shorttitle}%
-    \fancyhead[RE]{\@headfootfont\@shortauthors\ACM@linecountR}%
+    %\fancyhead[LO]{\ACM@linecountL\@headfootfont\shorttitle}%
+    %\fancyhead[RE]{\@headfootfont\@shortauthors\ACM@linecountR}%
+    \fancyfoot[C]{\thepage}
     \if@ACM@nonacm\else%
       \fancyhead[LE]{\ACM@linecountL\@headfootfont
         \acmConference@shortname,
@@ -2573,6 +2574,7 @@
   \fancyhf{}%
   \renewcommand{\headrulewidth}{\z@}%
   \renewcommand{\footrulewidth}{\z@}%
+
   \if@ACM@journal@bibstrip
     \ifcase\ACM@format@nr
     \relax % manuscript
@@ -2618,6 +2620,7 @@
     \fancyhead[L]{\ACM@linecountL}%
     \fancyhead[R]{\ACM@linecountR}%
     \fancyfoot[C]{\if@ACM@printfolios\footnotesize\thepage\fi}%
+    \fancyfoot[C]{\thepage}%
   \fi
   \if@ACM@timestamp
     \ifnum\ACM@format@nr=0\relax % Manuscript
