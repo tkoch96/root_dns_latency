@@ -1,0 +1,139 @@
+Review #320A
+===========================================================================
+
+Reviewer recommendation
+-----------------------
+2. Weak reject
+
+Overall merit
+-------------
+2. Top 50% but not top 25% of submitted papers
+
+Reviewer confidence
+-------------------
+3. High
+
+Paper summary
+-------------
+The paper presents a measurement-based characterization of IP anycast performance, for two scenarios: root DNS servers and an anycast CDN.  Anycast leads to latency inflation in the root DNS scenario, but it doesn't matter much because users rarely experience that latency (due to DNS caching).  Anycast leads to much less latency inflation in the CDN setting -- where it would indeed matter more -- because CDNs have richer deployments of anycast replicas and richer peering at those connection points.
+
+Strengths
+---------
+Understanding the performance trade-offs for IP anycast is interesting, and the high-level conclusions for DNS vs. CDN services have practical relevance.
+
+Weaknesses
+----------
+The measurement methodology is fairly informal, and generally the paper could be much "tighter" -- the text is fairly repetitive about the main high-level conclusions (which could be made more succinctly, and largely by appealing to prior work on DNS caching and the IMC'15 paper on anycast CDN measurement). Also, the paper is quite choppy in going back and forth between the DNS and CDN scenarios multiple times -- contributing to the sense of repetitiveness in the paper. Generally, the main points of the paper could be made in just a few pages, instead of repeated with additional levels of detail several times throughout the paper.
+
+Comments for author
+-------------------
+The paper could make a stronger argument for why it is useful to study these two systems (DNS root service and an anycast CDN) together.  It is true that the general conclusion (DNS root latency is inflated but it doesn't matter, and anycast CDN latency would matter but isn't all that inflated) is interesting, but the point about "DNS root latency doesn't really matter" could be made without much of a measurement study given prior work on DNS caching.  Generally, it seems a distraction to talk about both systems together, especially with all the jumping back and forth between the two systems.
+
+Also, for a paper primarily focused on measurement, the treatment of the measurement methodology is quite informal, with new details coming in passing as the paper progresses. It would have been more interesting if a single, novel measurement methodology made the whole study (of both systems) possible, rather than needing separate methods for each of the two systems.  Also, relying on "browser measurements from daily use of two of the authors" seems quite ad hoc, and very small scale. Generally, the last half of Section 3.1 and most of Section 3.2 are quite informal -- there is no top-down description (and justification) of the measurement methods.  It is hard to see whether/what the new methodological contributions might be, or even if this is actually the right methodology to use.
+
+Detailed comments
+
+- Abstract, "most users experience less than 15 msec per day from root DNS": This was hard to understand at first.  After reading the rest of the paper, I think this refers to total extra delay a user experiences across all Internet activity, largely because of the effectiveness of DNS caching (especially of information provided by the root DNS servers).
+
+- The description of anycast "rings" is somewhat hard to follow, especially in the Introduction where it is first mentioned.  It'd be good to motivate and define these rings, and clarify whether this is a common way that anycast CDNs work (and, if so, why).
+
+- The term "inflation per RTT for ACDN" is a bit confusing at first, too.
+
+- Section 2.1 is largely repetitive with the abstract and Introduction.  Similarly Section 2.4.
+
+- Section 3.1 mentions "captive portal detection from Chromium-based browsers". This was confusing.  (It's not especially important for understanding the rest of the paper, though, so this is a small comment.)
+
+- The text in the first few paragraphs of page 6 seems to meander.
+
+- In Section 5.2, how does the server compute RTTs (for the server-side logging)? Is this done using something like Web10G?  How do these measurements account for delayed ACKs at the client?
+
+- At first the discussion of restrictive vs. unrestrictive peering (in Section 5.3) is counter-intuitive. The text seems to suggest that many roots have an open peering policy (which would give greater connectivity to users) and ACDN has a restrictive policy (resulting in seemingly less connectivity).  The discussion here could be more nuanced.  Are the "extra peers" in the DNS case actually causing the DNS response traffic to take a *less* good route to the client, because the "best BGP path" is actually not all that good (because it doesn't take performance into account), whereas ACDN is making more strategic choices?  It may be helpful to tease apart the distinction between selectivity of peering choices and the smartness of the ultimate routing decisions made (among the routing choices that are available) for return traffic.  Or, in fact, do the DNS roots have *fewer* peers despite having an open policy because they are less richly connected to the Internet? 
+
+- Why does Section 5.3 study AS path length?  The length of the AS path is, at best, only loosely correlated with performance.
+
+- The IMC'15 study (reference [21]) is mentioned fairly late in the paper, in section 6. Given the high relevance of the paper, it would be useful to mention it earlier in the paper -- and explain the key differences in measurement methodology and conclusions more explicitly.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #320B
+===========================================================================
+
+Reviewer recommendation
+-----------------------
+2. Weak reject
+
+Overall merit
+-------------
+2. Top 50% but not top 25% of submitted papers
+
+Reviewer confidence
+-------------------
+2. Medium
+
+Paper summary
+-------------
+The importance of Anycast as a contributing factor in the performance of IP applications has been of perennial interest. The authors study the contribution of anycast to the overall performance of root DNS lookups and load assignment among CDN edge proxies in a large commercial CDN. They conclude after extensive analysis of existing traces and a number of informal experiments that while anycast induced path inflation to the root exists in DNS it does not contribute significantly to overall DNS query performance. They conclude that for the CDN case, the extensive system engineering keeps path inflation low despite  use of Anycast.
+
+Strengths
+---------
++ Useful re-visiting of a perennial issue taken from a different perspective from earlier studies
++ Good analysis about the relative importance of Anycast to overall latency in two important problem domains
++ New work specific to CDNs can inform future studies
+
+Weaknesses
+----------
+- Much ado about an old argument that may not matter much in the grand scheme of things
+- Writing is repetitive - paper is longer than it needs to be despite the large appendix
+
+Comments for author
+-------------------
+This is a solid piece of work and though some of the writing was a slog due to repetition, the main points come through clearly and are reasonably well backed up by the data. The point of view of studying anycast in the context of the larger application of which it is a part instead of as an individual module accounts for much of the incremental contribution over previous studies.
+
+I don't have many comments, as overall the conclusions are self-evident from the exposition and the methodology overall seems sound. Nevertheless I have a few suggestions:
+
+- Since you are focusing on placing the anycast measurements in context for DNS root lookups, it seems important to have that in the context of what portion of the overall DNS interaction latency the root lookups constitute. You cover well the strong impact of caching, but don't at all look at the equally important question of how many DNS lookups are required to satisfy a single user request. Another well-known phenomenon is that often the are many 10s of lookups related to a single page load on the web. What does this mean for the relative contribution of the root lookups? Is anycast used for any other part of the DNS tree?
+
+- Given the growing IPv6 traffic, it isn't clear whether this matters to your statistics from 2018. In particular some insight as to whether the behaviors with respect to anycast might or might not be different for IPv4 and IPv6. Some words on this, if possible, might quell reader uncertainty.
+
+- The measurements assume that all latency is due to path inflation and that server load is not a factor. I believe earlier studies have shown server load to not be all that important, but it's an issue worth mentioning.
+
+- Some recent work has suggested rather than try to fix root DNS latency problems, it would be better to get rid of root queries entirely. See especially https://www.icir.org/mallman/pubs/All19b/All19b.pdf as something perhaps worth discussing in your discussion/conclusion.
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #320C
+===========================================================================
+
+Reviewer recommendation
+-----------------------
+2. Weak reject
+
+Overall merit
+-------------
+1. Bottom 50% of submitted papers
+
+Reviewer confidence
+-------------------
+2. Medium
+
+Paper summary
+-------------
+This paper confronts the published literature showing that anycast performance can be poor when used for DNS by comparing the performance of the DNS roots against replicas provided by a major CDN.  The paper demonstrates that while DNS root performance can be suboptimal, it rarely matters since end users are unlikely to engage with the roots frequently, while anycast performance in the CDN is generally quite good, and can dramatically improve end-user experience.
+
+Strengths
+---------
+The paper presents an analysis of the anycast performance of a major CDN, and puts previous results regarding the root DNS anycast performance in perspective.
+
+Weaknesses
+----------
+Much of the measurement methodology is seemingly ad hoc and often anecdotal--especially with regard to the DNS study.  While the CDN measurement is much more extensive and rigorous, the data itself is proprietary and not made available to the community.  The manuscript itself is quite verbose, and the prose redundant at times: the results likely could have been just as equally presented in a short format.
+
+Comments for author
+-------------------
+The paper feels a bit like a defense of anycast and almost an advertisement for "ACDN".  It is quite evident that end-users are extremely unlikely to be significantly impacted by root DNS performance, regardless of how poor it might be given the caching inherent in DNS resolutions.  Hence, the paper feels a bit over-the-top in its constant attack on prior work.  The real contribution, instead, would seem to be the characterization of ACDN and its performance.  Indeed, the anecdotal measurements conducted from "two authors'" desktops presented in the latter portion of section 3 feel almost comical when placed against the industrial-grade measurements collected by the commercial ACDN infrastructure.
+
+Even the attempts to systematize the DNS measurements in Section 4 felt a bit awkward, with Table 1 presenting an awkward joining of otherwise unrelated data.   Similarly, Figure 2 feels like it is offered as "real" measurements when, instead, it is actually the result of a bespoke calculation--leaving the reader feeling a bit off-put in the context of a formal measurement study.  Indeed, the paper would have been much stronger had the authors selected a single measurement methodology and applied it to both systems, even if it necessarily lacked the fidelity of the existing ACDN telemetry.
