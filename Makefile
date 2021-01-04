@@ -6,7 +6,7 @@ TARGET=$(NAME).pdf
 
 # Change the line below to contain an export URL.
 # Make sure the sharing mode on the Doc is set to "anyone with link can view"
-DOCS_LINK=https://docs.google.com/document/d/1ctCJQVLjrWA2-x_4eL-rC06sJQUka2YLCbxZCc9hL90/export?format=txt
+DOCS_LINK=https://docs.google.com/document/d/1OFMCSQBzvZptzkGDyCOZ4aZ9Tw6cHdwONyhM97KsTF0/export?format=txt
 
 # This line should not change; however, you can customize the template.tex for the conference
 #
