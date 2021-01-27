@@ -34,7 +34,8 @@ recompile: $(TARGET)
 all: trigger $(TARGET)
 
 clean:
-	rm -f $(NAME).aux $(NAME).bbl $(NAME).blg $(NAME).log $(NAME).pdf $(NAME).md $(NAME).mdg $(NAME).mdt $(NAME).md-r $(NAME).out $(NAME).trig $(NAME).run.xml $(NAME)-blx.bib authors.aux
+	# rm -f $(NAME).aux $(NAME).bbl $(NAME).blg $(NAME).log $(NAME).pdf $(NAME).md $(NAME).mdg $(NAME).mdt $(NAME).md-r $(NAME).out $(NAME).trig $(NAME).run.xml $(NAME)-blx.bib authors.aux
+	rm -f $(NAME).aux $(NAME).bbl $(NAME).blg $(NAME).log $(NAME).pdf $(NAME).md $(NAME).mdg $(NAME).md-r $(NAME).out $(NAME).trig $(NAME).run.xml $(NAME)-blx.bib authors.aux
 	rm -f $(NAME).tex  # CAUTION remove if source is moved from Google docs
 
 trigger $(NAME).trig:
@@ -42,7 +43,8 @@ trigger $(NAME).trig:
 
 # This fetches the shared source from Google docs
 $(NAME).tex: $(NAME).trig
-	wget --no-check-certificate -O$(NAME).mdt $(DOCS_LINK)
+	mv ~/Downloads/A\ Tale\ of\ Two\ Anycasts\ SIGCOMM\ \'21.txt root_dns_latency.mdt
+	# wget --no-check-certificate -O$(NAME).mdt $(DOCS_LINK)
 	# `awk '{if (/^#/) print ""; print $0}'` adds a new line before any
 	#  section heading (begins with #)
 	iconv -c -t ASCII//TRANSLIT $(NAME).mdt | awk '{if (/^#/) print ""; print $0}' > $(NAME).md
