@@ -1,6 +1,11 @@
 # NB: By default fetch the paper from Google docs every time
 # use "make recompile" to avoid the extra fetch
 
+
+# USAGE PYTHON=python_path make
+# python_path should be python3.x, with libraries in requirements.txt instaled
+# i.e., before running make do python_path -m pip install -r requirements.txt
+
 NAME=root_dns_latency
 TARGET=$(NAME).pdf
 
