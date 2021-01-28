@@ -4,9 +4,13 @@
 NAME=root_dns_latency
 TARGET=$(NAME).pdf
 
-# Change the line below to contain an export URL.
-# Make sure the sharing mode on the Doc is set to "anyone with link can view"
-DOCS_LINK=https://docs.google.com/document/d/1OFMCSQBzvZptzkGDyCOZ4aZ9Tw6cHdwONyhM97KsTF0/export?format=txt
+
+# This is the document ID of your google doc
+# (SETTING UP) An author should create a project on the google cloud console
+# The author should add the accounts of everyone else to the project
+# ** I THINK ** everyone can use the same drive_api_key.json file (in git), but this may not be true
+# ***** THE ACCOUNT YOU ADD SHOULD ONLY HAVE VIEW PERMISSIONS OF THE FILE *******
+DOC_ID=1OFMCSQBzvZptzkGDyCOZ4aZ9Tw6cHdwONyhM97KsTF0
 
 # This line should not change; however, you can customize the template.tex for the conference
 #
@@ -43,8 +47,11 @@ trigger $(NAME).trig:
 
 # This fetches the shared source from Google docs
 $(NAME).tex: $(NAME).trig
-	mv ~/Downloads/A\ Tale\ of\ Two\ Anycasts\ SIGCOMM\ \'21.txt root_dns_latency.mdt
-	# wget --no-check-certificate -O$(NAME).mdt $(DOCS_LINK)
+	# Get's the document via the google docs API
+	# the first time you do this, you will need to authenticate via your browser
+	# just log into the google account you added to the project (see above)
+	PYTHON pull_doc.py $(NAME) $(DOC_ID)
+
 	# `awk '{if (/^#/) print ""; print $0}'` adds a new line before any
 	#  section heading (begins with #)
 	iconv -c -t ASCII//TRANSLIT $(NAME).mdt | awk '{if (/^#/) print ""; print $0}' > $(NAME).md
