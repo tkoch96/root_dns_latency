@@ -5,6 +5,9 @@
 # USAGE PYTHON=python_path make
 # python_path should be python3.x, with libraries in requirements.txt instaled
 # i.e., before running make do python_path -m pip install -r requirements.txt
+#
+# (PYTHON is set from shell env variable, or with this default value)
+PYTHON ?= python
 
 NAME=root_dns_latency
 TARGET=$(NAME).pdf
@@ -55,7 +58,7 @@ $(NAME).tex: $(NAME).trig
 	# Get's the document via the google docs API
 	# the first time you do this, you will need to authenticate via your browser
 	# just log into the google account you added to the project (see above)
-	PYTHON pull_doc.py $(NAME) $(DOC_ID)
+	$(PYTHON) pull_doc.py $(NAME) $(DOC_ID)
 
 	# `awk '{if (/^#/) print ""; print $0}'` adds a new line before any
 	#  section heading (begins with #)
