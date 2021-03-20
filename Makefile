@@ -19,6 +19,7 @@ TARGET=$(NAME).pdf
 # ** I THINK ** everyone can use the same drive_api_key.json file (in git), but this may not be true
 # ***** THE ACCOUNT YOU ADD SHOULD ONLY HAVE VIEW PERMISSIONS OF THE FILE *******
 DOC_ID=1OFMCSQBzvZptzkGDyCOZ4aZ9Tw6cHdwONyhM97KsTF0
+DOCS_LINK=https://docs.google.com/document/d/1OFMCSQBzvZptzkGDyCOZ4aZ9Tw6cHdwONyhM97KsTF0/export?format=txt
 
 # This line should not change; however, you can customize the template.tex for the conference
 #
@@ -58,8 +59,8 @@ $(NAME).tex: $(NAME).trig
 	# Get's the document via the google docs API
 	# the first time you do this, you will need to authenticate via your browser
 	# just log into the google account you added to the project (see above)
-	$(PYTHON) pull_doc.py $(NAME) $(DOC_ID)
-
+	# $(PYTHON) pull_doc.py $(NAME) $(DOC_ID)
+	wget --no-check-certificate -O$(NAME).mdt $(DOCS_LINK)
 	# `awk '{if (/^#/) print ""; print $0}'` adds a new line before any
 	#  section heading (begins with #)
 	iconv -c -t ASCII//TRANSLIT $(NAME).mdt | awk '{if (/^#/) print ""; print $0}' > $(NAME).md
