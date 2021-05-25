@@ -1,0 +1,271 @@
+Review #48A
+===========================================================================
+
+Overall merit
+-------------
+3. Weak accept
+
+Reviewer expertise
+------------------
+2. Some familiarity
+
+Paper summary
+-------------
+IP anycast is a technology widely used in the internet, for example to reach DNS root servers, as well as for end hosts to reach CDN servers. This paper studies anycast latency, and finds that anycast latency is high for most users, but that the latency doesn't matter much because it's optimized for using application-specific techniques.
+
+Strengths
+---------
+The paper provides a new, modern, and useful analysis of IP multicast. The study is large-scale and hence relevant to many topological/geographic regions in the Internet.
+
+Weaknesses
+----------
+The results don't seem particularly surprising. The main result seems to be that many hosts suffer latency to the DNS roots on the order of 10s or 100s of milliseconds, but this isn't much of a problem due to DNS caching, while CDNs place servers closer to hosts and hence have lower latency.
+
+Comments for author
+-------------------
+The results of this paper do not seem very surprising to me. There are many fewer DNS roots than servers in a large-scale CDN. So, a CDN would be able to place servers closer to end hosts, and hence a CDN would have much lower latency than DNS. It also makes sense that few users would reach the DNS root, previous studies have shown that DNS caching is very successful at reducing DNS root server traffic. All other observations appear in prior work - [26 showed that CDN inflation is low, [25-63] find that DNS's is high, etc. It could be argued this work lends confidence to prior results, but the amount of statistical confidence it contributes is not quantified.
+
+The latency measured to the DNS root servers is the direct path from the host. However, the actual DNS lookup latency is substantially longer than that, as the query would have to make an iterative sequence of lookups after reaching the root server. It's unclear how much a longer root server latency actually matters in terms of end to end user performance.
+
+The argument that DNS is "different" in terms of latency than the CDN also seems questionable. The paper focuses only on analyzing latency at the DNS roots - when DNS edge servers are taken into account the latency is lower. The same would probably be true of the CDN, the origin server would probably have higher latency to most hosts than the CDN's edge servers. If you look at both DNS and the CDN, they are both large distributed systems with many servers and users typically have lower latency in them because they both tend to have servers close to any particular hosts. Because of this the claim that CDNs are "engineered" differently seems somewhat questionable.
+
+There are other systems besides CDNs and DNS that use IP anycast - why study just these two systems? It would help if you could talk about the generality of your findings and how/if they apply to IP anycast in general in some way.
+
+The paper focuses a lot on averages. What about equity/fairness? It's actually important to look at the outlier users before making claims like the ones in Section 4.2. The minority matters too.
+
+"precise measures of how these authors..." - is this representative? This doesn't seem representative.
+
+"gathered at the research ab" - is this the 2 users? It would be helpful if you could avoid changing terminology unnecessarily.
+
+"We have shown root DNS latency... makes no difference to users" - you did not show this, overclaim
+
+"none consider how root DNS specifically to page load time" - is this true? Prior work showed that root DNS contributes minimally as most requests don't reach the roots.
+
+A lot of the descriptions in the paper focus on latency as a primary motivator for deploying more sites, but reliability is another. Protection against DDoS is another. There are other reasons to deploy sites beyond latency.
+
+"that inflation is a problem" - when you first start talking about inflation it's unclear what you're referring to (inflation of what)
+
+"anycast inflation" - please define this
+
+"investigate actual inflation" - please define "actual" -- how is the latency in the sentence before not "actual" latency?
+
+"our study are" - typo
+
+"will release our analysis source" - what is an "analysis source"? Source code, data, something else?
+
+"exploring if portions may be releasable" - I'm not sure what I should take away from this - should I have any degree of confidence in them being released?
+
+"is readily available" - if the data is readily available, why use data from 2018
+
+Citation [1] is pretty old - is there something newer you could use?
+
+"traces from 2018" - could you please give more details about these traces? How much data is there, # samples? How do we know if results from this data are statistically representative or sound?
+
+Why is it ok to discard queries to non-existing domain names? They are still queries. This probably makes your latency inflations higher than they actually are, as probably many of those queries have higher latency to begin with.
+
+"to ensure that user counts are not double counted..." - how do you "take care" to do this? Seems hard.
+
+"we can not share absolute latencies from ACDN" - if you are able to share why not, readers may find it educational.
+
+"1, 000" - remove stray space
+
+"do not benefit users" - at all? There's a number of places where you use absolute wording like this for claims, turning them into overclaims. It would help if you could make a pass and insert words like "most" or "usually" or such to make the statements accurate.
+
+"small amount of latency inflation" -- should it be "smaller"?
+
+"make economic sense or help user experience" - why would one be true yet not the other?
+
+Section 7.1 - I had some difficulty in this section figuring out what was the main nonintuitive point you were trying to make. What are the key novel findings here, what is surprising?
+
+"nor do they compare performance" - can't someone just read both papers? What do you mean by "compare performance", I mean, your paper also just reported the two sets of results separately, they just happened to be in the same paper.
+
+In section 8 I found it unclear what exactly you were claiming as new results. [26] also found CDN inflation low, 25-63 found DNS's latency is high.
+
+"In Figure 1 we show..." - it's unclear what "rings" are at this point in the text. Please define on first use.
+
+"billion users across" - should it be "requests"?
+
+DITL \intersect ACDN - I don't see how you can intersect these data sets. Was ACDN also from 2018? It would help if you could speak more precisely about what data you used and time ranges.
+
+"due to crowdsourced" - crowdsourced is probably the wrong technical term to be used here.
+
+"Why is there so much investment in more sites?" - what is your answer?
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #48B
+===========================================================================
+
+Overall merit
+-------------
+3. Weak accept
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+The paper presents a measurement study of IP anycast performance for root DNS servers and an anycast CDN, to understand the extent latency (e.g., RTT) is inflated. The punchlines are that (i) queries to the root DNS servers experience significant inflation, but the impact is minor because of DNS caching is effective such that few client DNS requests trigger queries to the DNS roots and (ii) the CDN experiences much less latency inflation from anycast, which is important because inflation here *would* adversely affect the user experience. In practice, the two systems are engineered differently, perhaps largely because anycast latency inflation has a much different impact in the two settings.
+
+Strengths
+---------
+IP anycast is widely used to host geo-replicated services, like DNS and CDNs.  Understanding how these systems are built and how they perform is important. The measurement study sheds light on how these two main use cases for IP anycast perform in the wild, with insights about how these two systems are engineered and used in practice.
+
+Weaknesses
+----------
+The measurement methodology doesn't, in and of itself, make a major research contribution, so the strength of the paper depends mainly on the depth of insights from the analysis.  While the analysis does shed light on the differences in how anycast performs -- and differences in how much it really matters -- between the two systems, they high-level conclusions may not be very surprising to readers. (In addition, the writing in the paper could be tighter to make the main points more concisely.) That said, establishing these analysis results is still a useful contribution.
+
+Comments for author
+-------------------
+Thanks for your submission to SIGCOMM, and particularly for undertaking the ambitious effort to measurement analyze two large, geo-replicated systems and compare them.
+
+While the paper is a good treatment of an interesting problem, the main contribution of the paper isn't so clear.  There are two main aspects to the paper -- the measurement methodology and the analysis results.  Each makes somewhat of a contribution, though neither one delivers a big "a ha" moment.  It's understandable that sometimes the methodology doesn't break new ground, but then the hope is that the analysis results do.  Or vice versa. 
+
+Also, the paper spreads itself a little thin in talking about both the DNS and CDN systems.  The DNS results seem less surprising -- the fact that relatively few user queries hit the root DNS servers is well-understood -- so the paper could have focused just on the CDN system and gone into greater depth about how to engineer and operate an anycast CDN with low latency inflation.  That is, the paper could just appeal to anycast DNS in the narrative, asking whether IP anycast offers sufficient control for CDNs to direct clients to nearby server replicas -- noting that experience with anycast for DNS might suggest otherwise (and citing past work accordingly) -- and then move on to focus on the CDN scenario.
+
+Why is "geographic" inflation of particular interest?  Wouldn't topological inflation (extra distance traveled on the Internet topology, beyond the shortest propagation-delay path) be the more relevant metric?
+
+Relying on "browser measurements from daily use of two of the authors" (Section 4.3) is too ad hoc, and too small scale.
+
+Some of Section 5.1 reads like high-level motivation that could go in Section 1. It helps motivate why topological proximity matters for CDNs, but that seems like a point that could be made earlier and more concisely.
+
+Section 6 notes "Latency is measured via server-side logging of TCP round-trip times." How are these data collected?  Using something like Web10G?
+
+What about clients *not* well-served by the CDNs?  It could be interesting to study the tail.  Also, presumably some tenants have their content cached at some CDN nodes and not others.  What affect does that have on latency inflation?
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #48C
+===========================================================================
+
+Overall merit
+-------------
+3. Weak accept
+
+Reviewer expertise
+------------------
+2. Some familiarity
+
+Paper summary
+-------------
+The paper presents an investigation into two anycast systems: root DNS and CDN. The study shows that although both systems largely deploy anycast but have different behaviors, especially in route inflation. The paper confirms the previous finding that root DNS incurs rather large route inflation, but finds this inflation does not hurt user experience too much. In contrast, CDN has optimized greatly towards minimizing latency and the inflation is tiny. Finally, the paper concludes that anycast can perform well even though the inflation could be large in systems when this inflate latencies do not impact user experience.
+
+Strengths
+---------
++ The paper has an interesting story-line. The conclusion makes sense.
++ Very detailed measurement data and a great deal of efforts.
+
+Weaknesses
+----------
+- The conclusion does not really surprising.
+- The contribution on the measurement methodology is incremental.
+
+Comments for author
+-------------------
+Overall, this is an interesting paper to read. The story-line is well designed and very detailed measurement data are well presented. Although the conclusion makes a lot of sense, it is not really surprising.
+
+The estimation on the impact of root latency to users is interesting, but the measurement methodology is not really rigorous.
+Although this may be enough to support the subject of this paper, the general research contribution of the methodology is incremental.
+
+Sec. 5.2 is a bit hard to follow. Are you basic saying because loading a page needs multiple RTT, so any inflate latency could be significant? But this conclusion can be drawn simply without the measurement data. I may not get the points of Fig 4b. What do you mean "change in latency as ring size increases"?
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #48D
+===========================================================================
+
+Overall merit
+-------------
+4. Accept
+
+Reviewer expertise
+------------------
+2. Some familiarity
+
+Paper summary
+-------------
+This paper looks at latency encountered by users when anycast is used for routing their requests to the nearest site (i.e., lowest latency site) among many such sites that can handle the request.
+
+First part of the paper shows that many users experience inflated latency during DNS resolution if their query needs to be resolved by one of the root servers. In this aspect the paper confirms what several prior studies have shown. Unlike those studies though, this paper goes a step further by showing that in reality DNS queries rarely need to go all the way to the root servers; most of the queries in reality are handled by intermediate resolvers. As a result, despite the sub-optimal performance of the anycast system in routing queries to root servers, users are affected by it in extremely rare circumstances.
+
+The paper then looks at latency of fetching HTTP content from a large CDN provider which also relies on anycast to route requests to the nearest replica from which to serve the content. Contrary to the DNS-case, the study finds that users experience much better performance with the CDN provider. The paper attributes this to the economic incentives CDN provider has in serving content with low latency to its users resulting in a network specifically designed and engineered to meet this goal (via rich peering and deployment of content close to users).
+
+Strengths
+---------
+The paper shows that it is important take application context into account while evaluating performance offered by anycast. It demonstrates that where latency matters a great deal to the users, the network can be engineered such that anycast can offer satisfactory performance to majority of users.
+
+Weaknesses
+----------
+The paper can do a better job of explaining myriads of datasets it uses for the study. It would also be interesting to see how representative the results are for other CDNs and applications.
+
+Comments for author
+-------------------
+I enjoyed reading this paper.
+
+The paper uses a lot of different datasets and while the description of it in Section 2 is fairly detailed, I still found myself getting lost in those very details. One suggestion for improving the readability is to use a table describing each dataset, where it's collected from, its purpose and section(s) where it is used.
+
+What does c_f represent in Eq. 2? Apart from calculating latency inflation with respect to the theoretical minimum, it would also be interesting to see inflation compared to the actual minimum achievable with the current deployment of DNS root servers (and CDN replicas).
+
+The paragraph describing how CDF is calculated for Fig. 3 is not very easy to follow.
+
+For ACDN, why do larger rings (e.g., R110) have lower latency per RTT but higher inflation compared to smaller rings (e.g., R28)?
+
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+Review #48E
+===========================================================================
+
+Overall merit
+-------------
+2. Weak reject
+
+Reviewer expertise
+------------------
+4. Expert
+
+Paper summary
+-------------
+This paper measured and contrasted two anycast systems: root DNS servers and a commercial anycast CDN. From the measurements, the authors reveal that root DNS latency rarely matters to end-users. Consequently, the root DNS anycast system has large undesirable geographic latency inflation. In contrast, CDN latency matter significantly to end-users. As a result, CDNs are incentivized to optimize their anycast systems. The measured CDN anycast system has
+significant less latency inflation than root DNS servers.
+
+Strengths
+---------
+Contrasting the performance of two different anycast systems is interesting and revealing. The authors described their measurement methods in great detail.
+
+Weaknesses
+----------
+Previous work has studied the performance of root DNS servers and that of other anycast CDNs.  I think it is insufficient to just contrast their performance without getting into more depth on what has caused the performance differences.
+
+Comments for author
+-------------------
+I like that you studied how root DNS latency affects user-perceived performance and compares it with that of CDN latency. However, given previous work [49] and [26] have studied anycast latency in detail and used more direct measurement data, I feel this paper does not provide sufficient new insight. People who have read [49] and [26] are well aware of the performance differences between the two systems. I don't think additional measurements and validation are necessary. For
+instance, [26] directly measures the CDN latency by embedding JavaScript in a landing page, which provides more authoritative measurement results than what you presented here.
+
+So in my opinion, the paper could entirely leave out the measurement results for root DNS servers and ACDN. Instead, the paper could focus on understanding why their performances differ so much. You have discussed this question to some extent and I think you have great insight here. You mentioned ACDN is better engineered than root DNS servers due to financial incentives and its average AS path lengths are much shorter. I would encourage you to elaborate on the structural differences between ACDN and root DNS servers. For instance, where are their servers/sites located? How different are their deployment locations?  Are DNS servers deployed according to population density or not? How much does ACDN's ring deployment structure help shorten the latency inflation? Does ACDN use DNS resolvers' IP addresses to help direct end users' queries to closest anycast replicas? I think answering those questions will help much more in deepening our understanding of anycast performance. It will shed light on how to overcome the path inflation issues of an anycast network.
+
+I am also somewhat confused about your overall measurement methods. It seems you used data from 2018 DITL as well as pings from RIPE Atlas. Since the ACDN results are only from RIPE, I think it might not be useful to present the results from the DITL data. It adds to the confusion, as I sometimes can't tell which results are from which data set easily.
+
+More detailed comments:
+
+Figure 1: I find this picture confusing. It'd be helpful to use a background section to describe the hierarchical ring structure of ACDN's anycast network.
+
+"We also use RIPE Atlas to ping anycast rings, because ACDN will not allow us to publish their measurements of absolute latency numbers." --> RIPE Atlas is known to be skewed to certain regions of the world. The measurements might be biased.
+
+"We choose to take a holistic approach to studying inflation, considering inflation relative to the deployment, rather than trying to infer which inflation would exist in an equivalent unicast deployment for several reasons." --> I am concerned that omitting unicast inflation may make the results biased against root DNS servers. CDN replica servers are deployed in locations geographically closer to end-users. But geographical distance and latency do not always correlate with each other, as previous measurement studies have shown. So I think it is necessary to include unicast latency here and use the best unicast latency compared with the actual anycast latency as a metric to highlight how well each anycast system works. The theoretical best does not mean we can actually achieve it in the practical routing system.
+
+"Generally, larger deployments are more likely to inflate queries, and inflation in the roots is quite large." --> This result seems to be counter-intuitive. With larger deployments, more servers can be placed closer to users. It'd be helpful to explain why larger deployments worsen latency for root DNS servers and ACDN.
+
+"We next calculate latency inflation for each ring. We calculate median latency over user populations within a ⟨region, AS⟩ hitting a front-end in a given ring," --> I am not sure why you need to group users. Can you directly plot the CDFs of user latency distribution for ACDN?
+
+Comment @A1 by Reviewer A
+---------------------------------------------------------------------------
+Discussion summary: The paper was discussed by the program committee, who appreciated a number of aspects about the work. The problem addressed was an important one, and the paper draws several interesting insights and observations on the CDN that was studied. At the same time, there were also several substantial concerns with the work, mostly centered around the novelty of the contributions. For example, there are many prior studies on DNS, and it is not clear what new results or contributions this work brings to the table. As such, the PC felt the DNS part of the paper could be cut back substantially, with the newly available space being available for additional focus on the studied CDN. The PC would like to see an improved balance between the DNS and CDN parts of the paper in the camera ready. Also, the PC felt the paper should be more careful with its claims -- the paper's conclusion seemed misleading, the studied CDN is not a pure anycast solution, you can combine DNS and CDN systems, etc. Overall, the PC felt that with appropriate and careful shepherding, the paper could be accepted.
