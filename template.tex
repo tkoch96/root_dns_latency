@@ -200,6 +200,12 @@ $endfor$
 
 \begin{document}
 
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
 $if(title)$
 \maketitle
 $endif$
@@ -220,12 +226,6 @@ $if(lot)$
 $endif$
 $if(lof)$
 \listoffigures
-$endif$
-
-$if(abstract)$
-\begin{abstract}
-$abstract$
-\end{abstract}
 $endif$
 
 
